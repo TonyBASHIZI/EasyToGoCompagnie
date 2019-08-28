@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace projectEasyToGoCompagny.Classes.Config
+namespace EasyToGoCompany.Classes.Config
 {
     public class Constant
     {

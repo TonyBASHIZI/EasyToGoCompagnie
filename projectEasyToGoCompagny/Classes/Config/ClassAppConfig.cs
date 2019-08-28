@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Permissions;
 
-namespace projectEasyToGoCompagny.Classes.Config
+namespace EasyToGoCompany.Classes.Config
 {
     public class AppConfig
     {
@@ -10,7 +10,7 @@ namespace projectEasyToGoCompagny.Classes.Config
         {
             get
             {
-                return Environment.CurrentDirectory + @"\EasyToGo";
+                return @"C:\ProgramData\EasyToGo";
             }
         }
 
@@ -123,48 +123,6 @@ namespace projectEasyToGoCompagny.Classes.Config
                 return true;
             }
             return false;
-        }
-
-        public static void WriteConnectionString(string server, string database, string username, string password)
-        {
-            try
-            {
-                string connectionString = "";
-
-                AppConfig.WriteInFiles(AppConfig.ConnectionString, connectionString);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Une erreur s'est produite. \n" + ex.Message);
-            }
-        }
-
-        public static void WriteInFiles(string path, String text)
-        {
-            try
-            {
-                if (text.Trim() != "")
-                {
-                    string fileContent = text.Trim();
-                    FileStream ClearFile = new FileStream(path, FileMode.Truncate);
-                    ClearFile.Flush(true);
-                    ClearFile.Close();
-
-                    FileStream fs1 = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
-                    TextWriter tw = new StreamWriter(fs1);
-                    tw.Write(fileContent);
-                    tw.Close();
-                }
-                else
-                {
-                    throw new Exception("Le champs concerné n'est pas completé ! ");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Une erreur s'est produite. \n" + ex.Message);
-            }
-
         }
     }
 }

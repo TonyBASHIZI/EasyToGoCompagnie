@@ -1,7 +1,7 @@
-﻿using projectEasyToGoCompagny.Classes.Config;
+﻿using EasyToGoCompany.Classes.Config;
 using System.IO;
 
-namespace projectEasyToGoCompagny.Classes.Connection
+namespace EasyToGoCompany.Classes.Connection
 {
     public class Connection
     {
@@ -9,7 +9,7 @@ namespace projectEasyToGoCompagny.Classes.Connection
 
         public void Connect()
         {
-            path = File.ReadAllText(Constant.Database.Path).Trim();
+            path = Constant.Database.Path;
         }
     }
 }

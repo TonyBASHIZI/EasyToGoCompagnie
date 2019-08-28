@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace projectEasyToGoCompagny.Properties
+namespace EasyToGoCompany.Properties
 {
 
 
