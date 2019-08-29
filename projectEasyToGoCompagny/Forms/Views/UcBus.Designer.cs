@@ -186,21 +186,24 @@
             this.TxtPlace.Location = new System.Drawing.Point(457, 93);
             this.TxtPlace.Name = "TxtPlace";
             this.TxtPlace.Size = new System.Drawing.Size(180, 23);
-            this.TxtPlace.TabIndex = 19;
+            this.TxtPlace.TabIndex = 6;
+            this.TxtPlace.Leave += new System.EventHandler(this.TextControle_Leave);
             // 
             // TxtPlaque
             // 
             this.TxtPlaque.Location = new System.Drawing.Point(457, 63);
             this.TxtPlaque.Name = "TxtPlaque";
             this.TxtPlaque.Size = new System.Drawing.Size(180, 23);
-            this.TxtPlaque.TabIndex = 18;
+            this.TxtPlaque.TabIndex = 5;
+            this.TxtPlaque.Leave += new System.EventHandler(this.TextControle_Leave);
             // 
             // TxtMarque
             // 
             this.TxtMarque.Location = new System.Drawing.Point(457, 33);
             this.TxtMarque.Name = "TxtMarque";
             this.TxtMarque.Size = new System.Drawing.Size(180, 23);
-            this.TxtMarque.TabIndex = 17;
+            this.TxtMarque.TabIndex = 4;
+            this.TxtMarque.Leave += new System.EventHandler(this.TextControle_Leave);
             // 
             // TxtCompagnie
             // 
@@ -208,14 +211,16 @@
             this.TxtCompagnie.Location = new System.Drawing.Point(148, 93);
             this.TxtCompagnie.Name = "TxtCompagnie";
             this.TxtCompagnie.Size = new System.Drawing.Size(180, 23);
-            this.TxtCompagnie.TabIndex = 16;
+            this.TxtCompagnie.TabIndex = 3;
+            this.TxtCompagnie.Leave += new System.EventHandler(this.TextControle_Leave);
             // 
             // TxtNumPos
             // 
             this.TxtNumPos.Location = new System.Drawing.Point(148, 63);
             this.TxtNumPos.Name = "TxtNumPos";
             this.TxtNumPos.Size = new System.Drawing.Size(180, 23);
-            this.TxtNumPos.TabIndex = 15;
+            this.TxtNumPos.TabIndex = 2;
+            this.TxtNumPos.Leave += new System.EventHandler(this.TextControle_Leave);
             // 
             // label6
             // 
@@ -267,7 +272,8 @@
             this.TxtNumero.Location = new System.Drawing.Point(148, 33);
             this.TxtNumero.Name = "TxtNumero";
             this.TxtNumero.Size = new System.Drawing.Size(180, 23);
-            this.TxtNumero.TabIndex = 8;
+            this.TxtNumero.TabIndex = 1;
+            this.TxtNumero.Leave += new System.EventHandler(this.TextControle_Leave);
             // 
             // label1
             // 
@@ -342,7 +348,7 @@
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            this.bindingNavigatorMoveFirstItem.Text = "Premier élément";
             // 
             // bindingNavigatorMovePreviousItem
             // 
@@ -351,7 +357,7 @@
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            this.bindingNavigatorMovePreviousItem.Text = "Précédent";
             // 
             // bindingNavigatorSeparator
             // 
@@ -379,7 +385,7 @@
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            this.bindingNavigatorMoveNextItem.Text = "Suivant";
             // 
             // bindingNavigatorMoveLastItem
             // 
@@ -388,7 +394,7 @@
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            this.bindingNavigatorMoveLastItem.Text = "Dernier élément";
             // 
             // bindingNavigatorSeparator2
             // 
@@ -417,7 +423,7 @@
             this.BtnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(23, 22);
-            this.BtnNew.Text = "toolStripButton1";
+            this.BtnNew.Text = "Nouveau";
             this.BtnNew.Click += new System.EventHandler(this.ControleButtons_Click);
             // 
             // toolStripSeparator4
@@ -447,7 +453,7 @@
             this.BtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(23, 22);
-            this.BtnSave.Text = "toolStripButton2";
+            this.BtnSave.Text = "Enregistrer";
             this.BtnSave.Click += new System.EventHandler(this.ControleButtons_Click);
             // 
             // toolStripSeparator8
@@ -477,7 +483,7 @@
             this.BtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(23, 22);
-            this.BtnDelete.Text = "toolStripButton3";
+            this.BtnDelete.Text = "Supprimer";
             this.BtnDelete.Click += new System.EventHandler(this.ControleButtons_Click);
             // 
             // toolStripSeparator12
@@ -507,7 +513,7 @@
             this.BtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnRefresh.Name = "BtnRefresh";
             this.BtnRefresh.Size = new System.Drawing.Size(23, 22);
-            this.BtnRefresh.Text = "toolStripButton1";
+            this.BtnRefresh.Text = "Actualiser";
             this.BtnRefresh.Click += new System.EventHandler(this.ControleButtons_Click);
             // 
             // toolStripSeparator15

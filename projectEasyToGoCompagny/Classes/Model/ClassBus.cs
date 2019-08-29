@@ -4,6 +4,8 @@
     {
         public string RefCompagnie { get; set; }
 
+        public string RefNumeroPos { get; set; }
+
         public string Numero { get; set; }
 
         public string Plaque { get; set; }

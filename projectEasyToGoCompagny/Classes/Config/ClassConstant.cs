@@ -18,5 +18,13 @@ namespace EasyToGoCompany.Classes.Config
             public static string Path = AppConfig.GetConnectionString;
             public static string Backup = AppConfig.BackupDirectory;
         }
+
+        public class Table
+        {
+            public static string Bus = "bus";
+            public static string Compagnie = "compagnie";
+            public static string Utilisateur = "utilisateur";
+            public static string Pos = "pos";
+        }
     }
 }

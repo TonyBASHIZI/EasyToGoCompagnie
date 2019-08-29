@@ -67,7 +67,6 @@ namespace projectEasyToGoCompagny.Forms
                 ///  TODO: Add this section to login form for connection string vérification
                 if (AppConfig.ConnectionStringEmpty())
                 {
-                    /// TODO: Add database configuration here !
                     MessageBox.Show(this, "Veuillez contacter l'administrateur système pour la configuration.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
