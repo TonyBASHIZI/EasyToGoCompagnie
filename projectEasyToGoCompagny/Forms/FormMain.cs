@@ -14,19 +14,18 @@ namespace projectEasyToGoCompagny.Forms
 {
     public partial class FormMain : Form
     {
-        private Form frm = null;
         private UserControl uc = null;
 
         public FormMain()
         {
-            InitializeComponent();
-            uc = new UcAccueil();
-            LoadUserControles(uc);
+            InitializeComponent();           
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
             GenerateConfiguration();
+            uc = new UcAccueil();
+            LoadUserControles(uc);
         }
 
         public void LoadUserControles(UserControl uc)

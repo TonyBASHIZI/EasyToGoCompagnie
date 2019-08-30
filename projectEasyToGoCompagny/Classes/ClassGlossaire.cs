@@ -202,7 +202,7 @@ namespace EasyToGoCompany.Classes
 
             using (IDbCommand cmd = con.CreateCommand())
             {
-                cmd.CommandText = "DELETE FROM `easy_to_go`.`" + table + "` WHERE id = `@id` ;";
+                cmd.CommandText = "DELETE FROM `easy_to_go`.`" + table + "` WHERE id = @id ;";
 
                 SetParameter(cmd, "@id", DbType.Int32, 4, id);
 
@@ -225,10 +225,11 @@ namespace EasyToGoCompany.Classes
             {
                 if (bus.Id == 0)
                 {
-                    cmd.CommandText = "INSERT INTO `easy_to_go`.`bus` (`ref_compagnie`,`numero`,`plaque`,`marque`," +
-                        "`place`) VALUES (@ref_compagnie, @numero, @plaque, @marque, @place); ";
+                    cmd.CommandText = "INSERT INTO `easy_to_go`.`bus` (`ref_compagnie`,`ref_pos`,`numero`,`plaque`,`marque`," +
+                        "`place`) VALUES (@ref_compagnie, @ref_pos, @numero, @plaque, @marque, @place); ";
 
                     SetParameter(cmd, "@ref_compagnie", DbType.String, 255, bus.RefCompagnie);
+                    SetParameter(cmd, "@ref_pos", DbType.String, 255, bus.RefNumeroPos);
                     SetParameter(cmd, "@numero", DbType.String, 100, bus.Numero);
                     SetParameter(cmd, "@plaque", DbType.String, 100, bus.Plaque);
                     SetParameter(cmd, "@marque", DbType.String, 100, bus.Marque);
@@ -237,10 +238,11 @@ namespace EasyToGoCompany.Classes
                 else
                 {
                     cmd.CommandText = "UPDATE `easy_to_go`.`bus` SET `ref_compagnie` = @ref_compagnie, `numero` = @numero," +
-                        "`plaque` = @plaque, `marque` = @marque, `place` = @place WHERE `id` = @id; ";
+                        "`plaque` = @plaque, `ref_pos` = @ref_pos, `marque` = @marque, `place` = @place WHERE `id` = @id; ";
 
                     SetParameter(cmd, "@id", DbType.Int32, 10, bus.Id);
                     SetParameter(cmd, "@ref_compagnie", DbType.String, 255, bus.RefCompagnie);
+                    SetParameter(cmd, "@ref_pos", DbType.String, 255, bus.RefNumeroPos);
                     SetParameter(cmd, "@numero", DbType.String, 100, bus.Numero);
                     SetParameter(cmd, "@plaque", DbType.String, 100, bus.Plaque);
                     SetParameter(cmd, "@marque", DbType.String, 100, bus.Marque);

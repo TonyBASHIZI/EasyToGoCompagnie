@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcBus));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -83,6 +85,18 @@
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.DgvId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvNumPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvCompagnie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvMarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvPlaque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.selectionnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.suppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
@@ -90,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BindNavig)).BeginInit();
             this.BindNavig.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
+            this.ContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -122,12 +137,39 @@
             // 
             // GridView
             // 
+            this.GridView.AllowUserToAddRows = false;
+            this.GridView.AllowUserToDeleteRows = false;
+            this.GridView.AllowUserToOrderColumns = true;
+            this.GridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.GridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvId,
+            this.DgvNumero,
+            this.DgvNumPos,
+            this.DgvCompagnie,
+            this.DgvMarque,
+            this.DgvPlaque,
+            this.DgvPlace,
+            this.DgvCreatedAt});
             this.GridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridView.Location = new System.Drawing.Point(3, 20);
             this.GridView.Name = "GridView";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(98)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(98)))), ((int)(((byte)(97)))));
+            this.GridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridView.Size = new System.Drawing.Size(886, 287);
             this.GridView.TabIndex = 0;
+            this.GridView.DoubleClick += new System.EventHandler(this.GridView_DoubleClick);
             // 
             // groupBox2
             // 
@@ -212,6 +254,7 @@
             this.TxtCompagnie.Name = "TxtCompagnie";
             this.TxtCompagnie.Size = new System.Drawing.Size(180, 23);
             this.TxtCompagnie.TabIndex = 3;
+            this.TxtCompagnie.Text = "Compagnie testeur";
             this.TxtCompagnie.Leave += new System.EventHandler(this.TextControle_Leave);
             // 
             // TxtNumPos
@@ -256,7 +299,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Numero :";
+            this.label3.Text = "Numéro :";
             // 
             // label2
             // 
@@ -479,6 +522,7 @@
             // BtnDelete
             // 
             this.BtnDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnDelete.Enabled = false;
             this.BtnDelete.Image = global::projectEasyToGoCompagny.Properties.Resources.delete;
             this.BtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnDelete.Name = "BtnDelete";
@@ -540,6 +584,91 @@
             // 
             this.ErrorProvider.ContainerControl = this;
             // 
+            // DgvId
+            // 
+            this.DgvId.DataPropertyName = "id";
+            this.DgvId.HeaderText = "ID";
+            this.DgvId.Name = "DgvId";
+            this.DgvId.ReadOnly = true;
+            this.DgvId.Visible = false;
+            // 
+            // DgvNumero
+            // 
+            this.DgvNumero.DataPropertyName = "numero";
+            this.DgvNumero.HeaderText = "Numéro";
+            this.DgvNumero.Name = "DgvNumero";
+            this.DgvNumero.ReadOnly = true;
+            // 
+            // DgvNumPos
+            // 
+            this.DgvNumPos.DataPropertyName = "ref_pos";
+            this.DgvNumPos.HeaderText = "Numéro POS";
+            this.DgvNumPos.Name = "DgvNumPos";
+            this.DgvNumPos.ReadOnly = true;
+            // 
+            // DgvCompagnie
+            // 
+            this.DgvCompagnie.DataPropertyName = "ref_compagnie";
+            this.DgvCompagnie.HeaderText = "Compagnie";
+            this.DgvCompagnie.Name = "DgvCompagnie";
+            this.DgvCompagnie.ReadOnly = true;
+            // 
+            // DgvMarque
+            // 
+            this.DgvMarque.DataPropertyName = "marque";
+            this.DgvMarque.HeaderText = "Marque";
+            this.DgvMarque.Name = "DgvMarque";
+            this.DgvMarque.ReadOnly = true;
+            // 
+            // DgvPlaque
+            // 
+            this.DgvPlaque.DataPropertyName = "plaque";
+            this.DgvPlaque.HeaderText = "Plaque";
+            this.DgvPlaque.Name = "DgvPlaque";
+            this.DgvPlaque.ReadOnly = true;
+            // 
+            // DgvPlace
+            // 
+            this.DgvPlace.DataPropertyName = "place";
+            this.DgvPlace.HeaderText = "Place";
+            this.DgvPlace.Name = "DgvPlace";
+            this.DgvPlace.ReadOnly = true;
+            // 
+            // DgvCreatedAt
+            // 
+            this.DgvCreatedAt.DataPropertyName = "created_at";
+            this.DgvCreatedAt.HeaderText = "Création";
+            this.DgvCreatedAt.Name = "DgvCreatedAt";
+            this.DgvCreatedAt.ReadOnly = true;
+            this.DgvCreatedAt.Visible = false;
+            // 
+            // ContextMenu
+            // 
+            this.ContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectionnerToolStripMenuItem,
+            this.suppToolStripMenuItem,
+            this.supprimerToolStripMenuItem});
+            this.ContextMenu.Name = "ContextMenu";
+            this.ContextMenu.Size = new System.Drawing.Size(140, 70);
+            // 
+            // selectionnerToolStripMenuItem
+            // 
+            this.selectionnerToolStripMenuItem.Name = "selectionnerToolStripMenuItem";
+            this.selectionnerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.selectionnerToolStripMenuItem.Text = "Nouveau";
+            // 
+            // suppToolStripMenuItem
+            // 
+            this.suppToolStripMenuItem.Name = "suppToolStripMenuItem";
+            this.suppToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.suppToolStripMenuItem.Text = "Selectionner";
+            // 
+            // supprimerToolStripMenuItem
+            // 
+            this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.supprimerToolStripMenuItem.Text = "Supprimer";
+            // 
             // UcBus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -549,6 +678,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UcBus";
             this.Size = new System.Drawing.Size(898, 498);
+            this.Load += new System.EventHandler(this.UcBus_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -559,6 +689,7 @@
             this.BindNavig.ResumeLayout(false);
             this.BindNavig.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
+            this.ContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -618,5 +749,17 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgvId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgvNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgvNumPos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgvCompagnie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgvMarque;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgvPlaque;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgvPlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgvCreatedAt;
+        private System.Windows.Forms.ContextMenuStrip ContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem selectionnerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem suppToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
     }
 }
