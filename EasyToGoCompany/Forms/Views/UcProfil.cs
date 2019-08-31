@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace EasyToGoCompany.Forms.Views
+{
+    public partial class UcProfil : UserControl
+    {
+        public static UcProfil _instance;
+
+        public UcProfil()
+        {
+            InitializeComponent();
+        }
+
+        public static UcProfil Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new UcProfil();
+                return _instance;
+            }
+        }
+    }
+}

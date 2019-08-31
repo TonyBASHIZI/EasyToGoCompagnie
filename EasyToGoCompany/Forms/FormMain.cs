@@ -14,6 +14,7 @@ namespace EasyToGoCompany.Forms
 {
     public partial class FormMain : Form
     {
+        private Form form = null;
         private UserControl uc = null;
 
         public FormMain()
@@ -23,6 +24,7 @@ namespace EasyToGoCompany.Forms
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            StatusLabel.Text = "";
             GenerateConfiguration();
             uc = new UcAccueil();
             LoadUserControles(uc);
@@ -91,7 +93,21 @@ namespace EasyToGoCompany.Forms
                     uc = UcBus.Instance;
                     LoadUserControles(uc);
                     break;
+
+                case "Profil":
+                    uc = UcProfil.Instance;
+                    LoadUserControles(uc);
+                    break;
             }
+        }
+
+        private void BtnConnection_Click(object sender, EventArgs e)
+        {
+            form = new FormLogin
+            {
+                Icon = this.Icon
+            };
+            form.ShowDialog(this);
         }
     }
 }
