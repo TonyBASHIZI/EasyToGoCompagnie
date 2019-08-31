@@ -31,6 +31,20 @@ namespace EasyToGoCompany.Forms.Views
 
         private void PnlEdit_Click(object sender, EventArgs e)
         {
+            if (LblEdit.Text == "Modifier")
+            {
+                GrbEdit.Visible = true;
+                LblEdit.Text = "Enregistrer";
+            }
+            else if (LblEdit.Text == "Enregistrer")
+            {
+                GrbEdit.Visible = false;
+                LblEdit.Text = "Modifier";
+            }
+        }
+
+        private void PnlAdd_Click(object sender, EventArgs e)
+        {
 
         }
     }

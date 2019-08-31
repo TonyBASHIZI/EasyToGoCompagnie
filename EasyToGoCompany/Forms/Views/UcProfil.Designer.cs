@@ -33,9 +33,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.LblNoms = new System.Windows.Forms.Label();
+            this.LblNom = new System.Windows.Forms.Label();
             this.PnlEdit = new System.Windows.Forms.Panel();
             this.LblEdit = new System.Windows.Forms.Label();
             this.LblAdresse = new System.Windows.Forms.Label();
@@ -46,17 +45,37 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GrbEdit = new System.Windows.Forms.GroupBox();
+            this.PcbProfile = new System.Windows.Forms.PictureBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtNom = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TxtAdresse = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtRccm = new System.Windows.Forms.TextBox();
+            this.TxtDescription = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.PcbEdit = new System.Windows.Forms.PictureBox();
+            this.PnlAdd = new System.Windows.Forms.Panel();
+            this.LblAdd = new System.Windows.Forms.Label();
+            this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.PnlMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.PnlEdit.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.GrbEdit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbProfile)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbEdit)).BeginInit();
+            this.PnlAdd.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlMain
@@ -111,21 +130,11 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.PcbProfile);
             this.panel3.Location = new System.Drawing.Point(23, 27);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(168, 158);
             this.panel3.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 158);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel4
             // 
@@ -136,15 +145,15 @@
             this.panel4.Size = new System.Drawing.Size(516, 259);
             this.panel4.TabIndex = 1;
             // 
-            // LblNoms
+            // LblNom
             // 
-            this.LblNoms.AutoSize = true;
-            this.LblNoms.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNoms.Location = new System.Drawing.Point(211, 26);
-            this.LblNoms.Name = "LblNoms";
-            this.LblNoms.Size = new System.Drawing.Size(70, 25);
-            this.LblNoms.TabIndex = 1;
-            this.LblNoms.Text = "Noms";
+            this.LblNom.AutoSize = true;
+            this.LblNom.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNom.Location = new System.Drawing.Point(210, 36);
+            this.LblNom.Name = "LblNom";
+            this.LblNom.Size = new System.Drawing.Size(61, 25);
+            this.LblNom.TabIndex = 1;
+            this.LblNom.Text = "Nom";
             // 
             // PnlEdit
             // 
@@ -165,7 +174,7 @@
             this.LblEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblEdit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(23)))), ((int)(((byte)(22)))));
-            this.LblEdit.Location = new System.Drawing.Point(29, 8);
+            this.LblEdit.Location = new System.Drawing.Point(19, 8);
             this.LblEdit.Name = "LblEdit";
             this.LblEdit.Size = new System.Drawing.Size(69, 18);
             this.LblEdit.TabIndex = 0;
@@ -176,7 +185,7 @@
             // 
             this.LblAdresse.AutoSize = true;
             this.LblAdresse.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblAdresse.Location = new System.Drawing.Point(211, 75);
+            this.LblAdresse.Location = new System.Drawing.Point(211, 82);
             this.LblAdresse.Name = "LblAdresse";
             this.LblAdresse.Size = new System.Drawing.Size(82, 22);
             this.LblAdresse.TabIndex = 4;
@@ -186,7 +195,7 @@
             // 
             this.LblRccm.AutoSize = true;
             this.LblRccm.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRccm.Location = new System.Drawing.Point(211, 119);
+            this.LblRccm.Location = new System.Drawing.Point(211, 114);
             this.LblRccm.Name = "LblRccm";
             this.LblRccm.Size = new System.Drawing.Size(69, 22);
             this.LblRccm.TabIndex = 5;
@@ -231,7 +240,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.panel3);
-            this.groupBox2.Controls.Add(this.LblNoms);
+            this.groupBox2.Controls.Add(this.LblNom);
             this.groupBox2.Controls.Add(this.PnlEdit);
             this.groupBox2.Controls.Add(this.LblAdresse);
             this.groupBox2.Controls.Add(this.LblRccm);
@@ -256,12 +265,167 @@
             this.GrbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GrbEdit.Controls.Add(this.groupBox3);
             this.GrbEdit.Location = new System.Drawing.Point(3, 3);
             this.GrbEdit.Name = "GrbEdit";
             this.GrbEdit.Size = new System.Drawing.Size(352, 480);
             this.GrbEdit.TabIndex = 0;
             this.GrbEdit.TabStop = false;
-            this.GrbEdit.Text = "Modification du profil";
+            this.GrbEdit.Visible = false;
+            // 
+            // PcbProfile
+            // 
+            this.PcbProfile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PcbProfile.Image = global::EasyToGoCompany.Properties.Resources.user;
+            this.PcbProfile.Location = new System.Drawing.Point(0, 0);
+            this.PcbProfile.Name = "PcbProfile";
+            this.PcbProfile.Size = new System.Drawing.Size(168, 158);
+            this.PcbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PcbProfile.TabIndex = 0;
+            this.PcbProfile.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.PnlAdd);
+            this.groupBox3.Controls.Add(this.panel5);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.TxtDescription);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.TxtRccm);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.TxtAdresse);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.TxtNom);
+            this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(19, 27);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(316, 431);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Modification du profile";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 133);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Nom : ";
+            // 
+            // TxtNom
+            // 
+            this.TxtNom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtNom.Location = new System.Drawing.Point(115, 130);
+            this.TxtNom.Name = "TxtNom";
+            this.TxtNom.Size = new System.Drawing.Size(180, 26);
+            this.TxtNom.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 168);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Adresse : ";
+            // 
+            // TxtAdresse
+            // 
+            this.TxtAdresse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtAdresse.Location = new System.Drawing.Point(115, 165);
+            this.TxtAdresse.Name = "TxtAdresse";
+            this.TxtAdresse.Size = new System.Drawing.Size(180, 26);
+            this.TxtAdresse.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 203);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 20);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "RCCM : ";
+            // 
+            // TxtRccm
+            // 
+            this.TxtRccm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtRccm.Location = new System.Drawing.Point(115, 200);
+            this.TxtRccm.Name = "TxtRccm";
+            this.TxtRccm.Size = new System.Drawing.Size(180, 26);
+            this.TxtRccm.TabIndex = 16;
+            // 
+            // TxtDescription
+            // 
+            this.TxtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtDescription.Location = new System.Drawing.Point(115, 235);
+            this.TxtDescription.Multiline = true;
+            this.TxtDescription.Name = "TxtDescription";
+            this.TxtDescription.Size = new System.Drawing.Size(180, 105);
+            this.TxtDescription.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 238);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 20);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Description : ";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.PcbEdit);
+            this.panel5.Location = new System.Drawing.Point(115, 35);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(75, 74);
+            this.panel5.TabIndex = 20;
+            // 
+            // PcbEdit
+            // 
+            this.PcbEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PcbEdit.Image = global::EasyToGoCompany.Properties.Resources.user;
+            this.PcbEdit.Location = new System.Drawing.Point(0, 0);
+            this.PcbEdit.Name = "PcbEdit";
+            this.PcbEdit.Size = new System.Drawing.Size(75, 74);
+            this.PcbEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PcbEdit.TabIndex = 0;
+            this.PcbEdit.TabStop = false;
+            // 
+            // PnlAdd
+            // 
+            this.PnlAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.PnlAdd.Controls.Add(this.LblAdd);
+            this.PnlAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PnlAdd.Location = new System.Drawing.Point(212, 84);
+            this.PnlAdd.Name = "PnlAdd";
+            this.PnlAdd.Size = new System.Drawing.Size(70, 25);
+            this.PnlAdd.TabIndex = 21;
+            this.PnlAdd.Click += new System.EventHandler(this.PnlAdd_Click);
+            // 
+            // LblAdd
+            // 
+            this.LblAdd.AutoSize = true;
+            this.LblAdd.BackColor = System.Drawing.Color.Transparent;
+            this.LblAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblAdd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(23)))), ((int)(((byte)(22)))));
+            this.LblAdd.Location = new System.Drawing.Point(7, 4);
+            this.LblAdd.Name = "LblAdd";
+            this.LblAdd.Size = new System.Drawing.Size(55, 16);
+            this.LblAdd.TabIndex = 0;
+            this.LblAdd.Text = "Ajouter";
+            this.LblAdd.Click += new System.EventHandler(this.PnlAdd_Click);
+            // 
+            // OpenFileDialog
+            // 
+            this.OpenFileDialog.FileName = "profile";
             // 
             // UcProfil
             // 
@@ -277,7 +441,6 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.PnlEdit.ResumeLayout(false);
             this.PnlEdit.PerformLayout();
@@ -286,6 +449,14 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.GrbEdit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PcbProfile)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PcbEdit)).EndInit();
+            this.PnlAdd.ResumeLayout(false);
+            this.PnlAdd.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -296,9 +467,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label LblNoms;
+        private System.Windows.Forms.Label LblNom;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PcbProfile;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label LblRccm;
         private System.Windows.Forms.Label LblAdresse;
@@ -310,5 +481,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox GrbEdit;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Panel PnlAdd;
+        private System.Windows.Forms.Label LblAdd;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox PcbEdit;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TxtDescription;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TxtRccm;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TxtAdresse;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TxtNom;
+        private System.Windows.Forms.OpenFileDialog OpenFileDialog;
     }
 }
