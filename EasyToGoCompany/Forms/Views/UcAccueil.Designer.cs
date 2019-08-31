@@ -38,7 +38,9 @@
             this.PnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(98)))), ((int)(((byte)(97)))));
+            this.PnlMain.BackColor = System.Drawing.Color.Transparent;
+            this.PnlMain.BackgroundImage = global::EasyToGoCompany.Properties.Resources.bus1;
+            this.PnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PnlMain.Controls.Add(this.label1);
             this.PnlMain.Location = new System.Drawing.Point(3, 3);
             this.PnlMain.Name = "PnlMain";
@@ -52,7 +54,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(258, 75);
+            this.label1.Location = new System.Drawing.Point(25, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(364, 77);
             this.label1.TabIndex = 0;

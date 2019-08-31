@@ -28,5 +28,10 @@ namespace EasyToGoCompany.Forms.Views
                 return _instance;
             }
         }
+
+        private void PnlEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

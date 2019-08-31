@@ -173,6 +173,21 @@
   <ItemGroup>
     <None Include="Resources\bus.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\all_bus_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amount_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amount_bank_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
