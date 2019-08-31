@@ -1,4 +1,4 @@
-﻿namespace projectEasyToGoCompagny.Forms.Views
+﻿namespace EasyToGoCompany.Forms.Views
 {
     partial class UcBus
     {
@@ -29,12 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcBus));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TxtId = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.GridView = new System.Windows.Forms.DataGridView();
+            this.DgvId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvNumPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvCompagnie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvMarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvPlaque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -85,14 +94,6 @@
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.DgvId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvNumPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvCompagnie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvMarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvPlaque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.selectionnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,6 +110,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.TxtId);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.BindNavig);
@@ -120,6 +122,17 @@
             this.groupBox1.Size = new System.Drawing.Size(898, 498);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // TxtId
+            // 
+            this.TxtId.Enabled = false;
+            this.TxtId.Font = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtId.Location = new System.Drawing.Point(884, 23);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.ReadOnly = true;
+            this.TxtId.Size = new System.Drawing.Size(3, 17);
+            this.TxtId.TabIndex = 23;
+            this.TxtId.Text = "0";
             // 
             // groupBox3
             // 
@@ -156,20 +169,78 @@
             this.GridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridView.Location = new System.Drawing.Point(3, 20);
             this.GridView.Name = "GridView";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(98)))), ((int)(((byte)(97)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(98)))), ((int)(((byte)(97)))));
-            this.GridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(98)))), ((int)(((byte)(97)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(98)))), ((int)(((byte)(97)))));
+            this.GridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridView.Size = new System.Drawing.Size(886, 287);
             this.GridView.TabIndex = 0;
             this.GridView.DoubleClick += new System.EventHandler(this.GridView_DoubleClick);
+            // 
+            // DgvId
+            // 
+            this.DgvId.DataPropertyName = "id";
+            this.DgvId.HeaderText = "ID";
+            this.DgvId.Name = "DgvId";
+            this.DgvId.ReadOnly = true;
+            this.DgvId.Visible = false;
+            // 
+            // DgvNumero
+            // 
+            this.DgvNumero.DataPropertyName = "numero";
+            this.DgvNumero.HeaderText = "Numéro";
+            this.DgvNumero.Name = "DgvNumero";
+            this.DgvNumero.ReadOnly = true;
+            // 
+            // DgvNumPos
+            // 
+            this.DgvNumPos.DataPropertyName = "ref_pos";
+            this.DgvNumPos.HeaderText = "Numéro POS";
+            this.DgvNumPos.Name = "DgvNumPos";
+            this.DgvNumPos.ReadOnly = true;
+            // 
+            // DgvCompagnie
+            // 
+            this.DgvCompagnie.DataPropertyName = "ref_compagnie";
+            this.DgvCompagnie.HeaderText = "Compagnie";
+            this.DgvCompagnie.Name = "DgvCompagnie";
+            this.DgvCompagnie.ReadOnly = true;
+            // 
+            // DgvMarque
+            // 
+            this.DgvMarque.DataPropertyName = "marque";
+            this.DgvMarque.HeaderText = "Marque";
+            this.DgvMarque.Name = "DgvMarque";
+            this.DgvMarque.ReadOnly = true;
+            // 
+            // DgvPlaque
+            // 
+            this.DgvPlaque.DataPropertyName = "plaque";
+            this.DgvPlaque.HeaderText = "Plaque";
+            this.DgvPlaque.Name = "DgvPlaque";
+            this.DgvPlaque.ReadOnly = true;
+            // 
+            // DgvPlace
+            // 
+            this.DgvPlace.DataPropertyName = "place";
+            this.DgvPlace.HeaderText = "Place";
+            this.DgvPlace.Name = "DgvPlace";
+            this.DgvPlace.ReadOnly = true;
+            // 
+            // DgvCreatedAt
+            // 
+            this.DgvCreatedAt.DataPropertyName = "created_at";
+            this.DgvCreatedAt.HeaderText = "Création";
+            this.DgvCreatedAt.Name = "DgvCreatedAt";
+            this.DgvCreatedAt.ReadOnly = true;
+            this.DgvCreatedAt.Visible = false;
             // 
             // groupBox2
             // 
@@ -414,7 +485,7 @@
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(58, 23);
             this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            this.bindingNavigatorPositionItem.ToolTipText = "Position actuelle";
             // 
             // bindingNavigatorSeparator1
             // 
@@ -462,7 +533,7 @@
             // BtnNew
             // 
             this.BtnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnNew.Image = global::projectEasyToGoCompagny.Properties.Resources.add;
+            this.BtnNew.Image = global::EasyToGoCompany.Properties.Resources.add;
             this.BtnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(23, 22);
@@ -492,7 +563,7 @@
             // BtnSave
             // 
             this.BtnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnSave.Image = global::projectEasyToGoCompagny.Properties.Resources.save;
+            this.BtnSave.Image = global::EasyToGoCompany.Properties.Resources.save;
             this.BtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(23, 22);
@@ -523,7 +594,7 @@
             // 
             this.BtnDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.BtnDelete.Enabled = false;
-            this.BtnDelete.Image = global::projectEasyToGoCompagny.Properties.Resources.delete;
+            this.BtnDelete.Image = global::EasyToGoCompany.Properties.Resources.delete;
             this.BtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(23, 22);
@@ -583,64 +654,6 @@
             // ErrorProvider
             // 
             this.ErrorProvider.ContainerControl = this;
-            // 
-            // DgvId
-            // 
-            this.DgvId.DataPropertyName = "id";
-            this.DgvId.HeaderText = "ID";
-            this.DgvId.Name = "DgvId";
-            this.DgvId.ReadOnly = true;
-            this.DgvId.Visible = false;
-            // 
-            // DgvNumero
-            // 
-            this.DgvNumero.DataPropertyName = "numero";
-            this.DgvNumero.HeaderText = "Numéro";
-            this.DgvNumero.Name = "DgvNumero";
-            this.DgvNumero.ReadOnly = true;
-            // 
-            // DgvNumPos
-            // 
-            this.DgvNumPos.DataPropertyName = "ref_pos";
-            this.DgvNumPos.HeaderText = "Numéro POS";
-            this.DgvNumPos.Name = "DgvNumPos";
-            this.DgvNumPos.ReadOnly = true;
-            // 
-            // DgvCompagnie
-            // 
-            this.DgvCompagnie.DataPropertyName = "ref_compagnie";
-            this.DgvCompagnie.HeaderText = "Compagnie";
-            this.DgvCompagnie.Name = "DgvCompagnie";
-            this.DgvCompagnie.ReadOnly = true;
-            // 
-            // DgvMarque
-            // 
-            this.DgvMarque.DataPropertyName = "marque";
-            this.DgvMarque.HeaderText = "Marque";
-            this.DgvMarque.Name = "DgvMarque";
-            this.DgvMarque.ReadOnly = true;
-            // 
-            // DgvPlaque
-            // 
-            this.DgvPlaque.DataPropertyName = "plaque";
-            this.DgvPlaque.HeaderText = "Plaque";
-            this.DgvPlaque.Name = "DgvPlaque";
-            this.DgvPlaque.ReadOnly = true;
-            // 
-            // DgvPlace
-            // 
-            this.DgvPlace.DataPropertyName = "place";
-            this.DgvPlace.HeaderText = "Place";
-            this.DgvPlace.Name = "DgvPlace";
-            this.DgvPlace.ReadOnly = true;
-            // 
-            // DgvCreatedAt
-            // 
-            this.DgvCreatedAt.DataPropertyName = "created_at";
-            this.DgvCreatedAt.HeaderText = "Création";
-            this.DgvCreatedAt.Name = "DgvCreatedAt";
-            this.DgvCreatedAt.ReadOnly = true;
-            this.DgvCreatedAt.Visible = false;
             // 
             // ContextMenu
             // 
@@ -761,5 +774,6 @@
         private System.Windows.Forms.ToolStripMenuItem selectionnerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem suppToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
+        private System.Windows.Forms.TextBox TxtId;
     }
 }

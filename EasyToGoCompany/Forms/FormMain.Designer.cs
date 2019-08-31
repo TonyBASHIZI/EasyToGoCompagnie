@@ -1,4 +1,4 @@
-﻿namespace projectEasyToGoCompagny.Forms
+﻿namespace EasyToGoCompany.Forms
 {
     partial class FormMain
     {

@@ -1,5 +1,5 @@
 ﻿using EasyToGoCompany.Classes.Config;
-using projectEasyToGoCompagny.Forms.Views;
+using EasyToGoCompany.Forms.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace projectEasyToGoCompagny.Forms
+namespace EasyToGoCompany.Forms
 {
     public partial class FormMain : Form
     {

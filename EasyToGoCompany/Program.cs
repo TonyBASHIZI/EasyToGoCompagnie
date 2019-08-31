@@ -1,4 +1,4 @@
-﻿using projectEasyToGoCompagny.Forms;
+﻿using EasyToGoCompany.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;

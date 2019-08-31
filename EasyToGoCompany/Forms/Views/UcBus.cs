@@ -11,18 +11,19 @@ using EasyToGoCompany.Classes.Model;
 using EasyToGoCompany.Classes;
 using EasyToGoCompany.Classes.Config;
 
-namespace projectEasyToGoCompagny.Forms.Views
+namespace EasyToGoCompany.Forms.Views
 {
     public partial class UcBus : UserControl
     {
         public static UcBus _instance;
 
-        private int id = 0;
         private Bus bus = null;
+        private BindingSource bindSource = null;
 
         public UcBus()
         {
             InitializeComponent();
+            bindSource = new BindingSource();
         }
 
         public static UcBus Instance
@@ -36,8 +37,8 @@ namespace projectEasyToGoCompagny.Forms.Views
         }
 
         private void UcBus_Load(object sender, EventArgs e)
-        {
-            LoadDataGridView();
+        {            
+            LoadDataGridView();            
         }
 
         private void ControleButtons_Click(object sender, EventArgs e)
@@ -68,19 +69,24 @@ namespace projectEasyToGoCompagny.Forms.Views
 
         private void LoadDataGridView()
         {
-            GridView.DataSource = Glossaire.Instance.LoadGrid(Constant.Table.Bus, "id");
+            GridView.DataSource = Glossaire.Instance.LoadDatas(Constant.Table.Bus, "id").Tables[0].DefaultView;
+            bindSource.DataSource = Glossaire.Instance.LoadDatas(Constant.Table.Bus, "id").Tables[0].DefaultView;
+            BindNavig.BindingSource = bindSource;
+            bindSource.CurrentChanged += BindingBus_CurrentChanged;
         }
 
         private void ClearFields()
         {
-            id = 0;
-            TxtMarque.Text = string.Empty;
-            TxtNumero.Text = string.Empty;
-            TxtNumPos.Text = string.Empty;
-            TxtPlace.Text = string.Empty;
-            TxtPlaque.Text = string.Empty;
+            TxtId.Text = "0";
+            TxtMarque.Text = "";
+            TxtNumero.Text = "";
+            TxtNumPos.Text = "";
+            TxtPlace.Text = "0";
+            TxtPlaque.Text = "";
             TxtNumero.Focus();
             BtnDelete.Enabled = false;
+            BtnSave.Enabled = true;
+            ErrorProvider.Clear();
         }
 
         private bool IsNumeric(string nombre)
@@ -114,7 +120,7 @@ namespace projectEasyToGoCompagny.Forms.Views
             {
                 if (!string.IsNullOrEmpty(control.Text))
                 {
-                    if (all == false && !IsNumeric(TxtPlace.Text)) /// TODO: Test if TxtPlace is numerique
+                    if (all == false && !IsNumeric(TxtPlace.Text))
                     {
                         ErrorProvider.SetError(control, "Ce champ ne peut prendre que les fichres");
                         return false;
@@ -134,6 +140,58 @@ namespace projectEasyToGoCompagny.Forms.Views
             else
             {
                 return false;
+            }
+        }
+
+        private void BindingBus_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                SetBinding(TxtId, "Text", "id");
+                SetBinding(TxtNumero, "Text", "numero");
+                SetBinding(TxtCompagnie, "Text", "ref_compagnie");
+                SetBinding(TxtMarque, "Text", "marque");
+                SetBinding(TxtNumPos, "Text", "ref_pos");
+                SetBinding(TxtPlace, "Text", "place");
+                SetBinding(TxtPlaque, "Text", "plaque");
+
+                BtnSave.Enabled = false;
+                BtnDelete.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private void SetBinding(Control control, string properties, string accessor)
+        {
+            try
+            {                
+                Binding binding = new Binding(properties, bindSource.Current, accessor, true, DataSourceUpdateMode.OnPropertyChanged);
+                binding.BindingComplete += BindingBus_BindingComplete;
+
+                control.DataBindings.Clear();
+                control.DataBindings.Add(binding);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private void BindingBus_BindingComplete(object sender, BindingCompleteEventArgs e)
+        {
+            try
+            {
+                if (e.Cancel)
+                {
+                    ClearFields();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
 
@@ -179,7 +237,7 @@ namespace projectEasyToGoCompagny.Forms.Views
 
                     bus = new Bus
                     {
-                        Id = id,
+                        Id = Convert.ToInt32(TxtId.Text.Trim()),
                         Numero = TxtNumero.Text.Trim(),
                         RefNumeroPos = TxtNumPos.Text.Trim(),
                         RefCompagnie = TxtCompagnie.Text.Trim(),
@@ -234,7 +292,7 @@ namespace projectEasyToGoCompagny.Forms.Views
                         RefNumeroPos = GridView.SelectedRows[0].Cells["DgvNumPos"].Value.ToString(),
                     };
 
-                    id = bus.Id;
+                    TxtId.Text = bus.Id.ToString();
                     TxtCompagnie.Text = bus.RefCompagnie;
                     TxtMarque.Text = bus.Marque;
                     TxtNumero.Text = bus.Numero;
@@ -257,9 +315,9 @@ namespace projectEasyToGoCompagny.Forms.Views
             }
         }
 
-        
-
         /// TODO: Add Binding navigator for datas
+
+        /// TODO: Add ContextMenu strip
 
     }
 }

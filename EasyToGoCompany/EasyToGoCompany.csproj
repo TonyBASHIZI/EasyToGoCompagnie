@@ -7,8 +7,8 @@
     <ProjectGuid>{D08A45A6-8F91-40C3-8174-5B977197C215}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>projectEasyToGoCompagny</RootNamespace>
-    <AssemblyName>projectEasyToGoCompagny</AssemblyName>
+    <RootNamespace>EasyToGoCompany</RootNamespace>
+    <AssemblyName>EasyToGoCompany</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -102,6 +102,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\EasyToGoCompany.Classes.Model.Bus.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

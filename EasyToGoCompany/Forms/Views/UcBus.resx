@@ -117,6 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="DgvId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DgvNumero.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DgvNumPos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DgvCompagnie.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DgvMarque.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DgvPlaque.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DgvPlace.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DgvCreatedAt.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="BindNavig.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -164,41 +188,17 @@
   <data name="BtnRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG7SURBVEhL3VU9LwRRFD0+ggSdxG9AoqdQK1WI6CRE46PV
-        +AcKUdqstft8bKLV+gckRIIQSpUCsWF2Z5z7cl9md7Mza9Y0nORl35x3z7l37rx9D38OQYA2nTZHkEWP
-        f4D5isGJl8NDKYOXzz08l/M4rxRwzLXJYBPtGg6ZMzarj/GgePrL4CkwLCpmMPGdX8CEMxdOLRojOEMn
-        q9t2BmWDS99glQlH+DzA30GOUZquewY3EsM3KzPuwmnUqjFYxY4VGZRovFTdgnoERXQwZoOxFWcem4BV
-        zVnzDD4oHFM6EtqWTLV5ZAL/FN1eHo8SwEQLSkciylyGhtSCFc/KovQ8ri0tg9UcSQJWv6JUupDtZhMc
-        YkipdFHK4s32sIg+pdIFt9q7fYN99CqVGP4u+sWDXq9KhUijRX4ew+LhFXCrVIg0PjITrIkHT4IDpUL8
-        dpuKhtorLXJG6RBJ/2j1oG5RtPS450bpUroWNE50VDjwu43L2SVajimlG6OFw27ZmVO7pUvRiDyuZYfw
-        ArKXEOfyQV3PrbloqFWb5vjphSMxEquyZLDVcnexuhwvl2tphQyZCydrsjk0/F8C+AaMFph3kNjt6gAA
-        AABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG9SURBVEhL3VU9LwRRFD0+ggSdxG9AoqdQK1WI6CRE46PV
+        +AcK0QibtXbfYhOt1j8gIRKEUKoUdtkwuzPOfbmT/cjOrFnTcJKXfXPePefevfPmPfw5eB7adNocXhI9
+        bhbzZYNTJ4XHYgKvnwd4KaVxUc7ghGuT3ibaNRwyZ2xSH8NB8fSXwbNnWFTIYOJ7N4MJ31w4tWgM7xyd
+        rG7bNygZXLkGq0w4wucB/g5yjNJ03TG4lZj8LkqMu/Q1atUYrGLHigyKNF6qbkE9vBw6GLPB2LJvHpqA
+        Vc1Z8z18UDimdCC0LYlq88AE7hm6nTSeJICJFpQORJC5DA2pBSuelUXpeVhbWgarOZYErH5FqXgh280m
+        OMKQUvGikETe9jCHPqXiBbdawf6DQ/QqFRnuPvrF493gTakK4miRm8aweDgZ3ClVQRwvmQnWxIMnQVap
+        Cn67TUVD7bUWOaN0BVE/tHpQtyhaejxwo3QpXQsaRzoqfPC9jcvZJVqOKaUbo4XDbtk3p3ZLl4IReFzL
+        DuEFZC8hzuWF+j235qKhVm2a46cXjsRIrMqiwVbL3cXqUrxcbqQVMmQunKzJ5tDwfwngG5anmD7d4DX/
+        AAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="DgvId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DgvNumero.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DgvNumPos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DgvCompagnie.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DgvMarque.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DgvPlaque.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DgvPlace.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DgvCreatedAt.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="ErrorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>125, 17</value>
   </metadata>

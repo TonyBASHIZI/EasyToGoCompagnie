@@ -1,4 +1,4 @@
-﻿namespace projectEasyToGoCompagny.Forms.Views
+﻿namespace EasyToGoCompany.Forms.Views
 {
     partial class UcAccueil
     {

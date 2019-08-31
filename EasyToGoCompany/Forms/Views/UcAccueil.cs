@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace projectEasyToGoCompagny.Forms.Views
+namespace EasyToGoCompany.Forms.Views
 {
     public partial class UcAccueil : UserControl
     {

@@ -75,18 +75,28 @@ namespace EasyToGoCompany.Classes
             cmd.Parameters.Add(param);
         }
 
-        public DataTable LoadGrid(string table, string orderBy)
+        public DataSet LoadDatas(string table, string orderBy = " ")
         {
             InitializeConnection();
 
             using (IDbCommand cmd = con.CreateCommand())
             {
-                cmd.CommandText = "SELECT * FROM `easy_to_go`.`" + table + "` ORDER BY `" + orderBy + "` DESC";
-                DataTable dt = new DataTable();
-                adapter = new MySqlDataAdapter((MySqlCommand)cmd);
-                adapter.Fill(dt);
+                DataSet ds = new DataSet();
 
-                return dt;
+                if (orderBy == " ")
+                {
+                    cmd.CommandText = "SELECT * FROM `easy_to_go`.`" + table;                   
+                    adapter = new MySqlDataAdapter((MySqlCommand)cmd);
+                    adapter.Fill(ds);
+                }
+                else
+                {
+                    cmd.CommandText = "SELECT * FROM `easy_to_go`.`" + table + "` ORDER BY `" + orderBy + "` DESC";
+                    adapter = new MySqlDataAdapter((MySqlCommand)cmd);
+                    adapter.Fill(ds);
+                }
+
+                return ds;
             }
         }
 
