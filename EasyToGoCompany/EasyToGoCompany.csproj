@@ -68,6 +68,7 @@
     <Compile Include="Classes\Connection\ClassConnection.cs" />
     <Compile Include="Classes\Model\ClassBase.cs" />
     <Compile Include="Classes\Model\ClassBus.cs" />
+    <Compile Include="Classes\Model\ClassCompagnie.cs" />
     <Compile Include="Forms\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>

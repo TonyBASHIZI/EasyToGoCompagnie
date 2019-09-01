@@ -263,6 +263,99 @@ namespace EasyToGoCompany.Classes
             }
         }
 
+        public Compagnie GetCompagnie(string name = null)
+        {
+            InitializeConnection();
+
+            Compagnie compagnie = null;
+            Byte[] photo = null;
+
+            using (IDbCommand cmd = con.CreateCommand())
+            {
+                if (name == null)
+                {
+                    cmd.CommandText = "SELECT * FROM easy_to_go.compagnie WHERE `compagnie`.`noms` = @name; ";
+
+                    SetParameter(cmd, "@name", DbType.String, 255, "COMPAGNIE TEST");
+
+                    using (IDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            compagnie = new Compagnie
+                            {
+                                Id = Convert.ToInt32(dr["id"]),
+                                Adresse = dr["adresse"].ToString(),
+                                Description = dr["description"].ToString(),
+                                Noms = dr["noms"].ToString(),
+                                Rccm = dr["rccm"].ToString(),
+                                Photo = dr["photo"] == DBNull.Value ? photo : (byte[])dr["photo"]
+                            };
+                        }
+                    }
+
+                }
+                else
+                {
+                    cmd.CommandText = "SELECT * FROM easy_to_go.compagnie WHERE `compagnie`.`noms` = @name; ";
+
+                    SetParameter(cmd, "@name", DbType.String, 255, name);
+
+                    using (IDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            compagnie = new Compagnie
+                            {
+                                Id = Convert.ToInt32(dr["id"]),
+                                Adresse = dr["adresse"].ToString(),
+                                Description = dr["description"].ToString(),
+                                Noms = dr["noms"].ToString(),
+                                Rccm = dr["rccm"].ToString(),
+                                Photo = dr["photo"] == DBNull.Value ? photo : (byte[])dr["photo"]
+                            };
+                        }
+                    }
+                }
+
+                return compagnie;
+            }
+        }
+
+        public void InsertUpdateCompagnie(Compagnie comp)
+        {
+            InitializeConnection();
+
+            using (IDbCommand cmd = con.CreateCommand())
+            {
+                if (comp.Id == 0)
+                {
+                    cmd.CommandText = "INSERT INTO `easy_to_go`.`compagnie` (`noms`,`description`,`adresse`,`photo`,`rccm`)"
+                        + " VALUES (@noms,@description,@adresse,@photo,@rccm); ";
+
+                    SetParameter(cmd, "@noms", DbType.String, 255, comp.Noms);
+                    SetParameter(cmd, "@description", DbType.String, 255, comp.Description);
+                    SetParameter(cmd, "@adresse", DbType.String, 255, comp.Adresse);
+                    SetParameter(cmd, "@rccm", DbType.String, 35, comp.Rccm);
+                    SetParameter(cmd, "@photo", DbType.Binary, int.MaxValue, comp.Photo);
+                }
+                else
+                {
+                    cmd.CommandText = "UPDATE `easy_to_go`.`compagnie` SET `noms` = @noms, `description` = @description, " 
+                        + "`adresse` = @adresse, `photo` = @photo, `rccm` = @rccm WHERE `id` = @id; ";
+
+                    SetParameter(cmd, "@id", DbType.Int32, 10, comp.Id);
+                    SetParameter(cmd, "@noms", DbType.String, 255, comp.Noms);
+                    SetParameter(cmd, "@description", DbType.String, 255, comp.Description);
+                    SetParameter(cmd, "@adresse", DbType.String, 255, comp.Adresse);
+                    SetParameter(cmd, "@rccm", DbType.String, 35, comp.Rccm);
+                    SetParameter(cmd, "@photo", DbType.Binary, int.MaxValue, comp.Photo);
+                }
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         #endregion
     }
 }
