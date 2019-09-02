@@ -63,6 +63,8 @@ namespace EasyToGoCompany.Forms.Views
         {
             try
             {
+                /// TODO: Load profile by catteogorie
+
                 compagnie = Glossaire.Instance.GetCompagnie("ALOHA DYNAMICS");
 
                 if (compagnie != null)

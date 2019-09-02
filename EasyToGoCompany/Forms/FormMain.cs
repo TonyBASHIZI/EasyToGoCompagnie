@@ -1,4 +1,5 @@
 ﻿using EasyToGoCompany.Classes.Config;
+using EasyToGoCompany.Classes.Model;
 using EasyToGoCompany.Forms.Views;
 using System;
 using System.Collections.Generic;
@@ -14,18 +15,49 @@ namespace EasyToGoCompany.Forms
 {
     public partial class FormMain : Form
     {
+        private static FormMain main;
         private Form form = null;
         private UserControl uc = null;
+
+        public static FormMain Instance
+        {
+            get
+            {
+                if (main == null)
+                {
+                    main = new FormMain();
+                }
+                return main;
+            } 
+        }
 
         public FormMain()
         {
             InitializeComponent();           
         }
 
+        public void RefreshOnlineStatus()
+        {
+            if (User.Instance.IsAuthenticate())
+            {
+                PnlMenu.Enabled = true;
+                LblConnection.Text = "Déconnection";
+                StatusLabel.Text = User.Instance.DescriptionSession;
+            }
+            else
+            {
+                uc = UcAccueil.Instance;
+                LoadUserControles(uc);
+                PnlMenu.Enabled = false;
+                StatusLabel.Text = "Invité";
+                LblConnection.Text = "Connexion";
+            }
+        }
+
         private void FormMain_Load(object sender, EventArgs e)
         {
-            StatusLabel.Text = "";
             GenerateConfiguration();
+            RefreshOnlineStatus();
             uc = new UcAccueil();
             LoadUserControles(uc);
         }
@@ -103,11 +135,19 @@ namespace EasyToGoCompany.Forms
 
         private void BtnConnection_Click(object sender, EventArgs e)
         {
-            form = new FormLogin
+            if (LblConnection.Text == "Connexion")
             {
-                Icon = this.Icon
-            };
-            form.ShowDialog(this);
+                form = new FormLogin(this)
+                {
+                    Icon = this.Icon
+                };
+                form.ShowDialog(this);
+            }
+            else
+            {
+                User.Instance = null;
+                this.RefreshOnlineStatus();
+            }
         }
     }
 }

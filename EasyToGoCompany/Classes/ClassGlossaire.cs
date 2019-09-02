@@ -356,6 +356,38 @@ namespace EasyToGoCompany.Classes
             }
         }
 
+        public User LoginRequest(string username, string password)
+        {
+            InitializeConnection();
+
+            User user = null;
+
+            using (IDbCommand cmd = con.CreateCommand())
+            {
+                cmd.CommandText = "SELECT * FROM `easy_to_go`.`utilisateur`	WHERE " +
+                    " `utilisateur`.`username` = @username AND `utilisateur`.`password` = @password; ";
+
+                SetParameter(cmd, "@username", DbType.String, 255, username);
+                SetParameter(cmd, "@password", DbType.String, 255, password);
+
+                using (IDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        user = new User
+                        {
+                            IdSession = Convert.ToInt32(dr["id"]),
+                            DescriptionSession = dr["description"].ToString(),
+                            UsernameSession = dr["username"].ToString(),
+                            NiveauSession = Convert.ToInt32(dr["niveau"])
+                        };
+                    }
+                }
+            }
+
+            return user;
+        }
+
         #endregion
     }
 }

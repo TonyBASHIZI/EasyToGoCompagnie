@@ -32,34 +32,39 @@
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.PnlHeader = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlConnection = new System.Windows.Forms.Panel();
             this.LblConnection = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlMenu = new System.Windows.Forms.Panel();
             this.PnlWhite = new System.Windows.Forms.Panel();
             this.PnlBus = new System.Windows.Forms.Panel();
-            this.PcbBus = new System.Windows.Forms.PictureBox();
             this.LblBus = new System.Windows.Forms.Label();
             this.PnlProfil = new System.Windows.Forms.Panel();
-            this.PcbProfil = new System.Windows.Forms.PictureBox();
             this.LblProfil = new System.Windows.Forms.Label();
             this.PnlDashboard = new System.Windows.Forms.Panel();
-            this.PcbDashboard = new System.Windows.Forms.PictureBox();
             this.LblDashboard = new System.Windows.Forms.Label();
-            this.PnlMain = new System.Windows.Forms.Panel();
             this.PnlWhite1 = new System.Windows.Forms.Panel();
+            this.PnlMain = new System.Windows.Forms.Panel();
+            this.PnlParametre = new System.Windows.Forms.Panel();
+            this.LblParametre = new System.Windows.Forms.Label();
+            this.PcbParametre = new System.Windows.Forms.PictureBox();
+            this.PcbBus = new System.Windows.Forms.PictureBox();
+            this.PcbProfil = new System.Windows.Forms.PictureBox();
+            this.PcbDashboard = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.StatusStrip.SuspendLayout();
             this.PnlHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PnlConnection.SuspendLayout();
             this.PnlMenu.SuspendLayout();
             this.PnlBus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PcbBus)).BeginInit();
             this.PnlProfil.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PcbProfil)).BeginInit();
             this.PnlDashboard.SuspendLayout();
+            this.PnlParametre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbParametre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbBus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbProfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcbDashboard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // StatusStrip
@@ -108,14 +113,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Aloha Dynamics";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 59);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // PnlConnection
             // 
             this.PnlConnection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -123,9 +120,9 @@
             this.PnlConnection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.PnlConnection.Controls.Add(this.LblConnection);
             this.PnlConnection.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PnlConnection.Location = new System.Drawing.Point(952, 50);
+            this.PnlConnection.Location = new System.Drawing.Point(930, 50);
             this.PnlConnection.Name = "PnlConnection";
-            this.PnlConnection.Size = new System.Drawing.Size(120, 29);
+            this.PnlConnection.Size = new System.Drawing.Size(142, 29);
             this.PnlConnection.TabIndex = 2;
             this.PnlConnection.Click += new System.EventHandler(this.BtnConnection_Click);
             // 
@@ -136,7 +133,7 @@
             this.LblConnection.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblConnection.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblConnection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(23)))), ((int)(((byte)(22)))));
-            this.LblConnection.Location = new System.Drawing.Point(17, 4);
+            this.LblConnection.Location = new System.Drawing.Point(18, 5);
             this.LblConnection.Name = "LblConnection";
             this.LblConnection.Size = new System.Drawing.Size(89, 18);
             this.LblConnection.TabIndex = 0;
@@ -159,6 +156,7 @@
             // PnlMenu
             // 
             this.PnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(23)))), ((int)(((byte)(22)))));
+            this.PnlMenu.Controls.Add(this.PnlParametre);
             this.PnlMenu.Controls.Add(this.PnlWhite);
             this.PnlMenu.Controls.Add(this.PnlBus);
             this.PnlMenu.Controls.Add(this.PnlProfil);
@@ -193,17 +191,6 @@
             this.PnlBus.TabIndex = 2;
             this.PnlBus.Click += new System.EventHandler(this.NavigationControles_Click);
             // 
-            // PcbBus
-            // 
-            this.PcbBus.Image = global::EasyToGoCompany.Properties.Resources.bus;
-            this.PcbBus.Location = new System.Drawing.Point(17, 9);
-            this.PcbBus.Name = "PcbBus";
-            this.PcbBus.Size = new System.Drawing.Size(30, 30);
-            this.PcbBus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PcbBus.TabIndex = 2;
-            this.PcbBus.TabStop = false;
-            this.PcbBus.Click += new System.EventHandler(this.NavigationControles_Click);
-            // 
             // LblBus
             // 
             this.LblBus.AutoSize = true;
@@ -228,17 +215,6 @@
             this.PnlProfil.Size = new System.Drawing.Size(185, 53);
             this.PnlProfil.TabIndex = 1;
             this.PnlProfil.Click += new System.EventHandler(this.NavigationControles_Click);
-            // 
-            // PcbProfil
-            // 
-            this.PcbProfil.Image = global::EasyToGoCompany.Properties.Resources.user_account;
-            this.PcbProfil.Location = new System.Drawing.Point(17, 9);
-            this.PcbProfil.Name = "PcbProfil";
-            this.PcbProfil.Size = new System.Drawing.Size(30, 30);
-            this.PcbProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PcbProfil.TabIndex = 2;
-            this.PcbProfil.TabStop = false;
-            this.PcbProfil.Click += new System.EventHandler(this.NavigationControles_Click);
             // 
             // LblProfil
             // 
@@ -265,17 +241,6 @@
             this.PnlDashboard.TabIndex = 0;
             this.PnlDashboard.Click += new System.EventHandler(this.NavigationControles_Click);
             // 
-            // PcbDashboard
-            // 
-            this.PcbDashboard.Image = global::EasyToGoCompany.Properties.Resources.menu;
-            this.PcbDashboard.Location = new System.Drawing.Point(17, 10);
-            this.PcbDashboard.Name = "PcbDashboard";
-            this.PcbDashboard.Size = new System.Drawing.Size(30, 30);
-            this.PcbDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PcbDashboard.TabIndex = 1;
-            this.PcbDashboard.TabStop = false;
-            this.PcbDashboard.Click += new System.EventHandler(this.NavigationControles_Click);
-            // 
             // LblDashboard
             // 
             this.LblDashboard.AutoSize = true;
@@ -288,6 +253,15 @@
             this.LblDashboard.Text = "Dashboard";
             this.LblDashboard.Click += new System.EventHandler(this.NavigationControles_Click);
             // 
+            // PnlWhite1
+            // 
+            this.PnlWhite1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PnlWhite1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnlWhite1.Location = new System.Drawing.Point(0, 0);
+            this.PnlWhite1.Name = "PnlWhite1";
+            this.PnlWhite1.Size = new System.Drawing.Size(185, 3);
+            this.PnlWhite1.TabIndex = 6;
+            // 
             // PnlMain
             // 
             this.PnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -298,14 +272,79 @@
             this.PnlMain.Size = new System.Drawing.Size(899, 499);
             this.PnlMain.TabIndex = 3;
             // 
-            // PnlWhite1
+            // PnlParametre
             // 
-            this.PnlWhite1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.PnlWhite1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlWhite1.Location = new System.Drawing.Point(0, 0);
-            this.PnlWhite1.Name = "PnlWhite1";
-            this.PnlWhite1.Size = new System.Drawing.Size(185, 3);
-            this.PnlWhite1.TabIndex = 6;
+            this.PnlParametre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlParametre.Controls.Add(this.PcbParametre);
+            this.PnlParametre.Controls.Add(this.LblParametre);
+            this.PnlParametre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PnlParametre.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnlParametre.Location = new System.Drawing.Point(0, 162);
+            this.PnlParametre.Name = "PnlParametre";
+            this.PnlParametre.Size = new System.Drawing.Size(185, 53);
+            this.PnlParametre.TabIndex = 7;
+            // 
+            // LblParametre
+            // 
+            this.LblParametre.AutoSize = true;
+            this.LblParametre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblParametre.ForeColor = System.Drawing.Color.White;
+            this.LblParametre.Location = new System.Drawing.Point(56, 14);
+            this.LblParametre.Name = "LblParametre";
+            this.LblParametre.Size = new System.Drawing.Size(93, 21);
+            this.LblParametre.TabIndex = 1;
+            this.LblParametre.Text = "Paramètre";
+            // 
+            // PcbParametre
+            // 
+            this.PcbParametre.Image = global::EasyToGoCompany.Properties.Resources.settings;
+            this.PcbParametre.Location = new System.Drawing.Point(17, 9);
+            this.PcbParametre.Name = "PcbParametre";
+            this.PcbParametre.Size = new System.Drawing.Size(30, 30);
+            this.PcbParametre.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PcbParametre.TabIndex = 2;
+            this.PcbParametre.TabStop = false;
+            // 
+            // PcbBus
+            // 
+            this.PcbBus.Image = global::EasyToGoCompany.Properties.Resources.bus;
+            this.PcbBus.Location = new System.Drawing.Point(17, 9);
+            this.PcbBus.Name = "PcbBus";
+            this.PcbBus.Size = new System.Drawing.Size(30, 30);
+            this.PcbBus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PcbBus.TabIndex = 2;
+            this.PcbBus.TabStop = false;
+            this.PcbBus.Click += new System.EventHandler(this.NavigationControles_Click);
+            // 
+            // PcbProfil
+            // 
+            this.PcbProfil.Image = global::EasyToGoCompany.Properties.Resources.user_account;
+            this.PcbProfil.Location = new System.Drawing.Point(17, 9);
+            this.PcbProfil.Name = "PcbProfil";
+            this.PcbProfil.Size = new System.Drawing.Size(30, 30);
+            this.PcbProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PcbProfil.TabIndex = 2;
+            this.PcbProfil.TabStop = false;
+            this.PcbProfil.Click += new System.EventHandler(this.NavigationControles_Click);
+            // 
+            // PcbDashboard
+            // 
+            this.PcbDashboard.Image = global::EasyToGoCompany.Properties.Resources.menu;
+            this.PcbDashboard.Location = new System.Drawing.Point(17, 10);
+            this.PcbDashboard.Name = "PcbDashboard";
+            this.PcbDashboard.Size = new System.Drawing.Size(30, 30);
+            this.PcbDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PcbDashboard.TabIndex = 1;
+            this.PcbDashboard.TabStop = false;
+            this.PcbDashboard.Click += new System.EventHandler(this.NavigationControles_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 59);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // FormMain
             // 
@@ -327,19 +366,22 @@
             this.StatusStrip.PerformLayout();
             this.PnlHeader.ResumeLayout(false);
             this.PnlHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PnlConnection.ResumeLayout(false);
             this.PnlConnection.PerformLayout();
             this.PnlMenu.ResumeLayout(false);
             this.PnlBus.ResumeLayout(false);
             this.PnlBus.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PcbBus)).EndInit();
             this.PnlProfil.ResumeLayout(false);
             this.PnlProfil.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PcbProfil)).EndInit();
             this.PnlDashboard.ResumeLayout(false);
             this.PnlDashboard.PerformLayout();
+            this.PnlParametre.ResumeLayout(false);
+            this.PnlParametre.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbParametre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbBus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbProfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcbDashboard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,7 +391,6 @@
 
         private System.Windows.Forms.StatusStrip StatusStrip;
         private System.Windows.Forms.Panel PnlHeader;
-        private System.Windows.Forms.Panel PnlMenu;
         private System.Windows.Forms.Panel PnlMain;
         private System.Windows.Forms.Panel PnlDashboard;
         private System.Windows.Forms.Panel PnlBus;
@@ -366,7 +407,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel PnlWhite;
-        private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.Panel PnlWhite1;
+        public System.Windows.Forms.Panel PnlMenu;
+        public System.Windows.Forms.ToolStripStatusLabel StatusLabel;
+        private System.Windows.Forms.Panel PnlParametre;
+        private System.Windows.Forms.PictureBox PcbParametre;
+        private System.Windows.Forms.Label LblParametre;
     }
 }

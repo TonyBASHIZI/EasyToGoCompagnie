@@ -69,6 +69,7 @@
     <Compile Include="Classes\Model\ClassBase.cs" />
     <Compile Include="Classes\Model\ClassBus.cs" />
     <Compile Include="Classes\Model\ClassCompagnie.cs" />
+    <Compile Include="Classes\Model\ClassUser.cs" />
     <Compile Include="Forms\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
