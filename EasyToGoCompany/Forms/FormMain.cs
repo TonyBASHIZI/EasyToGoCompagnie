@@ -125,6 +125,31 @@ namespace EasyToGoCompany.Forms
                     LoadUserControles(uc);
                     break;
 
+                case "Parametre":
+                    if (PnlParametreMain.Visible)
+                    {
+                        PnlParametreMain.Visible = false;
+                    }
+                    else
+                    {
+                        PnlParametreMain.Visible = true;
+                    }
+                    break;
+
+                case "AllBus":
+                    //
+                    break;
+
+                case "BusInactifs":
+                    //
+                    break;
+
+                case "User":
+                    form = new FormUser();
+                    form.Icon = this.Icon;
+                    form.ShowDialog();
+                    break;
+
                 default:
                     uc = UcAccueil.Instance;
                     LoadUserControles(uc);

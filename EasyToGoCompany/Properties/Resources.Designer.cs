@@ -143,6 +143,26 @@ namespace EasyToGoCompany.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hint {
+            get {
+                object obj = ResourceManager.GetObject("hint", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Print_48px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Print_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
@@ -196,6 +216,16 @@ namespace EasyToGoCompany.Properties {
         internal static System.Drawing.Bitmap user_account {
             get {
                 object obj = ResourceManager.GetObject("user_account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_credentials {
+            get {
+                object obj = ResourceManager.GetObject("user_credentials", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -13,7 +13,7 @@ namespace EasyToGoCompany.Classes
 {
     public class Glossaire
     {
-        private EasyToGoCompany.Classes.Connection.Connection cnx = null;
+        private Connection.Connection cnx = null;
 
         private MySqlConnection con = null;
         private MySqlDataAdapter adapter = null;
@@ -36,7 +36,7 @@ namespace EasyToGoCompany.Classes
         {
             try
             {
-                cnx = new EasyToGoCompany.Classes.Connection.Connection();
+                cnx = new Connection.Connection();
                 cnx.Connect();
 
                 con = new MySqlConnection(cnx.path);
@@ -297,25 +297,7 @@ namespace EasyToGoCompany.Classes
                 }
                 else
                 {
-                    cmd.CommandText = "SELECT * FROM easy_to_go.compagnie WHERE `compagnie`.`noms` = @name; ";
-
-                    SetParameter(cmd, "@name", DbType.String, 255, name);
-
-                    using (IDataReader dr = cmd.ExecuteReader())
-                    {
-                        if (dr.Read())
-                        {
-                            compagnie = new Compagnie
-                            {
-                                Id = Convert.ToInt32(dr["id"]),
-                                Adresse = dr["adresse"].ToString(),
-                                Description = dr["description"].ToString(),
-                                Noms = dr["noms"].ToString(),
-                                Rccm = dr["rccm"].ToString(),
-                                Photo = dr["photo"] == DBNull.Value ? photo : (byte[])dr["photo"]
-                            };
-                        }
-                    }
+                    throw new Exception("Ce profile n'existe pas. Veillez contacter l'adminisatrateur du sytème");
                 }
 
                 return compagnie;

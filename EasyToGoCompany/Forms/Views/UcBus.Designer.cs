@@ -325,7 +325,6 @@
             this.TxtCompagnie.Name = "TxtCompagnie";
             this.TxtCompagnie.Size = new System.Drawing.Size(180, 23);
             this.TxtCompagnie.TabIndex = 3;
-            this.TxtCompagnie.Text = "Compagnie testeur";
             this.TxtCompagnie.Leave += new System.EventHandler(this.TextControle_Leave);
             // 
             // TxtNumPos

@@ -47,6 +47,13 @@
             this.PnlMain = new System.Windows.Forms.Panel();
             this.PnlParametre = new System.Windows.Forms.Panel();
             this.LblParametre = new System.Windows.Forms.Label();
+            this.PnlParametreMain = new System.Windows.Forms.Panel();
+            this.LblAllBus = new System.Windows.Forms.Label();
+            this.LblBusInactifs = new System.Windows.Forms.Label();
+            this.LblUser = new System.Windows.Forms.Label();
+            this.PcbUser = new System.Windows.Forms.PictureBox();
+            this.PcbBusInactifs = new System.Windows.Forms.PictureBox();
+            this.PcbAllBus = new System.Windows.Forms.PictureBox();
             this.PcbParametre = new System.Windows.Forms.PictureBox();
             this.PcbBus = new System.Windows.Forms.PictureBox();
             this.PcbProfil = new System.Windows.Forms.PictureBox();
@@ -60,6 +67,10 @@
             this.PnlProfil.SuspendLayout();
             this.PnlDashboard.SuspendLayout();
             this.PnlParametre.SuspendLayout();
+            this.PnlParametreMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbBusInactifs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbAllBus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcbParametre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcbBus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcbProfil)).BeginInit();
@@ -156,6 +167,7 @@
             // PnlMenu
             // 
             this.PnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(23)))), ((int)(((byte)(22)))));
+            this.PnlMenu.Controls.Add(this.PnlParametreMain);
             this.PnlMenu.Controls.Add(this.PnlParametre);
             this.PnlMenu.Controls.Add(this.PnlWhite);
             this.PnlMenu.Controls.Add(this.PnlBus);
@@ -183,7 +195,7 @@
             this.PnlBus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlBus.Controls.Add(this.PcbBus);
             this.PnlBus.Controls.Add(this.LblBus);
-            this.PnlBus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PnlBus.Cursor = System.Windows.Forms.Cursors.Default;
             this.PnlBus.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlBus.Location = new System.Drawing.Point(0, 109);
             this.PnlBus.Name = "PnlBus";
@@ -194,6 +206,7 @@
             // LblBus
             // 
             this.LblBus.AutoSize = true;
+            this.LblBus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblBus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblBus.ForeColor = System.Drawing.Color.White;
             this.LblBus.Location = new System.Drawing.Point(56, 14);
@@ -208,7 +221,7 @@
             this.PnlProfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlProfil.Controls.Add(this.PcbProfil);
             this.PnlProfil.Controls.Add(this.LblProfil);
-            this.PnlProfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PnlProfil.Cursor = System.Windows.Forms.Cursors.Default;
             this.PnlProfil.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlProfil.Location = new System.Drawing.Point(0, 56);
             this.PnlProfil.Name = "PnlProfil";
@@ -219,6 +232,7 @@
             // LblProfil
             // 
             this.LblProfil.AutoSize = true;
+            this.LblProfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblProfil.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblProfil.ForeColor = System.Drawing.Color.White;
             this.LblProfil.Location = new System.Drawing.Point(56, 14);
@@ -233,7 +247,7 @@
             this.PnlDashboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlDashboard.Controls.Add(this.PcbDashboard);
             this.PnlDashboard.Controls.Add(this.LblDashboard);
-            this.PnlDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PnlDashboard.Cursor = System.Windows.Forms.Cursors.Default;
             this.PnlDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlDashboard.Location = new System.Drawing.Point(0, 3);
             this.PnlDashboard.Name = "PnlDashboard";
@@ -244,6 +258,7 @@
             // LblDashboard
             // 
             this.LblDashboard.AutoSize = true;
+            this.LblDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDashboard.ForeColor = System.Drawing.Color.White;
             this.LblDashboard.Location = new System.Drawing.Point(56, 14);
@@ -277,7 +292,7 @@
             this.PnlParametre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlParametre.Controls.Add(this.PcbParametre);
             this.PnlParametre.Controls.Add(this.LblParametre);
-            this.PnlParametre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PnlParametre.Cursor = System.Windows.Forms.Cursors.Default;
             this.PnlParametre.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlParametre.Location = new System.Drawing.Point(0, 162);
             this.PnlParametre.Name = "PnlParametre";
@@ -287,6 +302,7 @@
             // LblParametre
             // 
             this.LblParametre.AutoSize = true;
+            this.LblParametre.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblParametre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblParametre.ForeColor = System.Drawing.Color.White;
             this.LblParametre.Location = new System.Drawing.Point(56, 14);
@@ -294,9 +310,102 @@
             this.LblParametre.Size = new System.Drawing.Size(93, 21);
             this.LblParametre.TabIndex = 1;
             this.LblParametre.Text = "Paramètre";
+            this.LblParametre.Click += new System.EventHandler(this.NavigationControles_Click);
+            // 
+            // PnlParametreMain
+            // 
+            this.PnlParametreMain.Controls.Add(this.PcbUser);
+            this.PnlParametreMain.Controls.Add(this.LblUser);
+            this.PnlParametreMain.Controls.Add(this.PcbBusInactifs);
+            this.PnlParametreMain.Controls.Add(this.LblBusInactifs);
+            this.PnlParametreMain.Controls.Add(this.PcbAllBus);
+            this.PnlParametreMain.Controls.Add(this.LblAllBus);
+            this.PnlParametreMain.Cursor = System.Windows.Forms.Cursors.Default;
+            this.PnlParametreMain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnlParametreMain.Location = new System.Drawing.Point(0, 215);
+            this.PnlParametreMain.Name = "PnlParametreMain";
+            this.PnlParametreMain.Size = new System.Drawing.Size(185, 116);
+            this.PnlParametreMain.TabIndex = 8;
+            this.PnlParametreMain.Visible = false;
+            // 
+            // LblAllBus
+            // 
+            this.LblAllBus.AutoSize = true;
+            this.LblAllBus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblAllBus.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAllBus.ForeColor = System.Drawing.Color.White;
+            this.LblAllBus.Location = new System.Drawing.Point(77, 16);
+            this.LblAllBus.Name = "LblAllBus";
+            this.LblAllBus.Size = new System.Drawing.Size(81, 17);
+            this.LblAllBus.TabIndex = 1;
+            this.LblAllBus.Text = "Tous les bus";
+            this.LblAllBus.Click += new System.EventHandler(this.NavigationControles_Click);
+            // 
+            // LblBusInactifs
+            // 
+            this.LblBusInactifs.AutoSize = true;
+            this.LblBusInactifs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblBusInactifs.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBusInactifs.ForeColor = System.Drawing.Color.White;
+            this.LblBusInactifs.Location = new System.Drawing.Point(77, 47);
+            this.LblBusInactifs.Name = "LblBusInactifs";
+            this.LblBusInactifs.Size = new System.Drawing.Size(77, 17);
+            this.LblBusInactifs.TabIndex = 3;
+            this.LblBusInactifs.Text = "Bus inactifs";
+            this.LblBusInactifs.Click += new System.EventHandler(this.NavigationControles_Click);
+            // 
+            // LblUser
+            // 
+            this.LblUser.AutoSize = true;
+            this.LblUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblUser.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUser.ForeColor = System.Drawing.Color.White;
+            this.LblUser.Location = new System.Drawing.Point(77, 78);
+            this.LblUser.Name = "LblUser";
+            this.LblUser.Size = new System.Drawing.Size(69, 17);
+            this.LblUser.TabIndex = 5;
+            this.LblUser.Text = "Utilisateur";
+            this.LblUser.Click += new System.EventHandler(this.NavigationControles_Click);
+            // 
+            // PcbUser
+            // 
+            this.PcbUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PcbUser.Image = global::EasyToGoCompany.Properties.Resources.user_credentials;
+            this.PcbUser.Location = new System.Drawing.Point(47, 76);
+            this.PcbUser.Name = "PcbUser";
+            this.PcbUser.Size = new System.Drawing.Size(22, 22);
+            this.PcbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PcbUser.TabIndex = 6;
+            this.PcbUser.TabStop = false;
+            this.PcbUser.Click += new System.EventHandler(this.NavigationControles_Click);
+            // 
+            // PcbBusInactifs
+            // 
+            this.PcbBusInactifs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PcbBusInactifs.Image = global::EasyToGoCompany.Properties.Resources.icons8_Print_48px;
+            this.PcbBusInactifs.Location = new System.Drawing.Point(47, 45);
+            this.PcbBusInactifs.Name = "PcbBusInactifs";
+            this.PcbBusInactifs.Size = new System.Drawing.Size(22, 22);
+            this.PcbBusInactifs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PcbBusInactifs.TabIndex = 4;
+            this.PcbBusInactifs.TabStop = false;
+            this.PcbBusInactifs.Click += new System.EventHandler(this.NavigationControles_Click);
+            // 
+            // PcbAllBus
+            // 
+            this.PcbAllBus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PcbAllBus.Image = global::EasyToGoCompany.Properties.Resources.icons8_Print_48px;
+            this.PcbAllBus.Location = new System.Drawing.Point(47, 14);
+            this.PcbAllBus.Name = "PcbAllBus";
+            this.PcbAllBus.Size = new System.Drawing.Size(22, 22);
+            this.PcbAllBus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PcbAllBus.TabIndex = 2;
+            this.PcbAllBus.TabStop = false;
+            this.PcbAllBus.Click += new System.EventHandler(this.NavigationControles_Click);
             // 
             // PcbParametre
             // 
+            this.PcbParametre.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PcbParametre.Image = global::EasyToGoCompany.Properties.Resources.settings;
             this.PcbParametre.Location = new System.Drawing.Point(17, 9);
             this.PcbParametre.Name = "PcbParametre";
@@ -307,6 +416,7 @@
             // 
             // PcbBus
             // 
+            this.PcbBus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PcbBus.Image = global::EasyToGoCompany.Properties.Resources.bus;
             this.PcbBus.Location = new System.Drawing.Point(17, 9);
             this.PcbBus.Name = "PcbBus";
@@ -318,6 +428,7 @@
             // 
             // PcbProfil
             // 
+            this.PcbProfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PcbProfil.Image = global::EasyToGoCompany.Properties.Resources.user_account;
             this.PcbProfil.Location = new System.Drawing.Point(17, 9);
             this.PcbProfil.Name = "PcbProfil";
@@ -329,6 +440,7 @@
             // 
             // PcbDashboard
             // 
+            this.PcbDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PcbDashboard.Image = global::EasyToGoCompany.Properties.Resources.menu;
             this.PcbDashboard.Location = new System.Drawing.Point(17, 10);
             this.PcbDashboard.Name = "PcbDashboard";
@@ -377,6 +489,11 @@
             this.PnlDashboard.PerformLayout();
             this.PnlParametre.ResumeLayout(false);
             this.PnlParametre.PerformLayout();
+            this.PnlParametreMain.ResumeLayout(false);
+            this.PnlParametreMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbBusInactifs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PcbAllBus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcbParametre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcbBus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcbProfil)).EndInit();
@@ -413,5 +530,12 @@
         private System.Windows.Forms.Panel PnlParametre;
         private System.Windows.Forms.PictureBox PcbParametre;
         private System.Windows.Forms.Label LblParametre;
+        private System.Windows.Forms.Panel PnlParametreMain;
+        private System.Windows.Forms.PictureBox PcbAllBus;
+        private System.Windows.Forms.Label LblAllBus;
+        private System.Windows.Forms.PictureBox PcbUser;
+        private System.Windows.Forms.Label LblUser;
+        private System.Windows.Forms.PictureBox PcbBusInactifs;
+        private System.Windows.Forms.Label LblBusInactifs;
     }
 }
