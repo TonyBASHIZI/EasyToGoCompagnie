@@ -24,6 +24,7 @@ namespace EasyToGoCompany.Forms.Views
         {
             InitializeComponent();
             bindSource = new BindingSource();
+            TxtCompagnie.Text = User.Instance.DescriptionSession;
         }
 
         public static UcBus Instance

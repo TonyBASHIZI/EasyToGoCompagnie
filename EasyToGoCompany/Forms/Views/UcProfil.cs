@@ -63,9 +63,7 @@ namespace EasyToGoCompany.Forms.Views
         {
             try
             {
-                /// TODO: Load profile by catteogorie
-
-                compagnie = Glossaire.Instance.GetCompagnie("ALOHA DYNAMICS");
+                compagnie = Glossaire.Instance.GetCompagnie(User.Instance.DescriptionSession);
 
                 if (compagnie != null)
                 {
@@ -86,7 +84,7 @@ namespace EasyToGoCompany.Forms.Views
             catch (Exception ex)
             {
                 MessageBox.Show(this, "Le profile n'a pu être bien chargé", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine("Cette erreur s'est produit lors du chargement du profile : " + ex);
+                Console.WriteLine("Cette erreur s'est produite lors du chargement du profile : " + ex);
             }
         }
 
@@ -120,11 +118,18 @@ namespace EasyToGoCompany.Forms.Views
                 catch (Exception ex)
                 {
                     MessageBox.Show(this, "Le profile n'a pu être modifié", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Console.WriteLine("Cette erreur s'est produit lors du chargement du profile : " + ex);
+                    Console.WriteLine("Cette erreur s'est produite lors de la modification du profile : " + ex);
                 }
                 finally
                 {
-                    LoadCompagnyProfile();
+                    if (MessageBox.Show(this, "L'application doit rédemarrer pour appliqué toutes les modifications.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                    {
+                        Application.Restart();
+                    }
+                    else
+                    {
+                        //
+                    }
                 }
             }
             this.Cursor = Cursors.Default;

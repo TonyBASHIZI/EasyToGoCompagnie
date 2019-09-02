@@ -97,7 +97,6 @@ namespace EasyToGoCompany.Forms
                     AppConfig.CreateConnectionString();
                 }
 
-                ///  TODO: Add this section to login form for connection string vérification
                 if (AppConfig.ConnectionStringEmpty())
                 {
                     MessageBox.Show(this, "Veuillez contacter l'administrateur système pour la configuration.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -110,12 +109,7 @@ namespace EasyToGoCompany.Forms
         {
             string controlName = ((Control)sender).Name.Substring(3);
             switch (controlName)
-            {
-                case "Accueil":
-                    uc = UcAccueil.Instance;
-                    LoadUserControles(uc);
-                    break;
-
+            {           
                 case "Dashboard":
                     uc = UcDashboard.Instance;
                     LoadUserControles(uc);
@@ -128,6 +122,11 @@ namespace EasyToGoCompany.Forms
 
                 case "Profil":
                     uc = UcProfil.Instance;
+                    LoadUserControles(uc);
+                    break;
+
+                default:
+                    uc = UcAccueil.Instance;
                     LoadUserControles(uc);
                     break;
             }

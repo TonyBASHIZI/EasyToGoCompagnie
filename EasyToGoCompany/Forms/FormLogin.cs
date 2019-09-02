@@ -14,7 +14,7 @@ namespace EasyToGoCompany.Forms
 {
     public partial class FormLogin : Form
     {
-        FormMain main = new FormMain();
+        private FormMain main = new FormMain();
 
         public FormLogin()
         {

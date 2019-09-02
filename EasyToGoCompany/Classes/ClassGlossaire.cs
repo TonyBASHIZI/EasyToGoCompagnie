@@ -331,8 +331,10 @@ namespace EasyToGoCompany.Classes
                 if (comp.Id == 0)
                 {
                     cmd.CommandText = "INSERT INTO `easy_to_go`.`compagnie` (`noms`,`description`,`adresse`,`photo`,`rccm`)"
-                        + " VALUES (@noms,@description,@adresse,@photo,@rccm); ";
+                        + " VALUES (@noms,@description,@adresse,@photo,@rccm); " +
+                        "UPDATE `easy_to_go`.`utilisateur` SET `description` = @noms WHERE `id` = @idUser; ";
 
+                    SetParameter(cmd, "@idUser", DbType.Int32, 10, User.Instance.IdSession);
                     SetParameter(cmd, "@noms", DbType.String, 255, comp.Noms);
                     SetParameter(cmd, "@description", DbType.String, 255, comp.Description);
                     SetParameter(cmd, "@adresse", DbType.String, 255, comp.Adresse);
@@ -342,8 +344,10 @@ namespace EasyToGoCompany.Classes
                 else
                 {
                     cmd.CommandText = "UPDATE `easy_to_go`.`compagnie` SET `noms` = @noms, `description` = @description, " 
-                        + "`adresse` = @adresse, `photo` = @photo, `rccm` = @rccm WHERE `id` = @id; ";
+                        + "`adresse` = @adresse, `photo` = @photo, `rccm` = @rccm WHERE `id` = @id; " +
+                        "UPDATE `easy_to_go`.`utilisateur` SET `description` = @noms WHERE `id` = @idUser; ";
 
+                    SetParameter(cmd, "@idUser", DbType.Int32, 10, User.Instance.IdSession);
                     SetParameter(cmd, "@id", DbType.Int32, 10, comp.Id);
                     SetParameter(cmd, "@noms", DbType.String, 255, comp.Noms);
                     SetParameter(cmd, "@description", DbType.String, 255, comp.Description);
