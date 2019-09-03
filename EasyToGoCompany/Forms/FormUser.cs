@@ -1,4 +1,5 @@
-﻿using EasyToGoCompany.Classes.Model;
+﻿using EasyToGoCompany.Classes;
+using EasyToGoCompany.Classes.Model;
 using System;
 using System.Windows.Forms;
 
@@ -6,6 +7,9 @@ namespace EasyToGoCompany.Forms
 {
     public partial class FormUser : Form
     {
+        private string password = null;
+        private User user = null;
+
         public FormUser()
         {
             InitializeComponent();
@@ -18,7 +22,10 @@ namespace EasyToGoCompany.Forms
                 if (User.Instance.IdSession == 0)
                     PnlEdit.Enabled = false;
                 else
+                {
                     PnlEdit.Enabled = true;
+                    password = User.Instance.PasswordSession;
+                }
             }
             catch (Exception ex)
             {
@@ -66,7 +73,7 @@ namespace EasyToGoCompany.Forms
             switch (name)
             {
                 case "Edit":
-                    /// TODO: Insert and update user here
+                    UpdateUser();
                     break;
 
                 case "Cancel":
@@ -85,6 +92,56 @@ namespace EasyToGoCompany.Forms
             TxtNewPassword2.Text = string.Empty;
             TxtUsername.Text = string.Empty;
             TxtUsername.Focus();
+        }
+
+        private void UpdateUser()
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(TxtLastPassword.Text) && !string.IsNullOrEmpty(TxtNewPassword1.Text)
+                    && !string.IsNullOrEmpty(TxtNewPassword2.Text) && !string.IsNullOrEmpty(TxtUsername.Text))
+                {
+                    if (password.Equals(TxtLastPassword.Text))
+                    {
+                        if (! TxtNewPassword1.Text.Equals(TxtNewPassword2.Text))
+                        {
+                            MessageBox.Show(this, "Les deux mots de passe ne sont pas identiques !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            TxtNewPassword1.Focus();
+                        }
+                        else
+                        {
+                            user = new User
+                            {
+                                Username = TxtUsername.Text,
+                                Password = TxtNewPassword2.Text
+                            };
+
+                            if (Glossaire.Instance.UpdateUser(user))
+                            {
+                                if (MessageBox.Show(this, "L'application doit rédemarrer pour appliquer les modifications.", "Rédemarrage requis", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                                {
+                                    Application.Restart();
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, "Votre mot de passe est incorrect !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        TxtLastPassword.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(this, "Remplisser tous les champs svp !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TxtUsername.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Une erreur s'est produite lors de l'opération", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("Cette erreur s'est produite lors de l'opération : " + ex);
+            }
         }
     }
 }

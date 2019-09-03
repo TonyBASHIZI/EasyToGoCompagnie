@@ -1,13 +1,6 @@
 ﻿using EasyToGoCompany.Classes;
 using EasyToGoCompany.Classes.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyToGoCompany.Forms
@@ -37,7 +30,8 @@ namespace EasyToGoCompany.Forms
                 {
                     User.Instance = Glossaire.Instance.LoginRequest(TxtUsername.Text, TxtPassword.Text);
 
-                    if (User.Instance.DescriptionSession != null && User.Instance.UsernameSession != null && User.Instance.NiveauSession != 0)
+                    if (User.Instance.DescriptionSession != null && User.Instance.UsernameSession != null 
+                        && User.Instance.NiveauSession != 0 && User.Instance.PasswordSession != null)
                     {
                         User.Instance.UpdateFormMain();
                         this.main.RefreshOnlineStatus();

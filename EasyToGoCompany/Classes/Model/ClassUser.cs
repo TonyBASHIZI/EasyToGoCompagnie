@@ -39,6 +39,8 @@ namespace EasyToGoCompany.Classes.Model
 
         public int NiveauSession { get; set; }
 
+        public string PasswordSession { get; set; }
+
         public void UpdateFormMain()
         {
             FormMain.Instance.RefreshOnlineStatus();

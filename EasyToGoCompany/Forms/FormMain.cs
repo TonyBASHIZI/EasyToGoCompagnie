@@ -2,13 +2,6 @@
 using EasyToGoCompany.Classes.Model;
 using EasyToGoCompany.Forms.Views;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyToGoCompany.Forms
@@ -68,6 +61,9 @@ namespace EasyToGoCompany.Forms
             this.PnlMain.Controls.Clear();
             uc.Dock = DockStyle.Fill;
             //this.uc.MouseEnter += new System.EventHandler(this.ColorChanges_MouseEnter);
+
+            /// On mouse enter change color of controle
+  
             this.PnlMain.Controls.Add(uc);
             uc.Show();
 
@@ -145,8 +141,10 @@ namespace EasyToGoCompany.Forms
                     break;
 
                 case "User":
-                    form = new FormUser();
-                    form.Icon = this.Icon;
+                    form = new FormUser
+                    {
+                        Icon = this.Icon
+                    };
                     form.ShowDialog();
                     break;
 
@@ -170,6 +168,10 @@ namespace EasyToGoCompany.Forms
             else
             {
                 User.Instance = null;
+                UcAccueil.Instance = null;
+                UcBus.Instance = null;
+                UcDashboard.Instance = null;
+                UcProfil.Instance = null;
                 this.RefreshOnlineStatus();
             }
         }

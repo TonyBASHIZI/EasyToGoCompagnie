@@ -15,7 +15,7 @@ namespace EasyToGoCompany.Forms.Views
 {
     public partial class UcProfil : UserControl
     {
-        public static UcProfil _instance;
+        private static UcProfil _instance;
         private Compagnie compagnie = null;
         private int id = 0;
 
@@ -31,6 +31,11 @@ namespace EasyToGoCompany.Forms.Views
                 if (_instance == null)
                     _instance = new UcProfil();
                 return _instance;
+            }
+
+            set
+            {
+                _instance = value;
             }
         }
 

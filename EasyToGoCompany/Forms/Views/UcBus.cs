@@ -15,7 +15,7 @@ namespace EasyToGoCompany.Forms.Views
 {
     public partial class UcBus : UserControl
     {
-        public static UcBus _instance;
+        private static UcBus _instance;
 
         private Bus bus = null;
         private BindingSource bindSource = null;
@@ -34,6 +34,11 @@ namespace EasyToGoCompany.Forms.Views
                 if (_instance == null)
                     _instance = new UcBus();
                 return _instance;
+            }
+
+            set
+            {
+                _instance = value;
             }
         }
 

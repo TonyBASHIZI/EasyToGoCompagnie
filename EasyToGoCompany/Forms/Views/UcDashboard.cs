@@ -12,7 +12,7 @@ namespace EasyToGoCompany.Forms.Views
 {
     public partial class UcDashboard : UserControl
     {
-        public static UcDashboard _instance;
+        private static UcDashboard _instance;
         
         public UcDashboard()
         {
@@ -26,6 +26,11 @@ namespace EasyToGoCompany.Forms.Views
                 if (_instance == null)
                     _instance = new UcDashboard();
                 return _instance;
+            }
+
+            set
+            {
+                _instance = value;
             }
         }
     }

@@ -3,10 +3,6 @@ using EasyToGoCompany.Classes.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyToGoCompany.Classes
@@ -272,11 +268,11 @@ namespace EasyToGoCompany.Classes
 
             using (IDbCommand cmd = con.CreateCommand())
             {
-                if (name == null)
+                if (name != null)
                 {
                     cmd.CommandText = "SELECT * FROM easy_to_go.compagnie WHERE `compagnie`.`noms` = @name; ";
 
-                    SetParameter(cmd, "@name", DbType.String, 255, "COMPAGNIE TEST");
+                    SetParameter(cmd, "@name", DbType.String, 255, name);
 
                     using (IDataReader dr = cmd.ExecuteReader())
                     {
@@ -365,13 +361,64 @@ namespace EasyToGoCompany.Classes
                             IdSession = Convert.ToInt32(dr["id"]),
                             DescriptionSession = dr["description"].ToString(),
                             UsernameSession = dr["username"].ToString(),
-                            NiveauSession = Convert.ToInt32(dr["niveau"])
+                            NiveauSession = Convert.ToInt32(dr["niveau"]),
+                            PasswordSession = dr["password"].ToString()
                         };
                     }
                 }
             }
 
             return user;
+        }
+
+        public bool UpdateUser(User user)
+        {
+            InitializeConnection();
+
+            using (IDbCommand cmd = con.CreateCommand())
+            {
+                if (user.Id == 0)
+                {
+                    cmd.CommandText = "UPDATE `easy_to_go`.`utilisateur` SET `username` = @username, `password` = @password " +
+                        " WHERE `id` = @idUser; ";
+
+                    SetParameter(cmd, "@idUser", DbType.Int32, 10, User.Instance.IdSession);
+                    SetParameter(cmd, "@description", DbType.String, 255, User.Instance.DescriptionSession);
+                    SetParameter(cmd, "@username", DbType.String, 255, user.Username);
+                    SetParameter(cmd, "@password", DbType.String, 255, user.Password);
+                    SetParameter(cmd, "@niveau", DbType.String, 10, user.Niveau);
+
+                }
+
+                if (cmd.ExecuteNonQuery() != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        #endregion
+
+        #region Report
+
+        public DataSet ReportAllBus()
+        {
+            InitializeConnection();
+
+            using (IDbCommand cmd = con.CreateCommand())
+            {
+                DataSet ds = new DataSet("DsAllBus");
+
+                cmd.CommandText = "SELECT * FROM easy_to_go.bus; ";
+                adapter = new MySqlDataAdapter((MySqlCommand)cmd);
+                adapter.Fill(ds);
+
+                return ds;
+            }
         }
 
         #endregion

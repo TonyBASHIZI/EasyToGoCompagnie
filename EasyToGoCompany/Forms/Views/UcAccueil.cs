@@ -12,7 +12,7 @@ namespace EasyToGoCompany.Forms.Views
 {
     public partial class UcAccueil : UserControl
     {
-        public static UcAccueil _instance;
+        private static UcAccueil _instance;
 
         public UcAccueil()
         {
@@ -26,6 +26,11 @@ namespace EasyToGoCompany.Forms.Views
                 if (_instance == null)
                     _instance = new UcAccueil();
                 return _instance;
+            }
+
+            set
+            {
+                _instance = value;
             }
         }
     }
