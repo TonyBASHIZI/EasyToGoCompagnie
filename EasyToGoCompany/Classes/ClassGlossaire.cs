@@ -71,7 +71,7 @@ namespace EasyToGoCompany.Classes
             cmd.Parameters.Add(param);
         }
 
-        public DataSet LoadDatas(string table, string orderBy = " ")
+        public DataSet LoadDatas(string table, string orderBy = " ", string where = " ", string value = null)
         {
             InitializeConnection();
 
@@ -81,9 +81,25 @@ namespace EasyToGoCompany.Classes
 
                 if (orderBy == " ")
                 {
-                    cmd.CommandText = "SELECT * FROM `easy_to_go`.`" + table;                   
-                    adapter = new MySqlDataAdapter((MySqlCommand)cmd);
-                    adapter.Fill(ds);
+                    if (where == " " && value == null)
+                    {
+                        cmd.CommandText = "SELECT * FROM `easy_to_go`.`" + table + "`; ";
+
+                        SetParameter(cmd, "@table", DbType.String, 30, table);
+
+                        adapter = new MySqlDataAdapter((MySqlCommand)cmd);
+                        adapter.Fill(ds);
+                    }
+                    else
+                    {
+                        cmd.CommandText = cmd.CommandText = "SELECT * FROM `easy_to_go`.`" + table + "` WHERE @where = @value ; ";
+
+                        SetParameter(cmd, "@where", DbType.String, 30, where);
+                        SetParameter(cmd, "@value", DbType.String, 30, value);
+
+                        adapter = new MySqlDataAdapter((MySqlCommand)cmd);
+                        adapter.Fill(ds);
+                    }
                 }
                 else
                 {
@@ -219,6 +235,31 @@ namespace EasyToGoCompany.Classes
             }
         }
 
+        public int GetBusCount(string company)
+        {
+            InitializeConnection();
+
+            int nombre = 0;
+
+            using (IDbCommand cmd = con.CreateCommand())
+            {
+                cmd.CommandText = "SELECT count(ref_compagnie) as nombre FROM easy_to_go.bus " +
+                    " WHERE easy_to_go.bus.ref_compagnie = @company group by ref_compagnie; ";
+
+                SetParameter(cmd, "@company", DbType.String, 255, company);
+
+                using (IDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        nombre = Convert.ToInt32(dr["nombre"]);
+                    }
+                }
+            }
+
+            return nombre;
+        }
+
         #endregion
 
         #region Model
@@ -347,10 +388,12 @@ namespace EasyToGoCompany.Classes
             using (IDbCommand cmd = con.CreateCommand())
             {
                 cmd.CommandText = "SELECT * FROM `easy_to_go`.`utilisateur`	WHERE " +
-                    " `utilisateur`.`username` = @username AND `utilisateur`.`password` = @password; ";
+                    " `utilisateur`.`username` = @username AND `utilisateur`.`password` = @password " +
+                    " AND `utilisateur`.`etat` = @etat; ";
 
                 SetParameter(cmd, "@username", DbType.String, 255, username);
                 SetParameter(cmd, "@password", DbType.String, 255, password);
+                SetParameter(cmd, "@etat", DbType.String, 255, "ACTIF");
 
                 using (IDataReader dr = cmd.ExecuteReader())
                 {

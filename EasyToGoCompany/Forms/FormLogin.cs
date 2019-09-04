@@ -46,7 +46,7 @@ namespace EasyToGoCompany.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, "Une erreur de connexion s'est produite !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Une erreur de connexion s'est produite. \nVeillez contacter l'administrateur système !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine("Cette erreur s'est produit lors du chargement du profile : " + ex);
             }
             finally

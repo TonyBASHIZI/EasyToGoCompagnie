@@ -200,20 +200,20 @@
             // LblAdresse
             // 
             this.LblAdresse.AutoSize = true;
-            this.LblAdresse.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblAdresse.Location = new System.Drawing.Point(211, 82);
+            this.LblAdresse.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAdresse.Location = new System.Drawing.Point(211, 103);
             this.LblAdresse.Name = "LblAdresse";
-            this.LblAdresse.Size = new System.Drawing.Size(82, 22);
+            this.LblAdresse.Size = new System.Drawing.Size(71, 21);
             this.LblAdresse.TabIndex = 4;
             this.LblAdresse.Text = "Adresse";
             // 
             // LblRccm
             // 
             this.LblRccm.AutoSize = true;
-            this.LblRccm.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRccm.Location = new System.Drawing.Point(211, 114);
+            this.LblRccm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRccm.Location = new System.Drawing.Point(211, 78);
             this.LblRccm.Name = "LblRccm";
-            this.LblRccm.Size = new System.Drawing.Size(69, 22);
+            this.LblRccm.Size = new System.Drawing.Size(61, 21);
             this.LblRccm.TabIndex = 5;
             this.LblRccm.Text = "RCCM";
             // 

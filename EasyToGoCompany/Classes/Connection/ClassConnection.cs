@@ -1,5 +1,4 @@
 ﻿using EasyToGoCompany.Classes.Config;
-using System.IO;
 
 namespace EasyToGoCompany.Classes.Connection
 {

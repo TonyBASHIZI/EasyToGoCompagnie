@@ -1,4 +1,5 @@
-﻿using EasyToGoCompany.Classes.Config;
+﻿using EasyToGoCompany.Classes;
+using EasyToGoCompany.Classes.Config;
 using EasyToGoCompany.Classes.Model;
 using EasyToGoCompany.Forms.Views;
 using System;
@@ -35,7 +36,7 @@ namespace EasyToGoCompany.Forms
             {
                 PnlMenu.Enabled = true;
                 LblConnection.Text = "Déconnection";
-                StatusLabel.Text = User.Instance.DescriptionSession;
+                StatusLabel.Text = User.Instance.DescriptionSession;               
             }
             else
             {
@@ -107,7 +108,7 @@ namespace EasyToGoCompany.Forms
             switch (controlName)
             {           
                 case "Dashboard":
-                    uc = UcDashboard.Instance;
+                    uc = new UcDashboard();
                     LoadUserControles(uc);
                     break;
 
@@ -170,7 +171,6 @@ namespace EasyToGoCompany.Forms
                 User.Instance = null;
                 UcAccueil.Instance = null;
                 UcBus.Instance = null;
-                UcDashboard.Instance = null;
                 UcProfil.Instance = null;
                 this.RefreshOnlineStatus();
             }

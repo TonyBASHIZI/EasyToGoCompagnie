@@ -75,10 +75,17 @@ namespace EasyToGoCompany.Forms.Views
 
         private void LoadDataGridView()
         {
-            GridView.DataSource = Glossaire.Instance.LoadDatas(Constant.Table.Bus, "id").Tables[0].DefaultView;
-            bindSource.DataSource = Glossaire.Instance.LoadDatas(Constant.Table.Bus, "id").Tables[0].DefaultView;
-            BindNavig.BindingSource = bindSource;
-            bindSource.CurrentChanged += BindingBus_CurrentChanged;
+            try
+            {
+                GridView.DataSource = Glossaire.Instance.LoadDatas(Constant.Table.Bus, " ", "ref_compagnie", User.Instance.DescriptionSession).Tables[0].DefaultView;
+                bindSource.DataSource = Glossaire.Instance.LoadDatas(Constant.Table.Bus, " ", "ref_compagnie", User.Instance.DescriptionSession).Tables[0].DefaultView;
+                BindNavig.BindingSource = bindSource;
+                bindSource.CurrentChanged += BindingBus_CurrentChanged;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ClearFields()
@@ -166,7 +173,7 @@ namespace EasyToGoCompany.Forms.Views
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -182,7 +189,7 @@ namespace EasyToGoCompany.Forms.Views
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -197,7 +204,7 @@ namespace EasyToGoCompany.Forms.Views
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -278,6 +285,10 @@ namespace EasyToGoCompany.Forms.Views
             catch (Exception)
             {
                 MessageBox.Show(this, "Enregistrement impossible, Veiller vérifier la conformité de données.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);              
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
             }
         }
 

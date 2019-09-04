@@ -72,7 +72,7 @@
             this.LblEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblEdit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(23)))), ((int)(((byte)(22)))));
-            this.LblEdit.Location = new System.Drawing.Point(53, 8);
+            this.LblEdit.Location = new System.Drawing.Point(56, 8);
             this.LblEdit.Name = "LblEdit";
             this.LblEdit.Size = new System.Drawing.Size(89, 18);
             this.LblEdit.TabIndex = 0;

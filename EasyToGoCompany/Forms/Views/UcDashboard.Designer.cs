@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.pieChart1 = new LiveCharts.WinForms.PieChart();
-            this.pieChart2 = new LiveCharts.WinForms.PieChart();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
@@ -50,15 +48,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.PnlBus = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.LblAllBus = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.PieChartBus = new LiveCharts.WinForms.PieChart();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.ChartOperation = new LiveCharts.WinForms.CartesianChart();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -69,61 +70,35 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.PnlBus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(898, 184);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cartesianChart1, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.56818F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.43182F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 321F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(898, 498);
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(892, 165);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.pieChart1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.pieChart2, 1, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(452, 179);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(443, 316);
-            this.tableLayoutPanel5.TabIndex = 5;
-            // 
-            // pieChart1
-            // 
-            this.pieChart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pieChart1.Location = new System.Drawing.Point(3, 3);
-            this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(215, 310);
-            this.pieChart1.TabIndex = 0;
-            this.pieChart1.Text = "pieChart1";
-            // 
-            // pieChart2
-            // 
-            this.pieChart2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pieChart2.Location = new System.Drawing.Point(224, 3);
-            this.pieChart2.Name = "pieChart2";
-            this.pieChart2.Size = new System.Drawing.Size(216, 310);
-            this.pieChart2.TabIndex = 1;
-            this.pieChart2.Text = "pieChart2";
             // 
             // tableLayoutPanel3
             // 
@@ -133,12 +108,12 @@
             this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(452, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(449, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(443, 127);
-            this.tableLayoutPanel3.TabIndex = 1;
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(440, 159);
+            this.tableLayoutPanel3.TabIndex = 2;
             // 
             // panel3
             // 
@@ -148,9 +123,9 @@
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(224, 3);
+            this.panel3.Location = new System.Drawing.Point(223, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(216, 121);
+            this.panel3.Size = new System.Drawing.Size(214, 153);
             this.panel3.TabIndex = 3;
             // 
             // label13
@@ -168,7 +143,7 @@
             // 
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Image = global::EasyToGoCompany.Properties.Resources.bus_100;
-            this.pictureBox4.Location = new System.Drawing.Point(127, 10);
+            this.pictureBox4.Location = new System.Drawing.Point(125, 10);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(80, 80);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -181,11 +156,11 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(15, 85);
+            this.label9.Location = new System.Drawing.Point(15, 117);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 16);
+            this.label9.Size = new System.Drawing.Size(81, 16);
             this.label9.TabIndex = 2;
-            this.label9.Text = "Nombre de bus";
+            this.label9.Text = "Bus inactifs";
             // 
             // label3
             // 
@@ -208,7 +183,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(215, 121);
+            this.panel2.Size = new System.Drawing.Size(214, 153);
             this.panel2.TabIndex = 2;
             // 
             // label12
@@ -226,7 +201,7 @@
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = global::EasyToGoCompany.Properties.Resources.amount_bank_100;
-            this.pictureBox3.Location = new System.Drawing.Point(126, 10);
+            this.pictureBox3.Location = new System.Drawing.Point(125, 10);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(80, 80);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -239,7 +214,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(11, 85);
+            this.label8.Location = new System.Drawing.Point(11, 117);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(136, 16);
             this.label8.TabIndex = 2;
@@ -268,8 +243,8 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(443, 127);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(440, 159);
+            this.tableLayoutPanel2.TabIndex = 1;
             // 
             // panel1
             // 
@@ -279,9 +254,9 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(224, 3);
+            this.panel1.Location = new System.Drawing.Point(223, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(216, 121);
+            this.panel1.Size = new System.Drawing.Size(214, 153);
             this.panel1.TabIndex = 1;
             // 
             // label11
@@ -299,7 +274,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::EasyToGoCompany.Properties.Resources.amount_100;
-            this.pictureBox2.Location = new System.Drawing.Point(127, 10);
+            this.pictureBox2.Location = new System.Drawing.Point(125, 10);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(80, 80);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -312,11 +287,11 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(11, 85);
+            this.label7.Location = new System.Drawing.Point(11, 117);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 16);
+            this.label7.Size = new System.Drawing.Size(125, 16);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Nombre de bus";
+            this.label7.Text = "Montant en virtuel";
             // 
             // label4
             // 
@@ -332,32 +307,32 @@
             // PnlBus
             // 
             this.PnlBus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(174)))), ((int)(((byte)(238)))));
-            this.PnlBus.Controls.Add(this.label10);
+            this.PnlBus.Controls.Add(this.LblAllBus);
             this.PnlBus.Controls.Add(this.pictureBox1);
             this.PnlBus.Controls.Add(this.label6);
             this.PnlBus.Controls.Add(this.label2);
             this.PnlBus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlBus.Location = new System.Drawing.Point(3, 3);
             this.PnlBus.Name = "PnlBus";
-            this.PnlBus.Size = new System.Drawing.Size(215, 121);
+            this.PnlBus.Size = new System.Drawing.Size(214, 153);
             this.PnlBus.TabIndex = 0;
             // 
-            // label10
+            // LblAllBus
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(12, 47);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 33);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "0";
+            this.LblAllBus.AutoSize = true;
+            this.LblAllBus.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAllBus.ForeColor = System.Drawing.Color.White;
+            this.LblAllBus.Location = new System.Drawing.Point(12, 47);
+            this.LblAllBus.Name = "LblAllBus";
+            this.LblAllBus.Size = new System.Drawing.Size(32, 33);
+            this.LblAllBus.TabIndex = 3;
+            this.LblAllBus.Text = "0";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::EasyToGoCompany.Properties.Resources.all_bus_100;
-            this.pictureBox1.Location = new System.Drawing.Point(125, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(124, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -370,7 +345,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 85);
+            this.label6.Location = new System.Drawing.Point(12, 117);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 16);
             this.label6.TabIndex = 1;
@@ -387,50 +362,75 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "BUS";
             // 
-            // tableLayoutPanel4
+            // panel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(452, 136);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(443, 37);
-            this.tableLayoutPanel4.TabIndex = 2;
+            this.panel4.Controls.Add(this.PieChartBus);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(626, 184);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(272, 314);
+            this.panel4.TabIndex = 1;
+            // 
+            // PieChartBus
+            // 
+            this.PieChartBus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PieChartBus.Location = new System.Drawing.Point(0, 0);
+            this.PieChartBus.Name = "PieChartBus";
+            this.PieChartBus.Size = new System.Drawing.Size(272, 314);
+            this.PieChartBus.TabIndex = 8;
+            this.PieChartBus.Text = "pieChart1";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.ChartOperation);
+            this.panel5.Controls.Add(this.groupBox2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 184);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(626, 314);
+            this.panel5.TabIndex = 2;
+            // 
+            // ChartOperation
+            // 
+            this.ChartOperation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ChartOperation.Location = new System.Drawing.Point(0, 51);
+            this.ChartOperation.Name = "ChartOperation";
+            this.ChartOperation.Size = new System.Drawing.Size(626, 263);
+            this.ChartOperation.TabIndex = 7;
+            this.ChartOperation.Text = "cartesianChart1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(626, 51);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 133);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Affiche les transactions par bus";
-            // 
-            // cartesianChart1
-            // 
-            this.cartesianChart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cartesianChart1.Location = new System.Drawing.Point(3, 179);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(443, 316);
-            this.cartesianChart1.TabIndex = 6;
-            this.cartesianChart1.Text = "cartesianChart1";
+            this.label1.Size = new System.Drawing.Size(581, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Affiche les courbes de transactions des opérations éffectuées par chaque bus";
             // 
             // UcDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.groupBox1);
             this.Name = "UcDashboard";
             this.Size = new System.Drawing.Size(898, 498);
+            this.Load += new System.EventHandler(this.UcDashboard_Load);
+            this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -445,40 +445,45 @@
             this.PnlBus.ResumeLayout(false);
             this.PnlBus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel PnlBus;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private LiveCharts.WinForms.PieChart pieChart1;
-        private System.Windows.Forms.Label label1;
-        private LiveCharts.WinForms.PieChart pieChart2;
-        private LiveCharts.WinForms.CartesianChart cartesianChart1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel PnlBus;
+        private System.Windows.Forms.Label LblAllBus;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel4;
+        private LiveCharts.WinForms.PieChart PieChartBus;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private LiveCharts.WinForms.CartesianChart ChartOperation;
+        private System.Windows.Forms.Label label1;
     }
 }

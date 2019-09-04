@@ -48,7 +48,7 @@ namespace EasyToGoCompany.Classes.Model
 
         public bool IsAuthenticate()
         {
-            if (User.Instance.DescriptionSession != null && User.Instance.NiveauSession != 0)
+            if (Instance.DescriptionSession != null && Instance.NiveauSession != 0)
             {
                 return true;
             }
