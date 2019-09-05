@@ -9,9 +9,6 @@ namespace EasyToGoCompany.Classes
 {
     public class Glossaire
     {
-        //private Connection.Connection cnx = null;
-
-        //private MySqlConnection con = null;
         private MySqlDataAdapter adapter = null;
         
         private static Glossaire _instance = null;

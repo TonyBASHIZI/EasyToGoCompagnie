@@ -13,5 +13,11 @@
         public string Marque { get; set; }
 
         public int Place { get; set; }
+
+        public string MiseEnCirculation { get; set; }
+
+        public string Kilometrage { get; set; }
+
+        public string AnneeFabrication { get; set; }
     }
 }

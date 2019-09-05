@@ -18,12 +18,10 @@ namespace EasyToGoCompany.Forms.Views
         private static UcBus _instance;
 
         private Bus bus = null;
-        private BindingSource bindSource = null;
 
         public UcBus()
         {
             InitializeComponent();
-            bindSource = new BindingSource();
             TxtCompagnie.Text = User.Instance.DescriptionSession;
         }
 
@@ -78,9 +76,6 @@ namespace EasyToGoCompany.Forms.Views
             try
             {
                 GridView.DataSource = Glossaire.Instance.LoadDatas(Constant.Table.Bus, " ", "ref_compagnie", User.Instance.DescriptionSession).Tables[0].DefaultView;
-                bindSource.DataSource = Glossaire.Instance.LoadDatas(Constant.Table.Bus, " ", "ref_compagnie", User.Instance.DescriptionSession).Tables[0].DefaultView;
-                BindNavig.BindingSource = bindSource;
-                bindSource.CurrentChanged += BindingBus_CurrentChanged;
             }
             catch (Exception ex)
             {
@@ -94,7 +89,10 @@ namespace EasyToGoCompany.Forms.Views
             TxtMarque.Text = "";
             TxtNumero.Text = "";
             TxtNumPos.Text = "";
+            TxtAnneeFabrication.Text = "";
+            DteMiseCirculation.Text = DateTime.Now.ToString();
             TxtPlace.Text = "0";
+            TxtKilometrage.Text = "0";
             TxtPlaque.Text = "";
             TxtNumero.Focus();
             BtnDelete.Enabled = false;
@@ -122,7 +120,8 @@ namespace EasyToGoCompany.Forms.Views
                 if (!string.IsNullOrEmpty(TxtNumero.Text) && !string.IsNullOrEmpty(TxtNumPos.Text)
                     && !string.IsNullOrEmpty(TxtCompagnie.Text) && !string.IsNullOrEmpty(TxtPlace.Text)
                     && !string.IsNullOrEmpty(TxtMarque.Text) && !string.IsNullOrEmpty(TxtPlaque.Text)
-                    && IsNumeric(TxtPlace.Text))
+                    && !string.IsNullOrEmpty(TxtAnneeFabrication.Text) && !string.IsNullOrEmpty(TxtKilometrage.Text)
+                    && IsNumeric(TxtPlace.Text) && IsNumeric(TxtAnneeFabrication.Text) && IsNumeric(TxtKilometrage.Text))
                 {
                     return true;
                 }
@@ -156,58 +155,6 @@ namespace EasyToGoCompany.Forms.Views
             }
         }
 
-        private void BindingBus_CurrentChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                SetBinding(TxtId, "Text", "id");
-                SetBinding(TxtNumero, "Text", "numero");
-                SetBinding(TxtCompagnie, "Text", "ref_compagnie");
-                SetBinding(TxtMarque, "Text", "marque");
-                SetBinding(TxtNumPos, "Text", "ref_pos");
-                SetBinding(TxtPlace, "Text", "place");
-                SetBinding(TxtPlaque, "Text", "plaque");
-
-                BtnSave.Enabled = false;
-                BtnDelete.Enabled = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void SetBinding(Control control, string properties, string accessor)
-        {
-            try
-            {                
-                Binding binding = new Binding(properties, bindSource.Current, accessor, true, DataSourceUpdateMode.OnPropertyChanged);
-                binding.BindingComplete += BindingBus_BindingComplete;
-
-                control.DataBindings.Clear();
-                control.DataBindings.Add(binding);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void BindingBus_BindingComplete(object sender, BindingCompleteEventArgs e)
-        {
-            try
-            {
-                if (e.Cancel)
-                {
-                    ClearFields();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void TextControle_Leave(object sender, EventArgs e)
         {
             string name = (((Control)sender).Name).Substring(3);
@@ -237,6 +184,14 @@ namespace EasyToGoCompany.Forms.Views
                 case "Marque":
                     IsAuthentic(TxtMarque);
                     break;
+
+                case "AnneeFabrication":
+                    IsAuthentic(TxtAnneeFabrication);
+                    break;
+
+                case "Kilometrage":
+                    IsAuthentic(TxtKilometrage);
+                    break;
             }
         }
 
@@ -256,7 +211,10 @@ namespace EasyToGoCompany.Forms.Views
                         RefCompagnie = TxtCompagnie.Text.Trim(),
                         Place = Convert.ToInt32(TxtPlace.Text.Trim()),
                         Marque = TxtMarque.Text.Trim(),
-                        Plaque = TxtPlaque.Text.Trim()
+                        Plaque = TxtPlaque.Text.Trim(),
+                        AnneeFabrication = TxtAnneeFabrication.Text.Trim(),
+                        Kilometrage = TxtKilometrage.Text.Trim(),
+                        MiseEnCirculation = Convert.ToDateTime(DteMiseCirculation.Value).ToString()
                     };
 
 
@@ -331,8 +289,6 @@ namespace EasyToGoCompany.Forms.Views
                 MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" +ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        /// TODO: Add Binding navigator for datas
 
         /// TODO: Add ContextMenu strip
 

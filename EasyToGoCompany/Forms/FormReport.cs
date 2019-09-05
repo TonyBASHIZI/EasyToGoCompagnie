@@ -29,6 +29,9 @@ namespace EasyToGoCompany.Forms
             name = name.Substring(3);
             try
             {
+                if (Connection.Instance.Con.State == ConnectionState.Closed)
+                    Connection.Instance.Con.Open();
+
                 using (IDbCommand cmd = Connection.Instance.Con.CreateCommand())
                 {
                     cmd.CommandText = "SELECT ref_compagnie, ref_pos, numero, marque, place " +
