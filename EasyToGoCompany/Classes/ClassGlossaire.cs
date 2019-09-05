@@ -9,12 +9,17 @@ namespace EasyToGoCompany.Classes
 {
     public class Glossaire
     {
-        private Connection.Connection cnx = null;
+        //private Connection.Connection cnx = null;
 
-        private MySqlConnection con = null;
+        //private MySqlConnection con = null;
         private MySqlDataAdapter adapter = null;
         
         private static Glossaire _instance = null;
+
+        public Glossaire()
+        {
+            InitializeConnection();
+        }
 
         public static Glossaire Instance
         {
@@ -32,17 +37,15 @@ namespace EasyToGoCompany.Classes
         {
             try
             {
-                cnx = new Connection.Connection();
-                cnx.Connect();
+                Connection.Connection.Instance.Connect();
 
-                con = new MySqlConnection(cnx.path);
+                if (Connection.Connection.Instance.Con.State == ConnectionState.Closed)
+                    Connection.Connection.Instance.Con.Open();
 
-                if (!con.State.ToString().ToLower().Equals("open"))
-                    con.Open();
             }
             catch (Exception ex)
             {
-                throw new Exception("Echec de connexion. \n" +ex.Message);
+                throw new Exception("Echec de connexion. \n" + ex.Message);
             }
         }
 
@@ -73,9 +76,7 @@ namespace EasyToGoCompany.Classes
 
         public DataSet LoadDatas(string table, string orderBy = " ", string where = " ", string value = null)
         {
-            InitializeConnection();
-
-            using (IDbCommand cmd = con.CreateCommand())
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 DataSet ds = new DataSet();
 
@@ -92,9 +93,8 @@ namespace EasyToGoCompany.Classes
                     }
                     else
                     {
-                        cmd.CommandText = cmd.CommandText = "SELECT * FROM `easy_to_go`.`" + table + "` WHERE @where = @value ; ";
+                        cmd.CommandText = cmd.CommandText = "SELECT * FROM `easy_to_go`.`" + table + "` WHERE `easy_to_go`.`" + table + "`.`" + where + "` = @value ; ";
 
-                        SetParameter(cmd, "@where", DbType.String, 30, where);
                         SetParameter(cmd, "@value", DbType.String, 30, value);
 
                         adapter = new MySqlDataAdapter((MySqlCommand)cmd);
@@ -114,11 +114,9 @@ namespace EasyToGoCompany.Classes
 
         public void LoadCombos(string field, string table, ComboBox combo)
         {
-            InitializeConnection();
-
             combo.Items.Clear();
 
-            using (IDbCommand cmd = con.CreateCommand())
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 cmd.CommandText = "SELECT `" + field + "` FROM `easy_to_go`.`" + table + "` ORDER BY `" + field + "` ";
 
@@ -136,11 +134,9 @@ namespace EasyToGoCompany.Classes
 
         public List<string> LoadString(string field, string table)
         {
-            InitializeConnection();
-
             List<string> list = new List<string>();
 
-            using (IDbCommand cmd = con.CreateCommand())
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 cmd.CommandText = "SELECT `" + field + "` FROM `easy_to_go`.`" + table + "` ORDER BY `" + field + "` ";
 
@@ -160,11 +156,9 @@ namespace EasyToGoCompany.Classes
 
         public int SelectId(string table, string field)
         {
-            InitializeConnection();
-
             int id = 0;
 
-            using (IDbCommand cmd = con.CreateCommand())
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 if (field.Contains("'"))
                 {
@@ -190,11 +184,9 @@ namespace EasyToGoCompany.Classes
 
         public int SelectId(string table, string field, string value)
         {
-            InitializeConnection();
-
             int id = 0;
 
-            using (IDbCommand cmd = con.CreateCommand())
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 if (field.Contains("'"))
                 {
@@ -220,9 +212,7 @@ namespace EasyToGoCompany.Classes
 
         public void Delete(string table, int id)
         {
-            InitializeConnection();
-
-            using (IDbCommand cmd = con.CreateCommand())
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 cmd.CommandText = "DELETE FROM `easy_to_go`.`" + table + "` WHERE id = @id ;";
 
@@ -237,11 +227,9 @@ namespace EasyToGoCompany.Classes
 
         public int GetBusCount(string company)
         {
-            InitializeConnection();
-
             int nombre = 0;
 
-            using (IDbCommand cmd = con.CreateCommand())
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 cmd.CommandText = "SELECT count(ref_compagnie) as nombre FROM easy_to_go.bus " +
                     " WHERE easy_to_go.bus.ref_compagnie = @company group by ref_compagnie; ";
@@ -260,15 +248,36 @@ namespace EasyToGoCompany.Classes
             return nombre;
         }
 
+        public int GetcountAmount(string company)
+        {
+            int nombre = 0;
+
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
+            {
+                cmd.CommandText = "SELECT `compte`.`ref_compagnie`,`compte`.`solde` as montant" +
+                    " FROM `easy_to_go`.`compte` WHERE `compte`.`designation` = @company AND `compte`.`etat` = 'ACTIF'; ";
+
+                SetParameter(cmd, "@company", DbType.String, 255, company);
+
+                using (IDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        nombre = Convert.ToInt32(dr["montant"]);
+                    }
+                }
+            }
+
+            return nombre;
+        }
+
         #endregion
 
         #region Model
 
         public void InsertUpdateBus(Bus bus)
         {
-            InitializeConnection();
-
-            using (IDbCommand cmd = con.CreateCommand())
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 if (bus.Id == 0)
                 {
@@ -302,12 +311,10 @@ namespace EasyToGoCompany.Classes
 
         public Compagnie GetCompagnie(string name = null)
         {
-            InitializeConnection();
-
             Compagnie compagnie = null;
             Byte[] photo = null;
 
-            using (IDbCommand cmd = con.CreateCommand())
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 if (name != null)
                 {
@@ -343,9 +350,7 @@ namespace EasyToGoCompany.Classes
 
         public void InsertUpdateCompagnie(Compagnie comp)
         {
-            InitializeConnection();
-
-            using (IDbCommand cmd = con.CreateCommand())
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 if (comp.Id == 0)
                 {
@@ -381,15 +386,15 @@ namespace EasyToGoCompany.Classes
 
         public User LoginRequest(string username, string password)
         {
-            InitializeConnection();
-
             User user = null;
 
-            using (IDbCommand cmd = con.CreateCommand())
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 cmd.CommandText = "SELECT * FROM `easy_to_go`.`utilisateur`	WHERE " +
                     " `utilisateur`.`username` = @username AND `utilisateur`.`password` = @password " +
                     " AND `utilisateur`.`etat` = @etat; ";
+
+                /// TODO: Select Code Compagnie for more authenticity
 
                 SetParameter(cmd, "@username", DbType.String, 255, username);
                 SetParameter(cmd, "@password", DbType.String, 255, password);
@@ -416,9 +421,7 @@ namespace EasyToGoCompany.Classes
 
         public bool UpdateUser(User user)
         {
-            InitializeConnection();
-
-            using (IDbCommand cmd = con.CreateCommand())
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 if (user.Id == 0)
                 {
@@ -450,15 +453,17 @@ namespace EasyToGoCompany.Classes
 
         public DataSet ReportAllBus()
         {
-            InitializeConnection();
-
-            using (IDbCommand cmd = con.CreateCommand())
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 DataSet ds = new DataSet("DsAllBus");
 
-                cmd.CommandText = "SELECT * FROM easy_to_go.bus; ";
+                cmd.CommandText = "SELECT ref_compagnie, ref_pos, numero, marque, place " + 
+                    " FROM easy_to_go.bus WHERE `bus`.`ref_compagnie` = @company; ";
+
+                SetParameter(cmd, "@compaeny", DbType.String, 255, User.Instance.DescriptionSession);
+
                 adapter = new MySqlDataAdapter((MySqlCommand)cmd);
-                adapter.Fill(ds);
+                adapter.Fill(ds, "Bus");
 
                 return ds;
             }

@@ -112,7 +112,7 @@ namespace EasyToGoCompany.Forms.Views
                     Noms = TxtNom.Text.Trim(),
                     Adresse = TxtAdresse.Text.Trim(),
                     Rccm = TxtRccm.Text.Trim(),
-                    Description = TxtDescription.Text.Trim(),
+                    Description = TxtDescriptionEdit.Text.Trim(),
                     Photo = GetImage(PcbEdit)
                 };
 

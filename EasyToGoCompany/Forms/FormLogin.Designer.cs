@@ -119,10 +119,11 @@
             // LblError
             // 
             this.LblError.AutoSize = true;
+            this.LblError.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblError.ForeColor = System.Drawing.Color.Red;
             this.LblError.Location = new System.Drawing.Point(69, 6);
             this.LblError.Name = "LblError";
-            this.LblError.Size = new System.Drawing.Size(116, 16);
+            this.LblError.Size = new System.Drawing.Size(116, 17);
             this.LblError.TabIndex = 1;
             this.LblError.Text = "                                    ";
             // 

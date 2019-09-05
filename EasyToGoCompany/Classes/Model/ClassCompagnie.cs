@@ -4,6 +4,8 @@
     {
         public string Noms { get; set; }
 
+        public string Code { get; }
+
         public string Description { get; set; }
 
         public string Adresse { get; set; }

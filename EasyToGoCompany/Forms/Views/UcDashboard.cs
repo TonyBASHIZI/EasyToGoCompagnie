@@ -26,6 +26,7 @@ namespace EasyToGoCompany.Forms.Views
             try
             {
                 LblAllBus.Text = Glossaire.Instance.GetBusCount(User.Instance.DescriptionSession).ToString();
+                LblMontantVirtuel.Text = Glossaire.Instance.GetcountAmount(User.Instance.DescriptionSession).ToString();
             }
             catch (Exception ex)
             {
@@ -75,8 +76,8 @@ namespace EasyToGoCompany.Forms.Views
 
             #region Chart 2
 
-            string LabelPoint(ChartPoint chartPoint) =>
-                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+            //string LabelPoint(ChartPoint chartPoint) =>
+            //    string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
 
             PieChartBus.InnerRadius = 50;
             PieChartBus.Series = new SeriesCollection
@@ -87,28 +88,28 @@ namespace EasyToGoCompany.Forms.Views
                     Values = new ChartValues<double> {3},
                     PushOut = 15,
                     DataLabels = true,
-                    LabelPoint = LabelPoint
+                    //LabelPoint = LabelPoint
                 },
                 new PieSeries
                 {
                     Title = "Beta",
                     Values = new ChartValues<double> {4},
                     DataLabels = true,
-                    LabelPoint = LabelPoint
+                    //LabelPoint = LabelPoint
                 },
                 new PieSeries
                 {
                     Title = "Charli",
                     Values = new ChartValues<double> {6},
                     DataLabels = true,
-                    LabelPoint = LabelPoint
+                    //LabelPoint = LabelPoint
                 },
                 new PieSeries
                 {
                     Title = "Delta",
                     Values = new ChartValues<double> {2},
                     DataLabels = true,
-                    LabelPoint = LabelPoint
+                    //LabelPoint = LabelPoint
                 }
             };
 
@@ -119,8 +120,8 @@ namespace EasyToGoCompany.Forms.Views
 
         private List<PieSeries> LoadPieSeries() /// TODO: Add object inject to generate PieSeries
         {
-            string LabelPoint(ChartPoint chartPoint) =>
-                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+            //string LabelPoint(ChartPoint chartPoint) =>
+            //    string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
 
             int nombre = Convert.ToInt32(LblAllBus.Text);
             List<PieSeries> series = null;
@@ -132,7 +133,7 @@ namespace EasyToGoCompany.Forms.Views
                     Title = "Frederic",
                     Values = new ChartValues<double> { 2 },
                     DataLabels = true,
-                    LabelPoint = LabelPoint
+                    //LabelPoint = LabelPoint
                 }
                 );
             }

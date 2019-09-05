@@ -43,5 +43,16 @@ namespace EasyToGoCompany.Properties {
                 return ((string)(this["easy_to_goConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.43.246;user id=Julio;password=myserver;persistsecurityinfo=True;da" +
+            "tabase=easy_to_go")]
+        public string easy_to_goJulio {
+            get {
+                return ((string)(this["easy_to_goJulio"]));
+            }
+        }
     }
 }

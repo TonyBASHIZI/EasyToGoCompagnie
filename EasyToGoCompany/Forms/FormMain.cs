@@ -134,7 +134,10 @@ namespace EasyToGoCompany.Forms
                     break;
 
                 case "AllBus":
-                    //
+                    form = new FormReport();
+                    form.Icon = this.Icon;
+                    form.ShowInTaskbar = false;
+                    form.ShowDialog(this);
                     break;
 
                 case "BusInactifs":

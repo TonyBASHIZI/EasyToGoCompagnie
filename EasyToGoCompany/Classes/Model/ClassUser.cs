@@ -41,6 +41,8 @@ namespace EasyToGoCompany.Classes.Model
 
         public string PasswordSession { get; set; }
 
+        public string CodeCompagnie { get; set; }
+
         public void UpdateFormMain()
         {
             FormMain.Instance.RefreshOnlineStatus();

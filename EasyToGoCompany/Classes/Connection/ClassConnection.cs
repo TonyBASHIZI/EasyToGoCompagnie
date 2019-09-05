@@ -1,14 +1,29 @@
 ﻿using EasyToGoCompany.Classes.Config;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace EasyToGoCompany.Classes.Connection
 {
     public class Connection
     {
-        public string path;
+        private static Connection _instance = null;
 
-        public void Connect()
+        public IDbConnection Con { get; set;}
+
+        public static Connection Instance
         {
-            path = Constant.Database.Path;
+            get
+            {
+                if (_instance == null)
+                    _instance = new Connection();
+                return _instance;
+            }
         }
+
+        public IDbConnection Connect()
+        {
+            Con = new MySqlConnection(Constant.Database.Path);
+            return Con;
+        }        
     }
 }
