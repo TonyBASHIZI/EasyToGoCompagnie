@@ -18,6 +18,7 @@ namespace EasyToGoCompany.Forms.Views
         private static UcBus _instance;
 
         private Bus bus = null;
+        private int id = 0;
 
         public UcBus()
         {
@@ -85,7 +86,7 @@ namespace EasyToGoCompany.Forms.Views
 
         private void ClearFields()
         {
-            TxtId.Text = "0";
+            id = 0;
             TxtMarque.Text = "";
             TxtNumero.Text = "";
             TxtNumPos.Text = "";
@@ -205,7 +206,7 @@ namespace EasyToGoCompany.Forms.Views
 
                     bus = new Bus
                     {
-                        Id = Convert.ToInt32(TxtId.Text.Trim()),
+                        Id = id,
                         Numero = TxtNumero.Text.Trim(),
                         RefNumeroPos = TxtNumPos.Text.Trim(),
                         RefCompagnie = TxtCompagnie.Text.Trim(),
@@ -214,7 +215,7 @@ namespace EasyToGoCompany.Forms.Views
                         Plaque = TxtPlaque.Text.Trim(),
                         AnneeFabrication = TxtAnneeFabrication.Text.Trim(),
                         Kilometrage = TxtKilometrage.Text.Trim(),
-                        MiseEnCirculation = Convert.ToDateTime(DteMiseCirculation.Value).ToString()
+                        MiseEnCirculation = DteMiseCirculation.Value
                     };
 
 
@@ -265,15 +266,12 @@ namespace EasyToGoCompany.Forms.Views
                         Plaque = GridView.SelectedRows[0].Cells["DgvPlaque"].Value.ToString(),
                         RefCompagnie = GridView.SelectedRows[0].Cells["DgvCompagnie"].Value.ToString(),
                         RefNumeroPos = GridView.SelectedRows[0].Cells["DgvNumPos"].Value.ToString(),
+                        MiseEnCirculation = Convert.ToDateTime(GridView.SelectedRows[0].Cells["DgvMiseEnCirculation"].Value.ToString()),
+                        Kilometrage = GridView.SelectedRows[0].Cells["DgvKilometrage"].Value.ToString(),
+                        AnneeFabrication = GridView.SelectedRows[0].Cells["DgvAnneeFab"].Value.ToString(),
                     };
 
-                    TxtId.Text = bus.Id.ToString();
-                    TxtCompagnie.Text = bus.RefCompagnie;
-                    TxtMarque.Text = bus.Marque;
-                    TxtNumero.Text = bus.Numero;
-                    TxtNumPos.Text = bus.RefNumeroPos;
-                    TxtPlace.Text = bus.Place.ToString();
-                    TxtPlaque.Text = bus.Plaque;
+                    /// TODO: Call function to inject bus into DetailBus form
 
                     BtnSave.Enabled = true;
                     BtnDelete.Enabled = true;
@@ -286,7 +284,55 @@ namespace EasyToGoCompany.Forms.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" +ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GridView_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (GridView.SelectedRows.Count > 0)
+                {
+                    bus = new Bus()
+                    {
+                        Id = Convert.ToInt32(GridView.SelectedRows[0].Cells["DgvId"].Value.ToString()),
+                        Place = Convert.ToInt32(GridView.SelectedRows[0].Cells["DgvPlace"].Value.ToString()),
+                        Marque = GridView.SelectedRows[0].Cells["DgvMarque"].Value.ToString(),
+                        Numero = GridView.SelectedRows[0].Cells["DgvNumero"].Value.ToString(),
+                        Plaque = GridView.SelectedRows[0].Cells["DgvPlaque"].Value.ToString(),
+                        RefCompagnie = GridView.SelectedRows[0].Cells["DgvCompagnie"].Value.ToString(),
+                        RefNumeroPos = GridView.SelectedRows[0].Cells["DgvNumPos"].Value.ToString(),
+                        MiseEnCirculation = Convert.ToDateTime(GridView.SelectedRows[0].Cells["DgvMiseEnCirculation"].Value.ToString()),
+                        Kilometrage = GridView.SelectedRows[0].Cells["DgvKilometrage"].Value.ToString(),
+                        AnneeFabrication = GridView.SelectedRows[0].Cells["DgvAnneeFab"].Value.ToString(),
+                    };
+
+                    id = bus.Id;
+                    TxtCompagnie.Text = bus.RefCompagnie;
+                    TxtMarque.Text = bus.Marque;
+                    TxtNumero.Text = bus.Numero;
+                    TxtNumPos.Text = bus.RefNumeroPos;
+                    TxtPlace.Text = bus.Place.ToString();
+                    TxtPlaque.Text = bus.Plaque;
+                    TxtAnneeFabrication.Text = bus.AnneeFabrication;
+                    TxtKilometrage.Text = bus.Kilometrage;
+                    DteMiseCirculation.Text = bus.MiseEnCirculation.ToString();
+
+                    LblMontant.Text = Glossaire.Instance.GetAmoutByBus(bus.Plaque.ToString()).ToString();
+
+                    BtnSave.Enabled = true;
+                    BtnDelete.Enabled = true;
+                }
+                else
+                {
+                    BtnSave.Enabled = false;
+                    BtnDelete.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

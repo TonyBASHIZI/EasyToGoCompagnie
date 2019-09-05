@@ -1,4 +1,6 @@
-﻿namespace EasyToGoCompany.Classes.Model
+﻿using System;
+
+namespace EasyToGoCompany.Classes.Model
 {
     public class Bus : Base
     {
@@ -14,7 +16,7 @@
 
         public int Place { get; set; }
 
-        public string MiseEnCirculation { get; set; }
+        public DateTime MiseEnCirculation { get; set; }
 
         public string Kilometrage { get; set; }
 

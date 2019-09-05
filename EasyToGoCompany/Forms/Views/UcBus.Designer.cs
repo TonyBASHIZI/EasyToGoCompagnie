@@ -33,18 +33,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcBus));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.TxtId = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.GridView = new System.Windows.Forms.DataGridView();
-            this.DgvId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvNumPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvCompagnie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvMarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvPlaque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TxtKilometrage = new System.Windows.Forms.MaskedTextBox();
+            this.TxtAnneeFabrication = new System.Windows.Forms.MaskedTextBox();
+            this.TxtPlace = new System.Windows.Forms.MaskedTextBox();
+            this.DteMiseCirculation = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TxtPlaque = new System.Windows.Forms.TextBox();
@@ -63,22 +61,18 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
@@ -88,13 +82,24 @@
             this.selectionnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.DteMiseCirculation = new System.Windows.Forms.DateTimePicker();
-            this.TxtPlace = new System.Windows.Forms.MaskedTextBox();
-            this.TxtAnneeFabrication = new System.Windows.Forms.MaskedTextBox();
-            this.TxtKilometrage = new System.Windows.Forms.MaskedTextBox();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.LblMontant = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.BtnNew = new System.Windows.Forms.ToolStripButton();
+            this.BtnSave = new System.Windows.Forms.ToolStripButton();
+            this.BtnDelete = new System.Windows.Forms.ToolStripButton();
+            this.BtnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.DgvId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvNumPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvCompagnie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvMarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvPlaque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvAnneeFab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvKilometrage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvMiseEnCirculation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
@@ -107,7 +112,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.TxtId);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.BindNavig);
@@ -119,17 +123,6 @@
             this.groupBox1.Size = new System.Drawing.Size(898, 498);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // TxtId
-            // 
-            this.TxtId.Enabled = false;
-            this.TxtId.Font = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtId.Location = new System.Drawing.Point(884, 23);
-            this.TxtId.Name = "TxtId";
-            this.TxtId.ReadOnly = true;
-            this.TxtId.Size = new System.Drawing.Size(3, 17);
-            this.TxtId.TabIndex = 23;
-            this.TxtId.Text = "0";
             // 
             // groupBox3
             // 
@@ -162,7 +155,10 @@
             this.DgvMarque,
             this.DgvPlaque,
             this.DgvPlace,
-            this.DgvCreatedAt});
+            this.DgvCreatedAt,
+            this.DgvAnneeFab,
+            this.DgvKilometrage,
+            this.DgvMiseEnCirculation});
             this.GridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridView.Location = new System.Drawing.Point(3, 20);
             this.GridView.Name = "GridView";
@@ -179,65 +175,8 @@
             this.GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridView.Size = new System.Drawing.Size(886, 287);
             this.GridView.TabIndex = 0;
+            this.GridView.Click += new System.EventHandler(this.GridView_Click);
             this.GridView.DoubleClick += new System.EventHandler(this.GridView_DoubleClick);
-            // 
-            // DgvId
-            // 
-            this.DgvId.DataPropertyName = "id";
-            this.DgvId.HeaderText = "ID";
-            this.DgvId.Name = "DgvId";
-            this.DgvId.ReadOnly = true;
-            this.DgvId.Visible = false;
-            // 
-            // DgvNumero
-            // 
-            this.DgvNumero.DataPropertyName = "numero";
-            this.DgvNumero.HeaderText = "Numéro";
-            this.DgvNumero.Name = "DgvNumero";
-            this.DgvNumero.ReadOnly = true;
-            // 
-            // DgvNumPos
-            // 
-            this.DgvNumPos.DataPropertyName = "ref_pos";
-            this.DgvNumPos.HeaderText = "Numéro POS";
-            this.DgvNumPos.Name = "DgvNumPos";
-            this.DgvNumPos.ReadOnly = true;
-            // 
-            // DgvCompagnie
-            // 
-            this.DgvCompagnie.DataPropertyName = "ref_compagnie";
-            this.DgvCompagnie.HeaderText = "Compagnie";
-            this.DgvCompagnie.Name = "DgvCompagnie";
-            this.DgvCompagnie.ReadOnly = true;
-            // 
-            // DgvMarque
-            // 
-            this.DgvMarque.DataPropertyName = "marque";
-            this.DgvMarque.HeaderText = "Marque";
-            this.DgvMarque.Name = "DgvMarque";
-            this.DgvMarque.ReadOnly = true;
-            // 
-            // DgvPlaque
-            // 
-            this.DgvPlaque.DataPropertyName = "plaque";
-            this.DgvPlaque.HeaderText = "Plaque";
-            this.DgvPlaque.Name = "DgvPlaque";
-            this.DgvPlaque.ReadOnly = true;
-            // 
-            // DgvPlace
-            // 
-            this.DgvPlace.DataPropertyName = "place";
-            this.DgvPlace.HeaderText = "Place";
-            this.DgvPlace.Name = "DgvPlace";
-            this.DgvPlace.ReadOnly = true;
-            // 
-            // DgvCreatedAt
-            // 
-            this.DgvCreatedAt.DataPropertyName = "created_at";
-            this.DgvCreatedAt.HeaderText = "Création";
-            this.DgvCreatedAt.Name = "DgvCreatedAt";
-            this.DgvCreatedAt.ReadOnly = true;
-            this.DgvCreatedAt.Visible = false;
             // 
             // groupBox2
             // 
@@ -271,6 +210,63 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information sur les bus";
+            // 
+            // TxtKilometrage
+            // 
+            this.TxtKilometrage.Location = new System.Drawing.Point(717, 93);
+            this.TxtKilometrage.Name = "TxtKilometrage";
+            this.TxtKilometrage.Size = new System.Drawing.Size(160, 23);
+            this.TxtKilometrage.TabIndex = 31;
+            // 
+            // TxtAnneeFabrication
+            // 
+            this.TxtAnneeFabrication.Location = new System.Drawing.Point(717, 33);
+            this.TxtAnneeFabrication.Mask = "0000";
+            this.TxtAnneeFabrication.Name = "TxtAnneeFabrication";
+            this.TxtAnneeFabrication.Size = new System.Drawing.Size(160, 23);
+            this.TxtAnneeFabrication.TabIndex = 30;
+            // 
+            // TxtPlace
+            // 
+            this.TxtPlace.Location = new System.Drawing.Point(369, 93);
+            this.TxtPlace.Mask = "00";
+            this.TxtPlace.Name = "TxtPlace";
+            this.TxtPlace.Size = new System.Drawing.Size(160, 23);
+            this.TxtPlace.TabIndex = 29;
+            // 
+            // DteMiseCirculation
+            // 
+            this.DteMiseCirculation.Location = new System.Drawing.Point(717, 63);
+            this.DteMiseCirculation.Name = "DteMiseCirculation";
+            this.DteMiseCirculation.Size = new System.Drawing.Size(160, 23);
+            this.DteMiseCirculation.TabIndex = 28;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(556, 66);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(139, 17);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Mise en circulation : ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(556, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(157, 17);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Année de fabrication : ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(556, 96);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(99, 17);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Kilométrage : ";
             // 
             // panel2
             // 
@@ -413,7 +409,10 @@
             this.toolStripSeparator15,
             this.toolStripSeparator17,
             this.toolStripSeparator18,
-            this.toolStripSeparator19});
+            this.toolStripSeparator19,
+            this.toolStripLabel1,
+            this.LblMontant,
+            this.toolStripLabel2});
             this.BindNavig.Location = new System.Drawing.Point(3, 18);
             this.BindNavig.MoveFirstItem = null;
             this.BindNavig.MoveLastItem = null;
@@ -445,16 +444,6 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // BtnNew
-            // 
-            this.BtnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnNew.Image = global::EasyToGoCompany.Properties.Resources.add;
-            this.BtnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnNew.Name = "BtnNew";
-            this.BtnNew.Size = new System.Drawing.Size(23, 22);
-            this.BtnNew.Text = "Nouveau";
-            this.BtnNew.Click += new System.EventHandler(this.ControleButtons_Click);
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
@@ -474,16 +463,6 @@
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
-            // 
-            // BtnSave
-            // 
-            this.BtnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnSave.Image = global::EasyToGoCompany.Properties.Resources.save;
-            this.BtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(23, 22);
-            this.BtnSave.Text = "Enregistrer";
-            this.BtnSave.Click += new System.EventHandler(this.ControleButtons_Click);
             // 
             // toolStripSeparator8
             // 
@@ -505,17 +484,6 @@
             this.toolStripSeparator11.Name = "toolStripSeparator11";
             this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
             // 
-            // BtnDelete
-            // 
-            this.BtnDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnDelete.Enabled = false;
-            this.BtnDelete.Image = global::EasyToGoCompany.Properties.Resources.delete;
-            this.BtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(23, 22);
-            this.BtnDelete.Text = "Supprimer";
-            this.BtnDelete.Click += new System.EventHandler(this.ControleButtons_Click);
-            // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
@@ -535,16 +503,6 @@
             // 
             this.toolStripSeparator16.Name = "toolStripSeparator16";
             this.toolStripSeparator16.Size = new System.Drawing.Size(6, 25);
-            // 
-            // BtnRefresh
-            // 
-            this.BtnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("BtnRefresh.Image")));
-            this.BtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.Size = new System.Drawing.Size(23, 22);
-            this.BtnRefresh.Text = "Actualiser";
-            this.BtnRefresh.Click += new System.EventHandler(this.ControleButtons_Click);
             // 
             // toolStripSeparator15
             // 
@@ -597,61 +555,144 @@
             this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             // 
-            // label7
+            // toolStripLabel1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(556, 66);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(139, 17);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Mise en circulation : ";
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(89, 22);
+            this.toolStripLabel1.Text = "Montant total : ";
             // 
-            // label8
+            // LblMontant
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(556, 36);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(157, 17);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Année de fabrication : ";
+            this.LblMontant.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMontant.ForeColor = System.Drawing.Color.Blue;
+            this.LblMontant.Name = "LblMontant";
+            this.LblMontant.Size = new System.Drawing.Size(19, 22);
+            this.LblMontant.Text = "0";
             // 
-            // label9
+            // toolStripLabel2
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(556, 96);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 17);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "Kilométrage : ";
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(19, 22);
+            this.toolStripLabel2.Text = "Fc";
             // 
-            // DteMiseCirculation
+            // BtnNew
             // 
-            this.DteMiseCirculation.Location = new System.Drawing.Point(717, 63);
-            this.DteMiseCirculation.Name = "DteMiseCirculation";
-            this.DteMiseCirculation.Size = new System.Drawing.Size(160, 23);
-            this.DteMiseCirculation.TabIndex = 28;
+            this.BtnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnNew.Image = global::EasyToGoCompany.Properties.Resources.add;
+            this.BtnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnNew.Name = "BtnNew";
+            this.BtnNew.Size = new System.Drawing.Size(23, 22);
+            this.BtnNew.Text = "Nouveau";
+            this.BtnNew.Click += new System.EventHandler(this.ControleButtons_Click);
             // 
-            // TxtPlace
+            // BtnSave
             // 
-            this.TxtPlace.Location = new System.Drawing.Point(369, 93);
-            this.TxtPlace.Mask = "00";
-            this.TxtPlace.Name = "TxtPlace";
-            this.TxtPlace.Size = new System.Drawing.Size(160, 23);
-            this.TxtPlace.TabIndex = 29;
+            this.BtnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnSave.Image = global::EasyToGoCompany.Properties.Resources.save;
+            this.BtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(23, 22);
+            this.BtnSave.Text = "Enregistrer";
+            this.BtnSave.Click += new System.EventHandler(this.ControleButtons_Click);
             // 
-            // TxtAnneeFabrication
+            // BtnDelete
             // 
-            this.TxtAnneeFabrication.Location = new System.Drawing.Point(717, 33);
-            this.TxtAnneeFabrication.Name = "TxtAnneeFabrication";
-            this.TxtAnneeFabrication.Size = new System.Drawing.Size(160, 23);
-            this.TxtAnneeFabrication.TabIndex = 30;
+            this.BtnDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnDelete.Enabled = false;
+            this.BtnDelete.Image = global::EasyToGoCompany.Properties.Resources.delete;
+            this.BtnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(23, 22);
+            this.BtnDelete.Text = "Supprimer";
+            this.BtnDelete.Click += new System.EventHandler(this.ControleButtons_Click);
             // 
-            // TxtKilometrage
+            // BtnRefresh
             // 
-            this.TxtKilometrage.Location = new System.Drawing.Point(717, 93);
-            this.TxtKilometrage.Name = "TxtKilometrage";
-            this.TxtKilometrage.Size = new System.Drawing.Size(160, 23);
-            this.TxtKilometrage.TabIndex = 31;
+            this.BtnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("BtnRefresh.Image")));
+            this.BtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.Size = new System.Drawing.Size(23, 22);
+            this.BtnRefresh.Text = "Actualiser";
+            this.BtnRefresh.Click += new System.EventHandler(this.ControleButtons_Click);
+            // 
+            // DgvId
+            // 
+            this.DgvId.DataPropertyName = "id";
+            this.DgvId.HeaderText = "ID";
+            this.DgvId.Name = "DgvId";
+            this.DgvId.ReadOnly = true;
+            this.DgvId.Visible = false;
+            // 
+            // DgvNumero
+            // 
+            this.DgvNumero.DataPropertyName = "numero";
+            this.DgvNumero.HeaderText = "Numéro";
+            this.DgvNumero.Name = "DgvNumero";
+            this.DgvNumero.ReadOnly = true;
+            // 
+            // DgvNumPos
+            // 
+            this.DgvNumPos.DataPropertyName = "ref_pos";
+            this.DgvNumPos.HeaderText = "Numéro POS";
+            this.DgvNumPos.Name = "DgvNumPos";
+            this.DgvNumPos.ReadOnly = true;
+            // 
+            // DgvCompagnie
+            // 
+            this.DgvCompagnie.DataPropertyName = "ref_compagnie";
+            this.DgvCompagnie.HeaderText = "Compagnie";
+            this.DgvCompagnie.Name = "DgvCompagnie";
+            this.DgvCompagnie.ReadOnly = true;
+            this.DgvCompagnie.Visible = false;
+            // 
+            // DgvMarque
+            // 
+            this.DgvMarque.DataPropertyName = "marque";
+            this.DgvMarque.HeaderText = "Marque";
+            this.DgvMarque.Name = "DgvMarque";
+            this.DgvMarque.ReadOnly = true;
+            // 
+            // DgvPlaque
+            // 
+            this.DgvPlaque.DataPropertyName = "plaque";
+            this.DgvPlaque.HeaderText = "Plaque";
+            this.DgvPlaque.Name = "DgvPlaque";
+            this.DgvPlaque.ReadOnly = true;
+            // 
+            // DgvPlace
+            // 
+            this.DgvPlace.DataPropertyName = "place";
+            this.DgvPlace.HeaderText = "Place";
+            this.DgvPlace.Name = "DgvPlace";
+            this.DgvPlace.ReadOnly = true;
+            // 
+            // DgvCreatedAt
+            // 
+            this.DgvCreatedAt.DataPropertyName = "created_at";
+            this.DgvCreatedAt.HeaderText = "Création";
+            this.DgvCreatedAt.Name = "DgvCreatedAt";
+            this.DgvCreatedAt.ReadOnly = true;
+            this.DgvCreatedAt.Visible = false;
+            // 
+            // DgvAnneeFab
+            // 
+            this.DgvAnneeFab.DataPropertyName = "annee_fabrication";
+            this.DgvAnneeFab.HeaderText = "Année de fabrication";
+            this.DgvAnneeFab.Name = "DgvAnneeFab";
+            // 
+            // DgvKilometrage
+            // 
+            this.DgvKilometrage.DataPropertyName = "kilometrage";
+            this.DgvKilometrage.HeaderText = "Kilométrage";
+            this.DgvKilometrage.Name = "DgvKilometrage";
+            // 
+            // DgvMiseEnCirculation
+            // 
+            this.DgvMiseEnCirculation.DataPropertyName = "mise_en_circulation";
+            this.DgvMiseEnCirculation.HeaderText = "Date de mise en circulation";
+            this.DgvMiseEnCirculation.Name = "DgvMiseEnCirculation";
+            this.DgvMiseEnCirculation.Visible = false;
             // 
             // UcBus
             // 
@@ -723,6 +764,20 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
+        private System.Windows.Forms.ContextMenuStrip ContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem selectionnerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem suppToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
+        private System.Windows.Forms.MaskedTextBox TxtKilometrage;
+        private System.Windows.Forms.MaskedTextBox TxtAnneeFabrication;
+        private System.Windows.Forms.MaskedTextBox TxtPlace;
+        private System.Windows.Forms.DateTimePicker DteMiseCirculation;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel LblMontant;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvId;
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvNumero;
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvNumPos;
@@ -731,17 +786,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvPlaque;
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvPlace;
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvCreatedAt;
-        private System.Windows.Forms.ContextMenuStrip ContextMenu;
-        private System.Windows.Forms.ToolStripMenuItem selectionnerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem suppToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
-        private System.Windows.Forms.TextBox TxtId;
-        private System.Windows.Forms.MaskedTextBox TxtKilometrage;
-        private System.Windows.Forms.MaskedTextBox TxtAnneeFabrication;
-        private System.Windows.Forms.MaskedTextBox TxtPlace;
-        private System.Windows.Forms.DateTimePicker DteMiseCirculation;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgvAnneeFab;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgvKilometrage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgvMiseEnCirculation;
     }
 }

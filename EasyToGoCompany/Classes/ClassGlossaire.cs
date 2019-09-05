@@ -245,7 +245,7 @@ namespace EasyToGoCompany.Classes
             return nombre;
         }
 
-        public int GetcountAmount(string company)
+        public int GetAmount(string company)
         {
             int nombre = 0;
 
@@ -268,6 +268,62 @@ namespace EasyToGoCompany.Classes
             return nombre;
         }
 
+        public int GetAmoutByBus(string plaque, string date = null)
+        {
+            int nombre = 0;
+
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
+            {
+                if (plaque != null && date == null)
+                {
+                    cmd.CommandText = "SELECT sum(montant - (commission + fraisTransact)) as montant FROM transaction WHERE ref_bus = '" + plaque +"'; ";
+
+                    using (IDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            nombre = dr["montant"] == DBNull.Value? 0 : Convert.ToInt32(dr["montant"]);
+                        }
+                    }
+                }
+                else
+                {
+                    cmd.CommandText = "SELECT sum(montant - (commission + fraisTransact)) as montant FROM transaction " +
+                        " WHERE ref_bus = '" + plaque + "' AND dateTransact < '"+ date +"'; ";
+
+                    using (IDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            nombre = dr["montant"] == DBNull.Value ? 0 : Convert.ToInt32(dr["montant"]);
+                        }
+                    }
+                }
+            }
+
+            return nombre;
+        }
+
+        public int GetAboutBus(string plaque)
+        {
+            int nombre = 0;
+
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
+            {
+                cmd.CommandText = "SELECT sum(montant - (commission + fraisTransact)) as montant FROM transaction WHERE ref_bus = '" + plaque + "'; ";
+
+                using (IDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        nombre = dr["montant"] == DBNull.Value ? 0 : Convert.ToInt32(dr["montant"]);
+                    }
+                }
+            }
+
+            return nombre;
+        }
+
         #endregion
 
         #region Model
@@ -279,7 +335,8 @@ namespace EasyToGoCompany.Classes
                 if (bus.Id == 0)
                 {
                     cmd.CommandText = "INSERT INTO `easy_to_go`.`bus` (`ref_compagnie`,`ref_pos`,`numero`,`plaque`,`marque`," +
-                        "`place`) VALUES (@ref_compagnie, @ref_pos, @numero, @plaque, @marque, @place); ";
+                        "`place`,`annee_fabrication`,`kilometrage`,`mise_en_circulation`) VALUES " +
+                        "(@ref_compagnie, @ref_pos, @numero, @plaque, @marque, @place, @fabrication, @km, @circulation); ";
 
                     SetParameter(cmd, "@ref_compagnie", DbType.String, 255, bus.RefCompagnie);
                     SetParameter(cmd, "@ref_pos", DbType.String, 255, bus.RefNumeroPos);
@@ -287,11 +344,15 @@ namespace EasyToGoCompany.Classes
                     SetParameter(cmd, "@plaque", DbType.String, 100, bus.Plaque);
                     SetParameter(cmd, "@marque", DbType.String, 100, bus.Marque);
                     SetParameter(cmd, "@place", DbType.Int32, 10, bus.Place);
+                    SetParameter(cmd, "@fabrication", DbType.String, 100, bus.AnneeFabrication);
+                    SetParameter(cmd, "@km", DbType.String, 100, bus.Kilometrage);
+                    SetParameter(cmd, "@circulation", DbType.DateTime, 100, bus.MiseEnCirculation);
                 }
                 else
                 {
                     cmd.CommandText = "UPDATE `easy_to_go`.`bus` SET `ref_compagnie` = @ref_compagnie, `numero` = @numero," +
-                        "`plaque` = @plaque, `ref_pos` = @ref_pos, `marque` = @marque, `place` = @place WHERE `id` = @id; ";
+                        "`plaque` = @plaque, `ref_pos` = @ref_pos, `marque` = @marque, `place` = @place, " +
+                        "`annee_fabrication` = @fabrication, `kilometrage` = @km, `mise_en_circulation` = @circulation WHERE `id` = @id; ";
 
                     SetParameter(cmd, "@id", DbType.Int32, 10, bus.Id);
                     SetParameter(cmd, "@ref_compagnie", DbType.String, 255, bus.RefCompagnie);
@@ -300,6 +361,9 @@ namespace EasyToGoCompany.Classes
                     SetParameter(cmd, "@plaque", DbType.String, 100, bus.Plaque);
                     SetParameter(cmd, "@marque", DbType.String, 100, bus.Marque);
                     SetParameter(cmd, "@place", DbType.Int32, 10, bus.Place);
+                    SetParameter(cmd, "@fabrication", DbType.String, 100, bus.AnneeFabrication);
+                    SetParameter(cmd, "@km", DbType.String, 100, bus.Kilometrage);
+                    SetParameter(cmd, "@circulation", DbType.DateTime, 100, bus.MiseEnCirculation);
                 }
 
                 cmd.ExecuteNonQuery();

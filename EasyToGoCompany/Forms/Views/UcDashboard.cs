@@ -26,7 +26,7 @@ namespace EasyToGoCompany.Forms.Views
             try
             {
                 LblAllBus.Text = Glossaire.Instance.GetBusCount(User.Instance.DescriptionSession).ToString();
-                LblMontantVirtuel.Text = Glossaire.Instance.GetcountAmount(User.Instance.DescriptionSession).ToString();
+                LblMontantVirtuel.Text = Glossaire.Instance.GetAmount(User.Instance.DescriptionSession).ToString();
             }
             catch (Exception ex)
             {
