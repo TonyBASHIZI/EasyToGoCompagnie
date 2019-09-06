@@ -115,7 +115,7 @@
             // 
             // PnlCancel
             // 
-            this.PnlCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.PnlCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.PnlCancel.Controls.Add(this.LblCancel);
             this.PnlCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlCancel.Location = new System.Drawing.Point(196, 194);
@@ -140,7 +140,7 @@
             // 
             // PnlEdit
             // 
-            this.PnlEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.PnlEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.PnlEdit.Controls.Add(this.LblEdit);
             this.PnlEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlEdit.Location = new System.Drawing.Point(38, 194);
@@ -251,6 +251,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(402, 284);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

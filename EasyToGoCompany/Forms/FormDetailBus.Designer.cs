@@ -154,7 +154,7 @@
             // PnlValidateDate
             // 
             this.PnlValidateDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlValidateDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.PnlValidateDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.PnlValidateDate.Controls.Add(this.LblValidateDate);
             this.PnlValidateDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlValidateDate.Location = new System.Drawing.Point(344, 34);
@@ -277,7 +277,7 @@
             // PnlValidateHour
             // 
             this.PnlValidateHour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlValidateHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.PnlValidateHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.PnlValidateHour.Controls.Add(this.LblValidateHour);
             this.PnlValidateHour.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlValidateHour.Location = new System.Drawing.Point(344, 32);
@@ -318,6 +318,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(520, 341);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

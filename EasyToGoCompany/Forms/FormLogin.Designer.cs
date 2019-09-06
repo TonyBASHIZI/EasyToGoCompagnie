@@ -36,8 +36,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LblError = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.PnlEdit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -47,7 +49,7 @@
             this.groupBox1.Controls.Add(this.TxtUsername);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(31, 25);
+            this.groupBox1.Location = new System.Drawing.Point(30, 94);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(385, 166);
             this.groupBox1.TabIndex = 0;
@@ -56,7 +58,7 @@
             // PnlEdit
             // 
             this.PnlEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.PnlEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.PnlEdit.Controls.Add(this.LblEdit);
             this.PnlEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlEdit.Location = new System.Drawing.Point(93, 110);
@@ -129,19 +131,31 @@
             this.LblError.TabIndex = 1;
             this.LblError.Text = "                                    ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::EasyToGoCompany.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(106, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(229, 84);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 213);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(446, 281);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LblError);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(462, 252);
+            this.MaximumSize = new System.Drawing.Size(462, 320);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(462, 252);
+            this.MinimumSize = new System.Drawing.Size(462, 320);
             this.Name = "FormLogin";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -150,6 +164,7 @@
             this.groupBox1.PerformLayout();
             this.PnlEdit.ResumeLayout(false);
             this.PnlEdit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +180,6 @@
         private System.Windows.Forms.Panel PnlEdit;
         private System.Windows.Forms.Label LblEdit;
         private System.Windows.Forms.Label LblError;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

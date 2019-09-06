@@ -39,7 +39,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PnlMain.BackColor = System.Drawing.Color.Transparent;
-            this.PnlMain.BackgroundImage = global::EasyToGoCompany.Properties.Resources.bus1;
+            this.PnlMain.BackgroundImage = global::EasyToGoCompany.Properties.Resources.Hatchback_Mockup_01__3_1;
             this.PnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PnlMain.Controls.Add(this.label1);
             this.PnlMain.Location = new System.Drawing.Point(3, 3);
@@ -53,7 +53,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(183)))), ((int)(((byte)(20)))));
             this.label1.Location = new System.Drawing.Point(25, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(364, 77);

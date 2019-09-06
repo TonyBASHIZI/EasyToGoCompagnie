@@ -174,7 +174,7 @@
             // PnlEdit
             // 
             this.PnlEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.PnlEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.PnlEdit.Controls.Add(this.LblEdit);
             this.PnlEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlEdit.Location = new System.Drawing.Point(377, 150);
@@ -308,7 +308,7 @@
             // 
             // PnlAdd
             // 
-            this.PnlAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.PnlAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.PnlAdd.Controls.Add(this.LblAdd);
             this.PnlAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlAdd.Location = new System.Drawing.Point(212, 84);
@@ -431,6 +431,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.PnlMain);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
