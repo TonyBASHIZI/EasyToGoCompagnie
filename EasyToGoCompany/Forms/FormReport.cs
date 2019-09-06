@@ -8,25 +8,27 @@ namespace EasyToGoCompany.Forms
 {
     public partial class FormReport : Form
     {
+        private string company = null;
+
         public FormReport()
         {
             InitializeComponent();
         }
 
-        public FormReport(string reportName)
+        public FormReport(string company)
         {
             InitializeComponent();
+            this.company = company;
         }
 
         private void FormReport_Load(object sender, EventArgs e)
         {
             this.RptViewer.RefreshReport();
-            LoadReport("AllBus");
+            LoadBusAmount(company);
         }
 
-        private void LoadReport(string name)
+        private void LoadBusAmount(string comapgny)
         {
-            name = name.Substring(3);
             try
             {
                 if (Connection.Instance.Con.State == ConnectionState.Closed)
@@ -34,18 +36,19 @@ namespace EasyToGoCompany.Forms
 
                 using (IDbCommand cmd = Connection.Instance.Con.CreateCommand())
                 {
-                    cmd.CommandText = "SELECT ref_compagnie, ref_pos, numero, marque, place " +
-                        " FROM easy_to_go.bus WHERE `bus`.`ref_compagnie` = 'ALOHA COMMISSION'; ";
+                    cmd.CommandText = "SELECT bus.ref_compagnie, bus.numero, ref_bus, bus.etat as etat_bus, " + 
+                        "sum(montant - (commission + fraisTransact)) as montant from transaction " + 
+                        "inner join bus on transaction.ref_bus = bus.plaque where bus.ref_compagnie = '"+ comapgny +"' group by ref_bus ";
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter((MySqlCommand)cmd))
                     {
-                        using (DataSet ds = new DataSet("DsAllBus"))
+                        using (DataSet ds = new DataSet("DsBusAmount"))
                         {
-                            adapter.Fill(ds, "DsAllBus");
+                            adapter.Fill(ds, "DsBusAmount");
 
                             RptViewer.LocalReport.DataSources.Clear();
-                            RptViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DsAllBus", ds.Tables[0]));
-                            RptViewer.LocalReport.ReportEmbeddedResource = "EasyToGoCompany.Reports.RptAllBus.rdlc";
+                            RptViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DsBusAmount", ds.Tables[0]));
+                            RptViewer.LocalReport.ReportEmbeddedResource = "EasyToGoCompany.Reports.RptBusAmount.rdlc";
                             RptViewer.PrinterSettings.DefaultPageSettings.Landscape = false;
                             RptViewer.RefreshReport();
                         }                       

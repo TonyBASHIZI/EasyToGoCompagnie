@@ -43,7 +43,8 @@ namespace EasyToGoCompany.Forms.Views
         }
 
         private void UcBus_Load(object sender, EventArgs e)
-        {            
+        {
+            /// Add programmability here for etat bus
             LoadDataGridView();            
         }
 

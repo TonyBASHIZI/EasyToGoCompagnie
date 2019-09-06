@@ -82,6 +82,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsAllBus.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\DsBusAmount.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsBusAmount.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormDetailBus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +190,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports\RptAllBus.rdlc" />
+    <EmbeddedResource Include="Reports\RptBusAmount.rdlc" />
     <None Include="Datasets\DsAllBus.xsc">
       <DependentUpon>DsAllBus.xsd</DependentUpon>
     </None>
@@ -195,6 +201,17 @@
     </None>
     <None Include="Datasets\DsAllBus.xss">
       <DependentUpon>DsAllBus.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DsBusAmount.xsc">
+      <DependentUpon>DsBusAmount.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DsBusAmount.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsBusAmount.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\DsBusAmount.xss">
+      <DependentUpon>DsBusAmount.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\EasyToGoCompany.Classes.Glossaire.datasource" />

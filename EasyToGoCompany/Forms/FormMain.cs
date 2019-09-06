@@ -133,10 +133,8 @@ namespace EasyToGoCompany.Forms
                     break;
 
                 case "Report":
-                    form = new FormReport();
-                    form.Icon = this.Icon;
-                    form.ShowInTaskbar = false;
-                    form.ShowDialog(this);
+                    uc = UcReport.Instance;
+                    LoadUserControles(uc);
                     break;
 
                 case "User":

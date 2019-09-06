@@ -54,6 +54,8 @@ namespace EasyToGoCompany.Forms
                     }
                     else
                     {
+                        /// Make a sound if incorrectes credentials
+                        
                         LblError.Text = "Le nom d'utilisateur ou le mot de passe est incorrect !";
                         TxtUsername.Focus();
                     }

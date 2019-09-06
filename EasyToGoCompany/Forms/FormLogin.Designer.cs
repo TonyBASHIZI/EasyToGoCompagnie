@@ -49,9 +49,9 @@
             this.groupBox1.Controls.Add(this.TxtUsername);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(30, 94);
+            this.groupBox1.Location = new System.Drawing.Point(30, 115);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(385, 166);
+            this.groupBox1.Size = new System.Drawing.Size(385, 143);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -61,7 +61,7 @@
             this.PnlEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.PnlEdit.Controls.Add(this.LblEdit);
             this.PnlEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PnlEdit.Location = new System.Drawing.Point(93, 110);
+            this.PnlEdit.Location = new System.Drawing.Point(93, 92);
             this.PnlEdit.Name = "PnlEdit";
             this.PnlEdit.Size = new System.Drawing.Size(200, 35);
             this.PnlEdit.TabIndex = 17;
@@ -84,7 +84,7 @@
             // TxtPassword
             // 
             this.TxtPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPassword.Location = new System.Drawing.Point(161, 65);
+            this.TxtPassword.Location = new System.Drawing.Point(161, 55);
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(189, 23);
             this.TxtPassword.TabIndex = 14;
@@ -94,7 +94,7 @@
             // TxtUsername
             // 
             this.TxtUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtUsername.Location = new System.Drawing.Point(161, 35);
+            this.TxtUsername.Location = new System.Drawing.Point(161, 25);
             this.TxtUsername.Name = "TxtUsername";
             this.TxtUsername.Size = new System.Drawing.Size(189, 23);
             this.TxtUsername.TabIndex = 13;
@@ -104,7 +104,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 68);
+            this.label4.Location = new System.Drawing.Point(25, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 17);
             this.label4.TabIndex = 16;
@@ -114,7 +114,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 38);
+            this.label2.Location = new System.Drawing.Point(25, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 17);
             this.label2.TabIndex = 15;
@@ -125,7 +125,7 @@
             this.LblError.AutoSize = true;
             this.LblError.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblError.ForeColor = System.Drawing.Color.Red;
-            this.LblError.Location = new System.Drawing.Point(69, 6);
+            this.LblError.Location = new System.Drawing.Point(69, 4);
             this.LblError.Name = "LblError";
             this.LblError.Size = new System.Drawing.Size(116, 17);
             this.LblError.TabIndex = 1;
@@ -134,7 +134,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::EasyToGoCompany.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(106, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(106, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(229, 84);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
