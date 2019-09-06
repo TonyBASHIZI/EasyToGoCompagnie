@@ -90,6 +90,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsBusAmount.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\DsBusAmountDate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsBusAmountDate.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DsBusAmountHour.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsBusAmountHour.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormDetailBus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +204,8 @@
     </Compile>
     <EmbeddedResource Include="Reports\RptAllBus.rdlc" />
     <EmbeddedResource Include="Reports\RptBusAmount.rdlc" />
+    <EmbeddedResource Include="Reports\RptBusAmountDate.rdlc" />
+    <EmbeddedResource Include="Reports\RptBusAmountHour.rdlc" />
     <None Include="Datasets\DsAllBus.xsc">
       <DependentUpon>DsAllBus.xsd</DependentUpon>
     </None>
@@ -215,6 +227,28 @@
     </None>
     <None Include="Datasets\DsBusAmount.xss">
       <DependentUpon>DsBusAmount.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DsBusAmountDate.xsc">
+      <DependentUpon>DsBusAmountDate.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DsBusAmountDate.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsBusAmountDate.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\DsBusAmountDate.xss">
+      <DependentUpon>DsBusAmountDate.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DsBusAmountHour.xsc">
+      <DependentUpon>DsBusAmountHour.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DsBusAmountHour.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsBusAmountHour.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\DsBusAmountHour.xss">
+      <DependentUpon>DsBusAmountHour.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\EasyToGoCompany.Classes.Glossaire.datasource" />
@@ -263,12 +297,6 @@
     <None Include="Resources\all_bus_100.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\amount_100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\amount_bank_100.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\bus.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -291,6 +319,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Hatchback Mockup 01 %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

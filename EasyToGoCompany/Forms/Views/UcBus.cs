@@ -273,8 +273,6 @@ namespace EasyToGoCompany.Forms.Views
                         AnneeFabrication = GridView.SelectedRows[0].Cells["DgvAnneeFab"].Value.ToString(),
                     };
 
-                    /// TODO: Call function to inject bus into DetailBus form
-
                     if (bus !=  null)
                     {
                         this.Cursor = Cursors.WaitCursor;

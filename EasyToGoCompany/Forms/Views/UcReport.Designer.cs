@@ -103,7 +103,7 @@
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Size = new System.Drawing.Size(784, 104);
+            this.groupBox5.Size = new System.Drawing.Size(792, 104);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Filtre par heure : ";
@@ -114,7 +114,7 @@
             this.PnlPreviewBusHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.PnlPreviewBusHour.Controls.Add(this.LblPreviewBusHour);
             this.PnlPreviewBusHour.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PnlPreviewBusHour.Location = new System.Drawing.Point(592, 37);
+            this.PnlPreviewBusHour.Location = new System.Drawing.Point(600, 37);
             this.PnlPreviewBusHour.Margin = new System.Windows.Forms.Padding(4);
             this.PnlPreviewBusHour.Name = "PnlPreviewBusHour";
             this.PnlPreviewBusHour.Size = new System.Drawing.Size(167, 32);
@@ -221,7 +221,7 @@
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox6.Size = new System.Drawing.Size(784, 106);
+            this.groupBox6.Size = new System.Drawing.Size(792, 106);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Filtre par date";
@@ -232,7 +232,7 @@
             this.PnlPreviewBusDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.PnlPreviewBusDate.Controls.Add(this.LblPreviewBusDate);
             this.PnlPreviewBusDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PnlPreviewBusDate.Location = new System.Drawing.Point(592, 40);
+            this.PnlPreviewBusDate.Location = new System.Drawing.Point(600, 40);
             this.PnlPreviewBusDate.Margin = new System.Windows.Forms.Padding(4);
             this.PnlPreviewBusDate.Name = "PnlPreviewBusDate";
             this.PnlPreviewBusDate.Size = new System.Drawing.Size(167, 32);
@@ -311,7 +311,7 @@
             this.PnlPreviewBusAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.PnlPreviewBusAmount.Controls.Add(this.LblPreviewBusAmount);
             this.PnlPreviewBusAmount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PnlPreviewBusAmount.Location = new System.Drawing.Point(617, 24);
+            this.PnlPreviewBusAmount.Location = new System.Drawing.Point(625, 25);
             this.PnlPreviewBusAmount.Margin = new System.Windows.Forms.Padding(4);
             this.PnlPreviewBusAmount.Name = "PnlPreviewBusAmount";
             this.PnlPreviewBusAmount.Size = new System.Drawing.Size(167, 32);

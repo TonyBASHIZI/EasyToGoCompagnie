@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsBusAmountHour" targetNamespace="http://tempuri.org/DsBusAmountHour.xsd" xmlns:mstns="http://tempuri.org/DsBusAmountHour.xsd" xmlns="http://tempuri.org/DsBusAmountHour.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsBusAmountHour" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsBusAmountHour" msprop:Generator_UserDSName="DsBusAmountHour">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DsBusAmountHour" msprop:Generator_TableClassName="DsBusAmountHourDataTable" msprop:Generator_TableVarName="tableDsBusAmountHour" msprop:Generator_TablePropName="_DsBusAmountHour" msprop:Generator_RowDeletingName="DsBusAmountHourRowDeleting" msprop:Generator_RowChangingName="DsBusAmountHourRowChanging" msprop:Generator_RowEvHandlerName="DsBusAmountHourRowChangeEventHandler" msprop:Generator_RowDeletedName="DsBusAmountHourRowDeleted" msprop:Generator_UserTableName="DsBusAmountHour" msprop:Generator_RowChangedName="DsBusAmountHourRowChanged" msprop:Generator_RowEvArgName="DsBusAmountHourRowChangeEvent" msprop:Generator_RowClassName="DsBusAmountHourRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ref_compagnie" msprop:Generator_ColumnVarNameInTable="columnref_compagnie" msprop:Generator_ColumnPropNameInRow="ref_compagnie" msprop:Generator_ColumnPropNameInTable="ref_compagnieColumn" msprop:Generator_UserColumnName="ref_compagnie" type="xs:string" minOccurs="0" />
+              <xs:element name="numero" msprop:Generator_ColumnVarNameInTable="columnnumero" msprop:Generator_ColumnPropNameInRow="numero" msprop:Generator_ColumnPropNameInTable="numeroColumn" msprop:Generator_UserColumnName="numero" type="xs:string" minOccurs="0" />
+              <xs:element name="ref_bus" msprop:Generator_ColumnVarNameInTable="columnref_bus" msprop:Generator_ColumnPropNameInRow="ref_bus" msprop:Generator_ColumnPropNameInTable="ref_busColumn" msprop:Generator_UserColumnName="ref_bus" type="xs:string" minOccurs="0" />
+              <xs:element name="montant" msprop:Generator_ColumnVarNameInTable="columnmontant" msprop:Generator_ColumnPropNameInRow="montant" msprop:Generator_ColumnPropNameInTable="montantColumn" msprop:Generator_UserColumnName="montant" type="xs:string" minOccurs="0" />
+              <xs:element name="etat_bus" msprop:Generator_ColumnVarNameInTable="columnetat_bus" msprop:Generator_ColumnPropNameInRow="etat_bus" msprop:Generator_ColumnPropNameInTable="etat_busColumn" msprop:Generator_UserColumnName="etat_bus" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

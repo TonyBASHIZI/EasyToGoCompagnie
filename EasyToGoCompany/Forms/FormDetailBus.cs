@@ -29,7 +29,7 @@ namespace EasyToGoCompany.Forms
             try
             {
                 this.Text = "Détail sur le bus : " + bus.Plaque;
-                LblMontantNow.Text = Glossaire.Instance.GetAmountByBus(bus.Plaque, DteByHour.Value.ToString()).ToString();
+                LblMontantNow.Text = Glossaire.Instance.GetAmountByBus(bus.Plaque, DateTime.Now.ToString()).ToString();
             }
             catch (Exception ex)
             {
@@ -94,7 +94,7 @@ namespace EasyToGoCompany.Forms
             {
                 second++;
 
-                if (second == 5)
+                if (second == 3)
                 {
                     this.Cursor = Cursors.WaitCursor;
                     LoadBusDetail();

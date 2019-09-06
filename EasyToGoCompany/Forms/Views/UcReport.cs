@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using EasyToGoCompany.Classes.Model;
 
@@ -55,7 +48,7 @@ namespace EasyToGoCompany.Forms.Views
 
                 case "PreviewBusHour":
                     this.Cursor = Cursors.WaitCursor;
-                    form = new FormReport(User.Instance.DescriptionSession);
+                    form = new FormReport(User.Instance.DescriptionSession, DteByHour.Value.ToString(), TxtBegin.Text, TxtEnd.Text);
                     form.ShowInTaskbar = false;
                     form.ShowDialog(this);
                     this.Cursor = Cursors.Default;
@@ -63,7 +56,7 @@ namespace EasyToGoCompany.Forms.Views
 
                 case "PreviewBusDate":
                     this.Cursor = Cursors.WaitCursor;
-                    form = new FormReport(User.Instance.DescriptionSession);
+                    form = new FormReport(User.Instance.DescriptionSession, DteBegin.Value.ToString(), DteEnd.Value.ToString());
                     form.ShowInTaskbar = false;
                     form.ShowDialog(this);
                     this.Cursor = Cursors.Default;
