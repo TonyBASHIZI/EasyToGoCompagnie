@@ -82,7 +82,7 @@ namespace EasyToGoCompany.Forms.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -240,12 +240,12 @@ namespace EasyToGoCompany.Forms.Views
                 }
                 else
                 {
-                    MessageBox.Show(this, "Certains champs ne sont pas conformes.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, "Certains champs ne sont pas conformes.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show(this, "Enregistrement impossible, Veiller vérifier la conformité de données.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);              
+                MessageBox.Show(this, "Enregistrement impossible, Veiller vérifier la conformité de données.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);              
             }
             finally
             {
@@ -296,7 +296,7 @@ namespace EasyToGoCompany.Forms.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
             finally
             {
@@ -348,7 +348,7 @@ namespace EasyToGoCompany.Forms.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

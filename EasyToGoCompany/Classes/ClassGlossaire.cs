@@ -85,8 +85,10 @@ namespace EasyToGoCompany.Classes
 
                         SetParameter(cmd, "@table", DbType.String, 30, table);
 
-                        adapter = new MySqlDataAdapter((MySqlCommand)cmd);
-                        adapter.Fill(ds);
+                        using (adapter = new MySqlDataAdapter((MySqlCommand)cmd))
+                        {
+                            adapter.Fill(ds);
+                        }
                     }
                     else
                     {
@@ -94,15 +96,20 @@ namespace EasyToGoCompany.Classes
 
                         SetParameter(cmd, "@value", DbType.String, 30, value);
 
-                        adapter = new MySqlDataAdapter((MySqlCommand)cmd);
-                        adapter.Fill(ds);
+                        using (adapter = new MySqlDataAdapter((MySqlCommand)cmd))
+                        {
+                            adapter.Fill(ds);
+                        }
                     }
                 }
                 else
                 {
                     cmd.CommandText = "SELECT * FROM `easy_to_go`.`" + table + "` ORDER BY `" + orderBy + "` DESC";
-                    adapter = new MySqlDataAdapter((MySqlCommand)cmd);
-                    adapter.Fill(ds);
+
+                    using (adapter = new MySqlDataAdapter((MySqlCommand)cmd))
+                    {
+                        adapter.Fill(ds);
+                    }
                 }
 
                 return ds;
@@ -222,7 +229,30 @@ namespace EasyToGoCompany.Classes
             }
         }
 
-        public int GetBusCount(string company)
+        public DataSet LoadDashboard()
+        {
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
+            {
+                string date = Convert.ToDateTime(ConvertToOwerDateTimeFormat(DateTime.Now.ToString())).ToString("yyyy-MM-dd 00:00:00");
+                DataSet ds = new DataSet();
+
+                cmd.CommandText = "SELECT bus.ref_compagnie as COMPAGNIE, date_format(transaction.dateTransact, '%W, %M %d, %Y - %H:%i') as DATE, " +
+                    "bus.numero as NUMERO, transaction.ref_bus as PLAQUE, (montant - (commission + fraisTransact)) as MONTANT " +
+                    "FROM transaction inner join bus on transaction.ref_bus = bus.plaque " +
+                    "where bus.ref_compagnie = @company AND dateTransact >= '"+ date +"' order by DATE desc; ";
+
+                SetParameter(cmd, "@company", DbType.String, 100, User.Instance.DescriptionSession);
+
+                using (adapter = new MySqlDataAdapter((MySqlCommand)cmd))
+                {
+                    adapter.Fill(ds);
+                }
+
+                return ds;
+            }
+        }
+
+        public int GetBusCount()
         {
             int nombre = 0;
 
@@ -231,13 +261,13 @@ namespace EasyToGoCompany.Classes
                 cmd.CommandText = "SELECT count(ref_compagnie) as nombre FROM easy_to_go.bus " +
                     " WHERE easy_to_go.bus.ref_compagnie = @company group by ref_compagnie; ";
 
-                SetParameter(cmd, "@company", DbType.String, 255, company);
+                SetParameter(cmd, "@company", DbType.String, 255, User.Instance.DescriptionSession);
 
                 using (IDataReader dr = cmd.ExecuteReader())
                 {
                     if (dr.Read())
                     {
-                        nombre = Convert.ToInt32(dr["nombre"]);
+                        nombre = dr["nombre"] == DBNull.Value ? 0 : Convert.ToInt32(dr["nombre"]);
                     }
                 }
             }
@@ -245,22 +275,45 @@ namespace EasyToGoCompany.Classes
             return nombre;
         }
 
-        public int GetAmount(string company)
+        public int GetInactiveBusCount()
         {
             int nombre = 0;
 
             using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
-                cmd.CommandText = "SELECT `compte`.`ref_compagnie`,`compte`.`solde` as montant" +
-                    " FROM `easy_to_go`.`compte` WHERE `compte`.`designation` = @company AND `compte`.`etat` = 'ACTIF'; ";
+                cmd.CommandText = "SELECT count(ref_compagnie) as nombre FROM easy_to_go.bus " +
+                    " WHERE bus.ref_compagnie = @company AND bus.etat = 'INACTIF' group by ref_compagnie; ";
 
-                SetParameter(cmd, "@company", DbType.String, 255, company);
+                SetParameter(cmd, "@company", DbType.String, 255, User.Instance.DescriptionSession);
 
                 using (IDataReader dr = cmd.ExecuteReader())
                 {
                     if (dr.Read())
                     {
-                        nombre = Convert.ToInt32(dr["montant"]);
+                        nombre = dr["nombre"] == DBNull.Value ? 0 : Convert.ToInt32(dr["nombre"]);
+                    }
+                }
+            }
+
+            return nombre;
+        }
+
+        public int GetAmount()
+        {
+            int nombre = 0;
+
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
+            {
+                cmd.CommandText = "SELECT `compte`.`solde` as montant" +
+                    " FROM `easy_to_go`.`compte` WHERE `compte`.`designation` = @company AND `compte`.`etat` = 'ACTIF'; ";
+
+                SetParameter(cmd, "@company", DbType.String, 255, User.Instance.DescriptionSession);
+
+                using (IDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        nombre = dr["nombre"] == DBNull.Value ? 0 : Convert.ToInt32(dr["montant"]);
                     }
                 }
             }
@@ -304,6 +357,8 @@ namespace EasyToGoCompany.Classes
 
             return nombre;
         }
+
+
 
         public int GetAmountBusByHour(string plaque, string date, string begin, string end)
         {

@@ -35,14 +35,14 @@ namespace EasyToGoCompany.Forms
             {
                 PnlMenu.Enabled = true;
                 LblConnection.Text = "Déconnexion";
-                StatusLabel.Text = User.Instance.DescriptionSession;               
+                LblStatus.Text = User.Instance.DescriptionSession;               
             }
             else
             {
                 uc = UcAccueil.Instance;
                 LoadUserControles(uc);
                 PnlMenu.Enabled = false;
-                StatusLabel.Text = "Invité";
+                LblStatus.Text = "Invité";
                 LblConnection.Text = "Connexion";
             }
         }

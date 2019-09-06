@@ -56,6 +56,8 @@
             this.LblDashboard = new System.Windows.Forms.Label();
             this.PnlWhite1 = new System.Windows.Forms.Panel();
             this.PnlMain = new System.Windows.Forms.Panel();
+            this.LblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusStrip.SuspendLayout();
             this.PnlHeader.SuspendLayout();
             this.PnlConnection.SuspendLayout();
             this.PnlMenu.SuspendLayout();
@@ -75,6 +77,8 @@
             // StatusStrip
             // 
             this.StatusStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(64)))), ((int)(((byte)(2)))));
+            this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LblStatus});
             this.StatusStrip.Location = new System.Drawing.Point(0, 589);
             this.StatusStrip.Name = "StatusStrip";
             this.StatusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
@@ -410,6 +414,13 @@
             this.PnlMain.Size = new System.Drawing.Size(899, 499);
             this.PnlMain.TabIndex = 3;
             // 
+            // LblStatus
+            // 
+            this.LblStatus.ForeColor = System.Drawing.Color.White;
+            this.LblStatus.Name = "LblStatus";
+            this.LblStatus.Size = new System.Drawing.Size(36, 17);
+            this.LblStatus.Text = "Invité";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -426,6 +437,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Easy to go";
             this.Load += new System.EventHandler(this.FormMain_Load);
+            this.StatusStrip.ResumeLayout(false);
+            this.StatusStrip.PerformLayout();
             this.PnlHeader.ResumeLayout(false);
             this.PnlHeader.PerformLayout();
             this.PnlConnection.ResumeLayout(false);
@@ -482,5 +495,6 @@
         private System.Windows.Forms.Label LblUser;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripStatusLabel LblStatus;
     }
 }
