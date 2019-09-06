@@ -127,7 +127,7 @@ namespace EasyToGoCompany.Forms.Views
                 }
                 finally
                 {
-                    if (MessageBox.Show(this, "L'application doit rédemarrer pour appliqué toutes les modifications.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                    if (MessageBox.Show(this, "L'application doit rédemarrer pour appliqué toutes les modifications.", "Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
                         Application.Restart();
                     }

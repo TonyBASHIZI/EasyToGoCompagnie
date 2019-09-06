@@ -10,6 +10,8 @@ namespace EasyToGoCompany.Classes.Model
 
         public string Numero { get; set; }
 
+        public string Etat { get; set; }
+
         public string Plaque { get; set; }
 
         public string Marque { get; set; }

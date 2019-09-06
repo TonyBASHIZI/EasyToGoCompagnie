@@ -418,8 +418,8 @@ namespace EasyToGoCompany.Classes
                 if (bus.Id == 0)
                 {
                     cmd.CommandText = "INSERT INTO `easy_to_go`.`bus` (`ref_compagnie`,`ref_pos`,`numero`,`plaque`,`marque`," +
-                        "`place`,`annee_fabrication`,`kilometrage`,`mise_en_circulation`) VALUES " +
-                        "(@ref_compagnie, @ref_pos, @numero, @plaque, @marque, @place, @fabrication, @km, @circulation); ";
+                        "`place`,`annee_fabrication`,`kilometrage`,`mise_en_circulation`, `etat`) VALUES " +
+                        "(@ref_compagnie, @ref_pos, @numero, @plaque, @marque, @place, @fabrication, @km, @circulation, @etat); ";
 
                     SetParameter(cmd, "@ref_compagnie", DbType.String, 255, bus.RefCompagnie);
                     SetParameter(cmd, "@ref_pos", DbType.String, 255, bus.RefNumeroPos);
@@ -430,12 +430,14 @@ namespace EasyToGoCompany.Classes
                     SetParameter(cmd, "@fabrication", DbType.String, 100, bus.AnneeFabrication);
                     SetParameter(cmd, "@km", DbType.String, 100, bus.Kilometrage);
                     SetParameter(cmd, "@circulation", DbType.DateTime, 100, bus.MiseEnCirculation);
+                    SetParameter(cmd, "@etat", DbType.String, 100, bus.Etat);
                 }
                 else
                 {
                     cmd.CommandText = "UPDATE `easy_to_go`.`bus` SET `ref_compagnie` = @ref_compagnie, `numero` = @numero," +
                         "`plaque` = @plaque, `ref_pos` = @ref_pos, `marque` = @marque, `place` = @place, " +
-                        "`annee_fabrication` = @fabrication, `kilometrage` = @km, `mise_en_circulation` = @circulation WHERE `id` = @id; ";
+                        "`annee_fabrication` = @fabrication, `kilometrage` = @km, `mise_en_circulation` = @circulation, " +
+                        "`etat` = @etat WHERE `id` = @id; ";
 
                     SetParameter(cmd, "@id", DbType.Int32, 10, bus.Id);
                     SetParameter(cmd, "@ref_compagnie", DbType.String, 255, bus.RefCompagnie);
@@ -447,6 +449,8 @@ namespace EasyToGoCompany.Classes
                     SetParameter(cmd, "@fabrication", DbType.String, 100, bus.AnneeFabrication);
                     SetParameter(cmd, "@km", DbType.String, 100, bus.Kilometrage);
                     SetParameter(cmd, "@circulation", DbType.DateTime, 100, bus.MiseEnCirculation);
+                    SetParameter(cmd, "@etat", DbType.String, 100, bus.Etat);
+
                 }
 
                 cmd.ExecuteNonQuery();

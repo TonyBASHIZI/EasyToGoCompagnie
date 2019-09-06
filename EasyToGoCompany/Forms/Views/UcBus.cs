@@ -24,7 +24,6 @@ namespace EasyToGoCompany.Forms.Views
         public UcBus()
         {
             InitializeComponent();
-            TxtCompagnie.Text = User.Instance.DescriptionSession;
         }
 
         public static UcBus Instance
@@ -44,7 +43,6 @@ namespace EasyToGoCompany.Forms.Views
 
         private void UcBus_Load(object sender, EventArgs e)
         {
-            /// Add programmability here for etat bus
             LoadDataGridView();            
         }
 
@@ -89,6 +87,7 @@ namespace EasyToGoCompany.Forms.Views
         private void ClearFields()
         {
             id = 0;
+            CmbEtatBus.Text = "ACTIF";
             TxtMarque.Text = "";
             TxtNumero.Text = "";
             TxtNumPos.Text = "";
@@ -121,10 +120,11 @@ namespace EasyToGoCompany.Forms.Views
             if (control == null && all == true)
             {
                 if (!string.IsNullOrEmpty(TxtNumero.Text) && !string.IsNullOrEmpty(TxtNumPos.Text)
-                    && !string.IsNullOrEmpty(TxtCompagnie.Text) && !string.IsNullOrEmpty(TxtPlace.Text)
+                    && !string.IsNullOrEmpty(TxtPlace.Text)
                     && !string.IsNullOrEmpty(TxtMarque.Text) && !string.IsNullOrEmpty(TxtPlaque.Text)
                     && !string.IsNullOrEmpty(TxtAnneeFabrication.Text) && !string.IsNullOrEmpty(TxtKilometrage.Text)
-                    && IsNumeric(TxtPlace.Text) && IsNumeric(TxtAnneeFabrication.Text) && IsNumeric(TxtKilometrage.Text))
+                    && IsNumeric(TxtPlace.Text) && IsNumeric(TxtAnneeFabrication.Text)
+                    && IsNumeric(TxtKilometrage.Text) && !string.IsNullOrEmpty(CmbEtatBus.Text))
                 {
                     return true;
                 }
@@ -168,10 +168,6 @@ namespace EasyToGoCompany.Forms.Views
                     IsAuthentic(TxtNumero);
                     break;
 
-                case "Compagnie":
-                    IsAuthentic(TxtCompagnie);
-                    break;
-
                 case "NumPos":
                     IsAuthentic(TxtNumPos);
                     break;
@@ -211,13 +207,14 @@ namespace EasyToGoCompany.Forms.Views
                         Id = id,
                         Numero = TxtNumero.Text.Trim(),
                         RefNumeroPos = TxtNumPos.Text.Trim(),
-                        RefCompagnie = TxtCompagnie.Text.Trim(),
+                        RefCompagnie = User.Instance.DescriptionSession,
                         Place = Convert.ToInt32(TxtPlace.Text.Trim()),
                         Marque = TxtMarque.Text.Trim(),
                         Plaque = TxtPlaque.Text.Trim(),
                         AnneeFabrication = TxtAnneeFabrication.Text.Trim(),
                         Kilometrage = TxtKilometrage.Text.Trim(),
-                        MiseEnCirculation = DteMiseCirculation.Value
+                        MiseEnCirculation = DteMiseCirculation.Value,
+                        Etat = CmbEtatBus.Text
                     };
 
 
@@ -271,6 +268,7 @@ namespace EasyToGoCompany.Forms.Views
                         MiseEnCirculation = Convert.ToDateTime(GridView.SelectedRows[0].Cells["DgvMiseEnCirculation"].Value.ToString()),
                         Kilometrage = GridView.SelectedRows[0].Cells["DgvKilometrage"].Value.ToString(),
                         AnneeFabrication = GridView.SelectedRows[0].Cells["DgvAnneeFab"].Value.ToString(),
+                        Etat = GridView.SelectedRows[0].Cells["GvcEtat"].Value.ToString()
                     };
 
                     if (bus !=  null)
@@ -322,10 +320,10 @@ namespace EasyToGoCompany.Forms.Views
                         MiseEnCirculation = Convert.ToDateTime(GridView.SelectedRows[0].Cells["DgvMiseEnCirculation"].Value.ToString()),
                         Kilometrage = GridView.SelectedRows[0].Cells["DgvKilometrage"].Value.ToString(),
                         AnneeFabrication = GridView.SelectedRows[0].Cells["DgvAnneeFab"].Value.ToString(),
+                        Etat = GridView.SelectedRows[0].Cells["GvcEtat"].Value.ToString()
                     };
 
                     id = bus.Id;
-                    TxtCompagnie.Text = bus.RefCompagnie;
                     TxtMarque.Text = bus.Marque;
                     TxtNumero.Text = bus.Numero;
                     TxtNumPos.Text = bus.RefNumeroPos;
@@ -334,6 +332,7 @@ namespace EasyToGoCompany.Forms.Views
                     TxtAnneeFabrication.Text = bus.AnneeFabrication;
                     TxtKilometrage.Text = bus.Kilometrage;
                     DteMiseCirculation.Text = bus.MiseEnCirculation.ToString();
+                    CmbEtatBus.Text = bus.Etat;
 
                     LblMontant.Text = Glossaire.Instance.GetAmountByBus(bus.Plaque.ToString()).ToString();
 

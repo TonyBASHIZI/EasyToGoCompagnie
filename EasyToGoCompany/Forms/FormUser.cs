@@ -118,9 +118,13 @@ namespace EasyToGoCompany.Forms
 
                             if (Glossaire.Instance.UpdateUser(user))
                             {
-                                if (MessageBox.Show(this, "L'application doit rédemarrer pour appliquer les modifications.", "Rédemarrage requis", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                                if (MessageBox.Show(this, "L'application doit rédemarrer pour appliquer les modifications.", "Rédemarrage requis", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                                 {
                                     Application.Restart();
+                                }
+                                else
+                                {
+                                    //
                                 }
                             }
                         }
