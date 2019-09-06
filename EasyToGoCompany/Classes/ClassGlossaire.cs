@@ -305,17 +305,17 @@ namespace EasyToGoCompany.Classes
             return nombre;
         }
 
-        public int GetAmountBusByHour(string plaque, string date, string begin, string fin)
+        public int GetAmountBusByHour(string plaque, string date, string begin, string end)
         {
             int nombre = 0;
             date = Convert.ToDateTime(ConvertToOwerDateTimeFormat(date)).ToString("yyyy-MM-dd ");
             begin = date + begin.Insert(begin.LastIndexOf(":"), ":00");
-            fin = date + fin.Insert(fin.LastIndexOf(":"), ":00");
+            end = date + end.Insert(end.LastIndexOf(":"), ":00");
 
             using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
                 cmd.CommandText = "SELECT sum(montant - (commission + fraisTransact)) as montant FROM transaction " +
-                    "WHERE (ref_bus = '" + plaque + "') AND (dateTransact BETWEEN '" + begin + "' AND '" + fin + "'); ";
+                    "WHERE (ref_bus = '" + plaque + "') AND (dateTransact BETWEEN '" + begin + "' AND '" + end + "'); ";
 
                 using (IDataReader dr = cmd.ExecuteReader())
                 {

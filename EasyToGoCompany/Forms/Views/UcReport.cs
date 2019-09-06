@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EasyToGoCompany.Classes.Model;
 
 namespace EasyToGoCompany.Forms.Views
 {
     public partial class UcReport : UserControl
     {
-        private static UcReport _instance;
+        private Form form = null;
+        private static UcReport _instance;       
 
         public UcReport()
         {
@@ -40,19 +42,35 @@ namespace EasyToGoCompany.Forms.Views
         }
 
         private void ControleReport_Click(object sender, EventArgs e)
-        {
+        {           
             switch (((Control)sender).Name.Substring(3))
             {
                 case "PreviewBusAmount":
+                    this.Cursor = Cursors.WaitCursor;
+                    form = new FormReport(User.Instance.DescriptionSession);
+                    form.ShowInTaskbar = false;
+                    form.ShowDialog(this);
+                    this.Cursor = Cursors.Default;
                     break;
 
                 case "PreviewBusHour":
+                    this.Cursor = Cursors.WaitCursor;
+                    form = new FormReport(User.Instance.DescriptionSession);
+                    form.ShowInTaskbar = false;
+                    form.ShowDialog(this);
+                    this.Cursor = Cursors.Default;
                     break;
 
                 case "PreviewBusDate":
+                    this.Cursor = Cursors.WaitCursor;
+                    form = new FormReport(User.Instance.DescriptionSession);
+                    form.ShowInTaskbar = false;
+                    form.ShowDialog(this);
+                    this.Cursor = Cursors.Default;
                     break;
 
                 default:
+                    this.Cursor = Cursors.Default;
                     break;
             }
         }

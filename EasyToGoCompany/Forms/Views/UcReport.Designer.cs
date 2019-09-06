@@ -81,7 +81,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.groupBox5);
-            this.groupBox4.Location = new System.Drawing.Point(30, 107);
+            this.groupBox4.Location = new System.Drawing.Point(30, 127);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
@@ -201,7 +201,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.groupBox6);
-            this.groupBox3.Location = new System.Drawing.Point(30, 262);
+            this.groupBox3.Location = new System.Drawing.Point(30, 282);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
@@ -224,7 +224,7 @@
             this.groupBox6.Size = new System.Drawing.Size(784, 106);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Par interval de date";
+            this.groupBox6.Text = "Filtre par date";
             // 
             // PnlPreviewBusDate
             // 
@@ -296,7 +296,7 @@
             // 
             this.groupBox2.Controls.Add(this.PnlPreviewBusAmount);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(30, 16);
+            this.groupBox2.Location = new System.Drawing.Point(30, 36);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);

@@ -12,13 +12,14 @@
   <xs:element name="DsBusAmount" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsBusAmount" msprop:Generator_UserDSName="DsBusAmount">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DsBusAmount" msprop:Generator_TableClassName="DsBusAmountDataTable" msprop:Generator_TableVarName="tableDsBusAmount" msprop:Generator_TablePropName="_DsBusAmount" msprop:Generator_RowDeletingName="DsBusAmountRowDeleting" msprop:Generator_RowChangingName="DsBusAmountRowChanging" msprop:Generator_RowEvHandlerName="DsBusAmountRowChangeEventHandler" msprop:Generator_RowDeletedName="DsBusAmountRowDeleted" msprop:Generator_UserTableName="DsBusAmount" msprop:Generator_RowChangedName="DsBusAmountRowChanged" msprop:Generator_RowEvArgName="DsBusAmountRowChangeEvent" msprop:Generator_RowClassName="DsBusAmountRow">
+        <xs:element name="DsBusAmount" msprop:Generator_TableClassName="DsBusAmountDataTable" msprop:Generator_TableVarName="tableDsBusAmount" msprop:Generator_RowChangedName="DsBusAmountRowChanged" msprop:Generator_TablePropName="_DsBusAmount" msprop:Generator_RowDeletingName="DsBusAmountRowDeleting" msprop:Generator_RowChangingName="DsBusAmountRowChanging" msprop:Generator_RowEvHandlerName="DsBusAmountRowChangeEventHandler" msprop:Generator_RowDeletedName="DsBusAmountRowDeleted" msprop:Generator_RowClassName="DsBusAmountRow" msprop:Generator_UserTableName="DsBusAmount" msprop:Generator_RowEvArgName="DsBusAmountRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ref_compagnie" msprop:Generator_ColumnVarNameInTable="columnref_compagnie" msprop:Generator_ColumnPropNameInRow="ref_compagnie" msprop:Generator_ColumnPropNameInTable="ref_compagnieColumn" msprop:Generator_UserColumnName="ref_compagnie" type="xs:string" minOccurs="0" />
               <xs:element name="numero" msprop:Generator_ColumnVarNameInTable="columnnumero" msprop:Generator_ColumnPropNameInRow="numero" msprop:Generator_ColumnPropNameInTable="numeroColumn" msprop:Generator_UserColumnName="numero" type="xs:string" minOccurs="0" />
               <xs:element name="ref_bus" msprop:Generator_ColumnVarNameInTable="columnref_bus" msprop:Generator_ColumnPropNameInRow="ref_bus" msprop:Generator_ColumnPropNameInTable="ref_busColumn" msprop:Generator_UserColumnName="ref_bus" type="xs:string" minOccurs="0" />
               <xs:element name="montant" msprop:Generator_ColumnVarNameInTable="columnmontant" msprop:Generator_ColumnPropNameInRow="montant" msprop:Generator_ColumnPropNameInTable="montantColumn" msprop:Generator_UserColumnName="montant" type="xs:string" minOccurs="0" />
+              <xs:element name="etat_bus" msprop:Generator_ColumnVarNameInTable="columnetat_bus" msprop:Generator_ColumnPropNameInRow="etat_bus" msprop:Generator_ColumnPropNameInTable="etat_busColumn" msprop:Generator_UserColumnName="etat_bus" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

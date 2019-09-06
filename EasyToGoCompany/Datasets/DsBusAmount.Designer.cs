@@ -287,6 +287,8 @@ namespace EasyToGoCompany.Datasets {
             
             private global::System.Data.DataColumn columnmontant;
             
+            private global::System.Data.DataColumn columnetat_bus;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DsBusAmountDataTable() {
@@ -354,6 +356,14 @@ namespace EasyToGoCompany.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn etat_busColumn {
+                get {
+                    return this.columnetat_bus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +399,14 @@ namespace EasyToGoCompany.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DsBusAmountRow AddDsBusAmountRow(string ref_compagnie, string numero, string ref_bus, string montant) {
+            public DsBusAmountRow AddDsBusAmountRow(string ref_compagnie, string numero, string ref_bus, string montant, string etat_bus) {
                 DsBusAmountRow rowDsBusAmountRow = ((DsBusAmountRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ref_compagnie,
                         numero,
                         ref_bus,
-                        montant};
+                        montant,
+                        etat_bus};
                 rowDsBusAmountRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDsBusAmountRow);
                 return rowDsBusAmountRow;
@@ -422,6 +433,7 @@ namespace EasyToGoCompany.Datasets {
                 this.columnnumero = base.Columns["numero"];
                 this.columnref_bus = base.Columns["ref_bus"];
                 this.columnmontant = base.Columns["montant"];
+                this.columnetat_bus = base.Columns["etat_bus"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -435,6 +447,8 @@ namespace EasyToGoCompany.Datasets {
                 base.Columns.Add(this.columnref_bus);
                 this.columnmontant = new global::System.Data.DataColumn("montant", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmontant);
+                this.columnetat_bus = new global::System.Data.DataColumn("etat_bus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnetat_bus);
                 this.ExtendedProperties.Add("Generator_TablePropName", "_DsBusAmount");
                 this.ExtendedProperties.Add("Generator_UserTableName", "DsBusAmount");
             }
@@ -643,6 +657,22 @@ namespace EasyToGoCompany.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string etat_bus {
+                get {
+                    try {
+                        return ((string)(this[this.tableDsBusAmount.etat_busColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'etat_bus\' in table \'DsBusAmount\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDsBusAmount.etat_busColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isref_compagnieNull() {
                 return this.IsNull(this.tableDsBusAmount.ref_compagnieColumn);
             }
@@ -687,6 +717,18 @@ namespace EasyToGoCompany.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetmontantNull() {
                 this[this.tableDsBusAmount.montantColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isetat_busNull() {
+                return this.IsNull(this.tableDsBusAmount.etat_busColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setetat_busNull() {
+                this[this.tableDsBusAmount.etat_busColumn] = global::System.Convert.DBNull;
             }
         }
         
