@@ -324,7 +324,7 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value> FC</Value>
+                              <Value>  FC</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
                               </Style>
@@ -558,10 +558,10 @@
     <Height>3.79292cm</Height>
     <Style />
   </Body>
-  <Width>24.34167cm</Width>
+  <Width>21.14021cm</Width>
   <Page>
     <PageHeader>
-      <Height>2.36953cm</Height>
+      <Height>2cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -569,7 +569,7 @@
           <Source>Embedded</Source>
           <Value>logo</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.42583in</Top>
+          <Top>0.24528in</Top>
           <Left>0.39458in</Left>
           <Height>0.5in</Height>
           <Width>1.39708in</Width>
@@ -598,7 +598,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>1.75162cm</Top>
+          <Top>1.25773cm</Top>
           <Left>13.28653cm</Left>
           <Height>0.6cm</Height>
           <Width>4.71487cm</Width>
@@ -635,7 +635,7 @@
     <LeftMargin>1cm</LeftMargin>
     <RightMargin>1cm</RightMargin>
     <TopMargin>0.5cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>1.27cm</ColumnSpacing>
     <Style />
   </Page>

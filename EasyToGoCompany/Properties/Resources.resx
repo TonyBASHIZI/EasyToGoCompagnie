@@ -154,9 +154,6 @@
   <data name="user_credentials" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_credentials.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bus.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="hint" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

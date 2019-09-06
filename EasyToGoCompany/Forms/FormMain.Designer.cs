@@ -31,6 +31,8 @@
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.PnlHeader = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.PnlConnection = new System.Windows.Forms.Panel();
             this.LblConnection = new System.Windows.Forms.Label();
             this.PnlMenu = new System.Windows.Forms.Panel();
@@ -54,9 +56,6 @@
             this.LblDashboard = new System.Windows.Forms.Label();
             this.PnlWhite1 = new System.Windows.Forms.Panel();
             this.PnlMain = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.StatusStrip.SuspendLayout();
             this.PnlHeader.SuspendLayout();
             this.PnlConnection.SuspendLayout();
             this.PnlMenu.SuspendLayout();
@@ -76,8 +75,6 @@
             // StatusStrip
             // 
             this.StatusStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(64)))), ((int)(((byte)(2)))));
-            this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusLabel});
             this.StatusStrip.Location = new System.Drawing.Point(0, 589);
             this.StatusStrip.Name = "StatusStrip";
             this.StatusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
@@ -105,6 +102,28 @@
             this.PnlHeader.Size = new System.Drawing.Size(1084, 90);
             this.PnlHeader.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(80)))), ((int)(((byte)(1)))));
+            this.label2.Location = new System.Drawing.Point(21, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 24);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Aloha Dynamics";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(183)))), ((int)(((byte)(20)))));
+            this.label1.Location = new System.Drawing.Point(17, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(237, 44);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "EASY TO GO";
+            // 
             // PnlConnection
             // 
             this.PnlConnection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -112,7 +131,7 @@
             this.PnlConnection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.PnlConnection.Controls.Add(this.LblConnection);
             this.PnlConnection.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PnlConnection.Location = new System.Drawing.Point(923, 50);
+            this.PnlConnection.Location = new System.Drawing.Point(916, 50);
             this.PnlConnection.Name = "PnlConnection";
             this.PnlConnection.Size = new System.Drawing.Size(149, 29);
             this.PnlConnection.TabIndex = 2;
@@ -391,28 +410,6 @@
             this.PnlMain.Size = new System.Drawing.Size(899, 499);
             this.PnlMain.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(183)))), ((int)(((byte)(20)))));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 44);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Easy to go";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(80)))), ((int)(((byte)(1)))));
-            this.label2.Location = new System.Drawing.Point(16, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 24);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Aloha Dynamics";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -429,8 +426,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Easy to go";
             this.Load += new System.EventHandler(this.FormMain_Load);
-            this.StatusStrip.ResumeLayout(false);
-            this.StatusStrip.PerformLayout();
             this.PnlHeader.ResumeLayout(false);
             this.PnlHeader.PerformLayout();
             this.PnlConnection.ResumeLayout(false);

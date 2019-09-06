@@ -34,7 +34,7 @@ namespace EasyToGoCompany.Forms
             if (User.Instance.IsAuthenticate())
             {
                 PnlMenu.Enabled = true;
-                LblConnection.Text = "Déconnection";
+                LblConnection.Text = "Déconnexion";
                 StatusLabel.Text = User.Instance.DescriptionSession;               
             }
             else
