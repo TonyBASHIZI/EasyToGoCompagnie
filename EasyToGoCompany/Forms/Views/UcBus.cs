@@ -17,6 +17,7 @@ namespace EasyToGoCompany.Forms.Views
     {
         private static UcBus _instance;
 
+        private Form form = null;
         private Bus bus = null;
         private int id = 0;
 
@@ -273,6 +274,18 @@ namespace EasyToGoCompany.Forms.Views
 
                     /// TODO: Call function to inject bus into DetailBus form
 
+                    if (bus !=  null)
+                    {
+                        this.Cursor = Cursors.WaitCursor;
+                        form = new FormDetailBus(bus);                        
+                        form.ShowDialog(this);
+
+                        if (form.Visible)
+                        {
+                            this.Cursor = Cursors.Default;
+                        }
+                    }
+
                     BtnSave.Enabled = true;
                     BtnDelete.Enabled = true;
                 }
@@ -285,6 +298,10 @@ namespace EasyToGoCompany.Forms.Views
             catch (Exception ex)
             {
                 MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } 
+            finally
+            {
+                this.Cursor = Cursors.Default;
             }
         }
 
@@ -319,7 +336,7 @@ namespace EasyToGoCompany.Forms.Views
                     TxtKilometrage.Text = bus.Kilometrage;
                     DteMiseCirculation.Text = bus.MiseEnCirculation.ToString();
 
-                    LblMontant.Text = Glossaire.Instance.GetAmoutByBus(bus.Plaque.ToString()).ToString();
+                    LblMontant.Text = Glossaire.Instance.GetAmountByBus(bus.Plaque.ToString()).ToString();
 
                     BtnSave.Enabled = true;
                     BtnDelete.Enabled = true;
@@ -333,6 +350,10 @@ namespace EasyToGoCompany.Forms.Views
             catch (Exception ex)
             {
                 MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
             }
         }
 

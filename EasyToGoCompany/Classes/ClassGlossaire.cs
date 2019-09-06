@@ -268,7 +268,7 @@ namespace EasyToGoCompany.Classes
             return nombre;
         }
 
-        public int GetAmoutByBus(string plaque, string date = null)
+        public int GetAmountByBus(string plaque, string date = null)
         {
             int nombre = 0;
 
@@ -288,8 +288,9 @@ namespace EasyToGoCompany.Classes
                 }
                 else
                 {
+                    date = ConvertToOwerDateTimeFormat(date);
                     cmd.CommandText = "SELECT sum(montant - (commission + fraisTransact)) as montant FROM transaction " +
-                        " WHERE ref_bus = '" + plaque + "' AND dateTransact < '"+ date +"'; ";
+                        " WHERE ref_bus = '" + plaque + "' AND dateTransact >= '"+ date +"'; ";
 
                     using (IDataReader dr = cmd.ExecuteReader())
                     {
@@ -304,13 +305,40 @@ namespace EasyToGoCompany.Classes
             return nombre;
         }
 
-        public int GetAboutBus(string plaque)
+        public int GetAmountBusByHour(string plaque, string date, string begin, string fin)
         {
             int nombre = 0;
+            date = Convert.ToDateTime(ConvertToOwerDateTimeFormat(date)).ToString("yyyy-MM-dd ");
+            begin = date + begin.Insert(begin.LastIndexOf(":"), ":00");
+            fin = date + fin.Insert(fin.LastIndexOf(":"), ":00");
 
             using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
-                cmd.CommandText = "SELECT sum(montant - (commission + fraisTransact)) as montant FROM transaction WHERE ref_bus = '" + plaque + "'; ";
+                cmd.CommandText = "SELECT sum(montant - (commission + fraisTransact)) as montant FROM transaction " +
+                    "WHERE (ref_bus = '" + plaque + "') AND (dateTransact BETWEEN '" + begin + "' AND '" + fin + "'); ";
+
+                using (IDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        nombre = dr["montant"] == DBNull.Value ? 0 : Convert.ToInt32(dr["montant"]);
+                    }
+                }
+            }
+
+            return nombre;
+        }
+
+        public int GetAmountBusByDay(string plaque, string begin, string end)
+        {
+            int nombre = 0;
+            begin = Convert.ToDateTime(ConvertToOwerDateTimeFormat(begin)).ToString("yyyy-MM-dd 00:00:00");
+            end = Convert.ToDateTime(ConvertToOwerDateTimeFormat(end)).ToString("yyyy-MM-dd 00:00:00");
+
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
+            {
+                cmd.CommandText = "SELECT sum(montant - (commission + fraisTransact)) as montant FROM transaction " +
+                    "WHERE (ref_bus = '" + plaque + "') AND (dateTransact BETWEEN '" + begin + "' AND '" + end + "'); ";
 
                 using (IDataReader dr = cmd.ExecuteReader())
                 {
@@ -510,24 +538,118 @@ namespace EasyToGoCompany.Classes
 
         #endregion
 
-        #region Report
+        #region Annexe
 
-        public DataSet ReportAllBus()
+        public string ConvertToOwerDateTimeFormat(string field)
         {
-            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
+            string date = null;
+
+            if (field.Contains("Jan") || field.Contains("Feb") || field.Contains("Mar") ||
+                field.Contains("Apr") || field.Contains("Jun") || field.Contains("Jul") ||
+                field.Contains("Aug") || field.Contains("Sep") || field.Contains("Oct") ||
+                field.Contains("Nov") || field.Contains("Dec"))
             {
-                DataSet ds = new DataSet("DsAllBus");
+                if (field.Contains("Jan"))
+                {
+                    int index = field.IndexOf("Jan");
+                    field = field.Remove(index, 3);
+                    date = field.Insert(index, "01");
+                    date = Convert.ToDateTime(date).ToString("yyyy-MM-dd HH:mm:ss");
+                }
 
-                cmd.CommandText = "SELECT ref_compagnie, ref_pos, numero, marque, place " + 
-                    " FROM easy_to_go.bus WHERE `bus`.`ref_compagnie` = @company; ";
+                if (field.Contains("Feb"))
+                {
+                    int index = field.IndexOf("Feb");
+                    field = field.Remove(index, 3);
+                    date = field.Insert(index, "02");
+                    date = Convert.ToDateTime(date).ToString("yyyy-MM-dd HH:mm:ss");
+                }
 
-                SetParameter(cmd, "@compaeny", DbType.String, 255, User.Instance.DescriptionSession);
+                if (field.Contains("Mar"))
+                {
+                    int index = field.IndexOf("Mar");
+                    field = field.Remove(index, 3);
+                    date = field.Insert(index, "03");
+                    date = Convert.ToDateTime(date).ToString("yyyy-MM-dd HH:mm:ss");
+                }
 
-                adapter = new MySqlDataAdapter((MySqlCommand)cmd);
-                adapter.Fill(ds, "Bus");
+                if (field.Contains("Apr"))
+                {
+                    int index = field.IndexOf("Apr");
+                    field = field.Remove(index, 3);
+                    date = field.Insert(index, "04");
+                    date = Convert.ToDateTime(date).ToString("yyyy-MM-dd HH:mm:ss");
+                }
 
-                return ds;
+                if (field.Contains("May"))
+                {
+                    int index = field.IndexOf("May");
+                    field = field.Remove(index, 3);
+                    date = field.Insert(index, "05");
+                    date = Convert.ToDateTime(date).ToString("yyyy-MM-dd HH:mm:ss");
+                }
+
+                if (field.Contains("Jun"))
+                {
+                    int index = field.IndexOf("Jun");
+                    field = field.Remove(index, 3);
+                    date = field.Insert(index, "06");
+                }
+
+                if (field.Contains("Jul"))
+                {
+                    int index = field.IndexOf("Jul");
+                    field = field.Remove(index, 3);
+                    date = field.Insert(index, "07");
+                    date = Convert.ToDateTime(date).ToString("yyyy-MM-dd HH:mm:ss");
+                }
+
+                if (field.Contains("Aug"))
+                {
+                    int index = field.IndexOf("Aug");
+                    field = field.Remove(index, 3);
+                    date = field.Insert(index, "08");
+                    date = Convert.ToDateTime(date).ToString("yyyy-MM-dd HH:mm:ss");
+                }
+
+                if (field.Contains("Sep"))
+                {
+                    int index = field.IndexOf("Sep");
+                    field = field.Remove(index, 3);
+                    date = field.Insert(index, "09");
+                    date = Convert.ToDateTime(date).ToString("yyyy-MM-dd HH:mm:ss");
+                }
+
+                if (field.Contains("Oct"))
+                {
+                    int index = field.IndexOf("Oct");
+                    field = field.Remove(index, 3);
+                    date = field.Insert(index, "10");
+                    date = Convert.ToDateTime(date).ToString("yyyy-MM-dd HH:mm:ss");
+                }
+
+                if (field.Contains("Nov"))
+                {
+                    int index = field.IndexOf("Nov");
+                    field = field.Remove(index, 3);
+                    date = field.Insert(index, "11");
+                    date = Convert.ToDateTime(date).ToString("yyyy-MM-dd HH:mm:ss");
+                }
+
+                if (field.Contains("Dec"))
+                {
+                    int index = field.IndexOf("Dec");
+                    field = field.Remove(index, 3);
+                    date = field.Insert(index, "12");
+                    date = Convert.ToDateTime(date).ToString("yyyy-MM-dd HH:mm:ss");
+                }
             }
+            else
+            {
+                date = field;
+            }
+
+            return date;
         }
 
         #endregion

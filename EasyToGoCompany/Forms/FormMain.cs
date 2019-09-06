@@ -1,5 +1,4 @@
-﻿using EasyToGoCompany.Classes;
-using EasyToGoCompany.Classes.Config;
+﻿using EasyToGoCompany.Classes.Config;
 using EasyToGoCompany.Classes.Model;
 using EasyToGoCompany.Forms.Views;
 using System;

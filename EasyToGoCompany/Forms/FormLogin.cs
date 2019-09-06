@@ -22,6 +22,21 @@ namespace EasyToGoCompany.Forms
 
         private void LoginRequest_Click(object sender, EventArgs e)
         {
+            LoginProcess();
+        }
+
+        private bool IsAuthentic()
+        {
+            if (!string.IsNullOrEmpty(TxtPassword.Text) && !string.IsNullOrEmpty(TxtUsername.Text))
+            {
+                return true;
+            }
+            else
+                return false;
+        } 
+        
+        private void LoginProcess()
+        {
             try
             {
                 this.Cursor = Cursors.WaitCursor;
@@ -30,7 +45,7 @@ namespace EasyToGoCompany.Forms
                 {
                     User.Instance = Glossaire.Instance.LoginRequest(TxtUsername.Text, TxtPassword.Text);
 
-                    if (User.Instance.DescriptionSession != null && User.Instance.UsernameSession != null 
+                    if (User.Instance.DescriptionSession != null && User.Instance.UsernameSession != null
                         && User.Instance.NiveauSession != 0 && User.Instance.PasswordSession != null)
                     {
                         User.Instance.UpdateFormMain();
@@ -55,14 +70,12 @@ namespace EasyToGoCompany.Forms
             }
         }
 
-        private bool IsAuthentic()
+        private void FormLogin_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!string.IsNullOrEmpty(TxtPassword.Text) && !string.IsNullOrEmpty(TxtUsername.Text))
+            if (e.KeyCode == Keys.Enter)
             {
-                return true;
+                LoginProcess();
             }
-            else
-                return false;
-        }       
+        }
     }
 }
