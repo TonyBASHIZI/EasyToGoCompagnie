@@ -1,6 +1,7 @@
 ﻿using EasyToGoCompany.Classes;
 using EasyToGoCompany.Classes.Model;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace EasyToGoCompany.Forms
@@ -78,6 +79,16 @@ namespace EasyToGoCompany.Forms
             {
                 LoginProcess();
             }
+        }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            LblConnection.ForeColor = Color.FromArgb(85, 183, 20);
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            LblConnection.ForeColor = Color.FromArgb(14, 23, 22);
         }
     }
 }

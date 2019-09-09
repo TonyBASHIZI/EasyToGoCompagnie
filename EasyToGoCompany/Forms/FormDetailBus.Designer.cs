@@ -154,7 +154,8 @@
             // PnlValidateDate
             // 
             this.PnlValidateDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlValidateDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            this.PnlValidateDate.BackColor = System.Drawing.Color.White;
+            this.PnlValidateDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlValidateDate.Controls.Add(this.LblValidateDate);
             this.PnlValidateDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlValidateDate.Location = new System.Drawing.Point(344, 34);
@@ -162,6 +163,8 @@
             this.PnlValidateDate.Size = new System.Drawing.Size(100, 38);
             this.PnlValidateDate.TabIndex = 7;
             this.PnlValidateDate.Click += new System.EventHandler(this.ControleFilter_Click);
+            this.PnlValidateDate.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.PnlValidateDate.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // LblValidateDate
             // 
@@ -176,6 +179,8 @@
             this.LblValidateDate.TabIndex = 0;
             this.LblValidateDate.Text = "Valider";
             this.LblValidateDate.Click += new System.EventHandler(this.ControleFilter_Click);
+            this.LblValidateDate.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.LblValidateDate.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // label7
             // 
@@ -277,7 +282,8 @@
             // PnlValidateHour
             // 
             this.PnlValidateHour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlValidateHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            this.PnlValidateHour.BackColor = System.Drawing.Color.White;
+            this.PnlValidateHour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlValidateHour.Controls.Add(this.LblValidateHour);
             this.PnlValidateHour.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlValidateHour.Location = new System.Drawing.Point(344, 32);
@@ -285,6 +291,8 @@
             this.PnlValidateHour.Size = new System.Drawing.Size(100, 38);
             this.PnlValidateHour.TabIndex = 4;
             this.PnlValidateHour.Click += new System.EventHandler(this.ControleFilter_Click);
+            this.PnlValidateHour.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.PnlValidateHour.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // LblValidateHour
             // 
@@ -299,6 +307,8 @@
             this.LblValidateHour.TabIndex = 0;
             this.LblValidateHour.Text = "Valider";
             this.LblValidateHour.Click += new System.EventHandler(this.ControleFilter_Click);
+            this.LblValidateHour.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.LblValidateHour.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // label3
             // 

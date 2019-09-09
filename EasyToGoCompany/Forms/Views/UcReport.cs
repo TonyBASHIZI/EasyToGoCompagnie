@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using EasyToGoCompany.Classes.Model;
+using System.Drawing;
 
 namespace EasyToGoCompany.Forms.Views
 {
@@ -64,6 +65,48 @@ namespace EasyToGoCompany.Forms.Views
 
                 default:
                     this.Cursor = Cursors.Default;
+                    break;
+            }
+        }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            switch (((Control)sender).Name.Substring(3))
+            {
+                case "PreviewBusAmount":
+                    LblPreviewBusAmount.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                case "PreviewBusHour":
+                    LblPreviewBusHour.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                case "PreviewBusDate":
+                    LblPreviewBusDate.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            switch (((Control)sender).Name.Substring(3))
+            {
+                case "PreviewBusAmount":
+                    LblPreviewBusAmount.ForeColor = Color.FromArgb(14, 23, 22);
+                    break;
+
+                case "PreviewBusHour":
+                    LblPreviewBusHour.ForeColor = Color.FromArgb(14, 23, 22);
+                    break;
+
+                case "PreviewBusDate":
+                    LblPreviewBusDate.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                default:
                     break;
             }
         }

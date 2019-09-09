@@ -1,6 +1,7 @@
 ﻿using EasyToGoCompany.Classes;
 using EasyToGoCompany.Classes.Model;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace EasyToGoCompany.Forms
@@ -118,7 +119,7 @@ namespace EasyToGoCompany.Forms
 
                             if (Glossaire.Instance.UpdateUser(user))
                             {
-                                if (MessageBox.Show(this, "L'application doit rédemarrer pour appliquer les modifications.", "Rédemarrage requis", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                                if (MessageBox.Show(this, "Information enregistrée avec succès !\nL'application doit rédemarrer pour appliquer les modifications.", "Rédemarrage requis", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                                 {
                                     Application.Restart();
                                 }
@@ -145,6 +146,40 @@ namespace EasyToGoCompany.Forms
             {
                 MessageBox.Show(this, "Une erreur s'est produite lors de l'opération", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine("Cette erreur s'est produite lors de l'opération : " + ex);
+            }
+        }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            switch (((Control)sender).Name.Substring(3))
+            {
+                case "Edit":
+                    LblEdit.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                case "Cancel":
+                    LblCancel.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            switch (((Control)sender).Name.Substring(3))
+            {
+                case "Edit":
+                    LblEdit.ForeColor = Color.FromArgb(14, 23, 22);
+                    break;
+
+                case "Cancel":
+                    LblCancel.ForeColor = Color.FromArgb(14, 23, 22);
+                    break;
+
+                default:
+                    break;
             }
         }
     }

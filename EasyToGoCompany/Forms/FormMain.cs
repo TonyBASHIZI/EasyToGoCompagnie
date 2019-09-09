@@ -2,6 +2,7 @@
 using EasyToGoCompany.Classes.Model;
 using EasyToGoCompany.Forms.Views;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace EasyToGoCompany.Forms
@@ -169,6 +170,82 @@ namespace EasyToGoCompany.Forms
                 UcBus.Instance = null;
                 UcProfil.Instance = null;
                 this.RefreshOnlineStatus();
+            }
+        }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            LblConnection.ForeColor = Color.FromArgb(85, 183, 20);
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            LblConnection.ForeColor = Color.FromArgb(14, 23, 22);
+        }
+
+        private void Menu_MouseEnter(object sender, EventArgs e)
+        {
+            switch (((Control)sender).Name.Substring(3))
+            {
+                case "Dashboard":
+                    LblDashboard.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                case "Profil":
+                    LblProfil.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                case "Bus":
+                    LblBus.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                case "Parametre":
+                    LblParametre.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                case "Report":
+                    LblReport.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                case "User":
+                    LblUser.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void Menu_MouseLeave(object sender, EventArgs e)
+        {
+            switch (((Control)sender).Name.Substring(3))
+            {
+                case "Dashboard":
+                    LblDashboard.ForeColor = Color.FromArgb(14, 23, 22);
+                    break;
+
+                case "Profil":
+                    LblProfil.ForeColor = Color.FromArgb(14, 23, 22);
+                    break;
+
+                case "Bus":
+                    LblBus.ForeColor = Color.FromArgb(14, 23, 22);
+                    break;
+
+                case "Parametre":
+                    LblParametre.ForeColor = Color.FromArgb(14, 23, 22);
+                    break;
+
+                case "Report":
+                    LblReport.ForeColor = Color.FromArgb(14, 23, 22);
+                    break;
+
+                case "User":
+                    LblUser.ForeColor = Color.FromArgb(14, 23, 22);
+                    break;
+
+                default:
+                    break;
             }
         }
     }

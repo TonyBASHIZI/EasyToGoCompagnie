@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.PnlEdit = new System.Windows.Forms.Panel();
-            this.LblEdit = new System.Windows.Forms.Label();
             this.TxtPassword = new System.Windows.Forms.TextBox();
+            this.PnlConnection = new System.Windows.Forms.Panel();
+            this.LblConnection = new System.Windows.Forms.Label();
             this.TxtUsername = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LblError = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            this.PnlEdit.SuspendLayout();
+            this.PnlConnection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.PnlEdit);
             this.groupBox1.Controls.Add(this.TxtPassword);
+            this.groupBox1.Controls.Add(this.PnlConnection);
             this.groupBox1.Controls.Add(this.TxtUsername);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
@@ -55,49 +55,54 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // PnlEdit
-            // 
-            this.PnlEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
-            this.PnlEdit.Controls.Add(this.LblEdit);
-            this.PnlEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PnlEdit.Location = new System.Drawing.Point(93, 92);
-            this.PnlEdit.Name = "PnlEdit";
-            this.PnlEdit.Size = new System.Drawing.Size(200, 35);
-            this.PnlEdit.TabIndex = 17;
-            this.PnlEdit.Click += new System.EventHandler(this.LoginRequest_Click);
-            // 
-            // LblEdit
-            // 
-            this.LblEdit.AutoSize = true;
-            this.LblEdit.BackColor = System.Drawing.Color.Transparent;
-            this.LblEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblEdit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(23)))), ((int)(((byte)(22)))));
-            this.LblEdit.Location = new System.Drawing.Point(56, 8);
-            this.LblEdit.Name = "LblEdit";
-            this.LblEdit.Size = new System.Drawing.Size(89, 18);
-            this.LblEdit.TabIndex = 0;
-            this.LblEdit.Text = "Connexion";
-            this.LblEdit.Click += new System.EventHandler(this.LoginRequest_Click);
-            // 
             // TxtPassword
             // 
-            this.TxtPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPassword.Location = new System.Drawing.Point(161, 55);
+            this.TxtPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPassword.Location = new System.Drawing.Point(160, 55);
             this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(189, 23);
-            this.TxtPassword.TabIndex = 14;
+            this.TxtPassword.Size = new System.Drawing.Size(195, 22);
+            this.TxtPassword.TabIndex = 6;
             this.TxtPassword.UseSystemPasswordChar = true;
             this.TxtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormLogin_KeyDown);
             // 
+            // PnlConnection
+            // 
+            this.PnlConnection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PnlConnection.BackColor = System.Drawing.Color.White;
+            this.PnlConnection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlConnection.Controls.Add(this.LblConnection);
+            this.PnlConnection.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PnlConnection.Location = new System.Drawing.Point(93, 92);
+            this.PnlConnection.Name = "PnlConnection";
+            this.PnlConnection.Size = new System.Drawing.Size(200, 35);
+            this.PnlConnection.TabIndex = 17;
+            this.PnlConnection.Click += new System.EventHandler(this.LoginRequest_Click);
+            this.PnlConnection.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.PnlConnection.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            // 
+            // LblConnection
+            // 
+            this.LblConnection.AutoSize = true;
+            this.LblConnection.BackColor = System.Drawing.Color.Transparent;
+            this.LblConnection.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LblConnection.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblConnection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(23)))), ((int)(((byte)(22)))));
+            this.LblConnection.Location = new System.Drawing.Point(55, 7);
+            this.LblConnection.Name = "LblConnection";
+            this.LblConnection.Size = new System.Drawing.Size(89, 18);
+            this.LblConnection.TabIndex = 0;
+            this.LblConnection.Text = "Connexion";
+            this.LblConnection.Click += new System.EventHandler(this.LoginRequest_Click);
+            this.LblConnection.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.LblConnection.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            // 
             // TxtUsername
             // 
-            this.TxtUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtUsername.Location = new System.Drawing.Point(161, 25);
+            this.TxtUsername.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtUsername.Location = new System.Drawing.Point(160, 25);
             this.TxtUsername.Name = "TxtUsername";
-            this.TxtUsername.Size = new System.Drawing.Size(189, 23);
-            this.TxtUsername.TabIndex = 13;
+            this.TxtUsername.Size = new System.Drawing.Size(195, 22);
+            this.TxtUsername.TabIndex = 5;
             this.TxtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormLogin_KeyDown);
             // 
             // label4
@@ -125,7 +130,7 @@
             this.LblError.AutoSize = true;
             this.LblError.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblError.ForeColor = System.Drawing.Color.Red;
-            this.LblError.Location = new System.Drawing.Point(69, 4);
+            this.LblError.Location = new System.Drawing.Point(69, 6);
             this.LblError.Name = "LblError";
             this.LblError.Size = new System.Drawing.Size(116, 17);
             this.LblError.TabIndex = 1;
@@ -162,8 +167,8 @@
             this.Text = "Authentification";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.PnlEdit.ResumeLayout(false);
-            this.PnlEdit.PerformLayout();
+            this.PnlConnection.ResumeLayout(false);
+            this.PnlConnection.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -173,13 +178,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox TxtPassword;
-        private System.Windows.Forms.TextBox TxtUsername;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel PnlEdit;
-        private System.Windows.Forms.Label LblEdit;
+        private System.Windows.Forms.Panel PnlConnection;
+        private System.Windows.Forms.Label LblConnection;
         private System.Windows.Forms.Label LblError;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox TxtPassword;
+        private System.Windows.Forms.TextBox TxtUsername;
     }
 }

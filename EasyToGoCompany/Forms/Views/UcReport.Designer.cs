@@ -111,7 +111,8 @@
             // PnlPreviewBusHour
             // 
             this.PnlPreviewBusHour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlPreviewBusHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            this.PnlPreviewBusHour.BackColor = System.Drawing.Color.White;
+            this.PnlPreviewBusHour.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlPreviewBusHour.Controls.Add(this.LblPreviewBusHour);
             this.PnlPreviewBusHour.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlPreviewBusHour.Location = new System.Drawing.Point(600, 37);
@@ -120,6 +121,8 @@
             this.PnlPreviewBusHour.Size = new System.Drawing.Size(167, 32);
             this.PnlPreviewBusHour.TabIndex = 24;
             this.PnlPreviewBusHour.Click += new System.EventHandler(this.ControleReport_Click);
+            this.PnlPreviewBusHour.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.PnlPreviewBusHour.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // LblPreviewBusHour
             // 
@@ -128,13 +131,15 @@
             this.LblPreviewBusHour.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblPreviewBusHour.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPreviewBusHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(23)))), ((int)(((byte)(22)))));
-            this.LblPreviewBusHour.Location = new System.Drawing.Point(47, 7);
+            this.LblPreviewBusHour.Location = new System.Drawing.Point(47, 6);
             this.LblPreviewBusHour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblPreviewBusHour.Name = "LblPreviewBusHour";
             this.LblPreviewBusHour.Size = new System.Drawing.Size(77, 18);
             this.LblPreviewBusHour.TabIndex = 0;
             this.LblPreviewBusHour.Text = "Visualiser";
             this.LblPreviewBusHour.Click += new System.EventHandler(this.ControleReport_Click);
+            this.LblPreviewBusHour.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.LblPreviewBusHour.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // label6
             // 
@@ -229,7 +234,8 @@
             // PnlPreviewBusDate
             // 
             this.PnlPreviewBusDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlPreviewBusDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            this.PnlPreviewBusDate.BackColor = System.Drawing.Color.White;
+            this.PnlPreviewBusDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlPreviewBusDate.Controls.Add(this.LblPreviewBusDate);
             this.PnlPreviewBusDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlPreviewBusDate.Location = new System.Drawing.Point(600, 40);
@@ -238,6 +244,8 @@
             this.PnlPreviewBusDate.Size = new System.Drawing.Size(167, 32);
             this.PnlPreviewBusDate.TabIndex = 28;
             this.PnlPreviewBusDate.Click += new System.EventHandler(this.ControleReport_Click);
+            this.PnlPreviewBusDate.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.PnlPreviewBusDate.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // LblPreviewBusDate
             // 
@@ -246,13 +254,15 @@
             this.LblPreviewBusDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblPreviewBusDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPreviewBusDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(23)))), ((int)(((byte)(22)))));
-            this.LblPreviewBusDate.Location = new System.Drawing.Point(47, 6);
+            this.LblPreviewBusDate.Location = new System.Drawing.Point(47, 5);
             this.LblPreviewBusDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblPreviewBusDate.Name = "LblPreviewBusDate";
             this.LblPreviewBusDate.Size = new System.Drawing.Size(77, 18);
             this.LblPreviewBusDate.TabIndex = 0;
             this.LblPreviewBusDate.Text = "Visualiser";
             this.LblPreviewBusDate.Click += new System.EventHandler(this.ControleReport_Click);
+            this.LblPreviewBusDate.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.LblPreviewBusDate.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // label5
             // 
@@ -308,7 +318,8 @@
             // PnlPreviewBusAmount
             // 
             this.PnlPreviewBusAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlPreviewBusAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            this.PnlPreviewBusAmount.BackColor = System.Drawing.Color.White;
+            this.PnlPreviewBusAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlPreviewBusAmount.Controls.Add(this.LblPreviewBusAmount);
             this.PnlPreviewBusAmount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlPreviewBusAmount.Location = new System.Drawing.Point(625, 25);
@@ -317,6 +328,8 @@
             this.PnlPreviewBusAmount.Size = new System.Drawing.Size(167, 32);
             this.PnlPreviewBusAmount.TabIndex = 5;
             this.PnlPreviewBusAmount.Click += new System.EventHandler(this.ControleReport_Click);
+            this.PnlPreviewBusAmount.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.PnlPreviewBusAmount.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // LblPreviewBusAmount
             // 
@@ -325,13 +338,15 @@
             this.LblPreviewBusAmount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblPreviewBusAmount.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPreviewBusAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(23)))), ((int)(((byte)(22)))));
-            this.LblPreviewBusAmount.Location = new System.Drawing.Point(47, 7);
+            this.LblPreviewBusAmount.Location = new System.Drawing.Point(47, 6);
             this.LblPreviewBusAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblPreviewBusAmount.Name = "LblPreviewBusAmount";
             this.LblPreviewBusAmount.Size = new System.Drawing.Size(77, 18);
             this.LblPreviewBusAmount.TabIndex = 0;
             this.LblPreviewBusAmount.Text = "Visualiser";
             this.LblPreviewBusAmount.Click += new System.EventHandler(this.ControleReport_Click);
+            this.LblPreviewBusAmount.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.LblPreviewBusAmount.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // label1
             // 
@@ -348,6 +363,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);

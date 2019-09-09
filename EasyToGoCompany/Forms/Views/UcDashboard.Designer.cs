@@ -60,8 +60,8 @@
             this.PieChartBus = new LiveCharts.WinForms.PieChart();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.TimerDashboard = new System.Windows.Forms.Timer(this.components);
             this.DgvDashboard = new System.Windows.Forms.DataGridView();
+            this.TimerDashboard = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -82,11 +82,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(898, 184);
+            this.groupBox1.Size = new System.Drawing.Size(898, 165);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -102,7 +103,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(892, 165);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(892, 146);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -117,7 +118,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(440, 159);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(440, 140);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // panel2
@@ -130,7 +131,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(223, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(214, 153);
+            this.panel2.Size = new System.Drawing.Size(214, 134);
             this.panel2.TabIndex = 4;
             // 
             // LblMontantBank
@@ -161,7 +162,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(11, 117);
+            this.label8.Location = new System.Drawing.Point(11, 98);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(153, 18);
             this.label8.TabIndex = 2;
@@ -188,7 +189,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(214, 153);
+            this.panel3.Size = new System.Drawing.Size(214, 134);
             this.panel3.TabIndex = 3;
             // 
             // LblMontantVirtuel
@@ -219,7 +220,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(11, 117);
+            this.label3.Location = new System.Drawing.Point(11, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 18);
             this.label3.TabIndex = 2;
@@ -248,7 +249,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(440, 159);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(440, 140);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // panel1
@@ -261,7 +262,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(223, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(214, 153);
+            this.panel1.Size = new System.Drawing.Size(214, 134);
             this.panel1.TabIndex = 4;
             // 
             // LblFakeBus
@@ -292,7 +293,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(15, 117);
+            this.label7.Location = new System.Drawing.Point(15, 98);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 18);
             this.label7.TabIndex = 2;
@@ -319,7 +320,7 @@
             this.PnlBus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlBus.Location = new System.Drawing.Point(3, 3);
             this.PnlBus.Name = "PnlBus";
-            this.PnlBus.Size = new System.Drawing.Size(214, 153);
+            this.PnlBus.Size = new System.Drawing.Size(214, 134);
             this.PnlBus.TabIndex = 0;
             // 
             // LblAllBus
@@ -350,7 +351,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 117);
+            this.label6.Location = new System.Drawing.Point(12, 98);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 18);
             this.label6.TabIndex = 1;
@@ -371,9 +372,9 @@
             // 
             this.panel4.Controls.Add(this.PieChartBus);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(580, 184);
+            this.panel4.Location = new System.Drawing.Point(580, 165);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(318, 314);
+            this.panel4.Size = new System.Drawing.Size(318, 333);
             this.panel4.TabIndex = 1;
             // 
             // PieChartBus
@@ -381,7 +382,7 @@
             this.PieChartBus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PieChartBus.Location = new System.Drawing.Point(0, 0);
             this.PieChartBus.Name = "PieChartBus";
-            this.PieChartBus.Size = new System.Drawing.Size(318, 314);
+            this.PieChartBus.Size = new System.Drawing.Size(318, 333);
             this.PieChartBus.TabIndex = 8;
             this.PieChartBus.Text = "pieChart1";
             // 
@@ -389,9 +390,9 @@
             // 
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 184);
+            this.panel5.Location = new System.Drawing.Point(0, 165);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(580, 314);
+            this.panel5.Size = new System.Drawing.Size(580, 333);
             this.panel5.TabIndex = 2;
             // 
             // panel6
@@ -402,13 +403,8 @@
             this.panel6.Controls.Add(this.DgvDashboard);
             this.panel6.Location = new System.Drawing.Point(9, 6);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(565, 298);
+            this.panel6.Size = new System.Drawing.Size(565, 317);
             this.panel6.TabIndex = 1;
-            // 
-            // TimerDashboard
-            // 
-            this.TimerDashboard.Interval = 1000;
-            this.TimerDashboard.Tick += new System.EventHandler(this.TimerDashboard_Tick);
             // 
             // DgvDashboard
             // 
@@ -442,8 +438,13 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.DgvDashboard.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvDashboard.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvDashboard.Size = new System.Drawing.Size(565, 298);
+            this.DgvDashboard.Size = new System.Drawing.Size(565, 317);
             this.DgvDashboard.TabIndex = 1;
+            // 
+            // TimerDashboard
+            // 
+            this.TimerDashboard.Interval = 1000;
+            this.TimerDashboard.Tick += new System.EventHandler(this.TimerDashboard_Tick);
             // 
             // UcDashboard
             // 

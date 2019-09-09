@@ -36,7 +36,20 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.GridView = new System.Windows.Forms.DataGridView();
+            this.DgvId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvNumPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvCompagnie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvMarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvPlaque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvAnneeFab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvKilometrage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvMiseEnCirculation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GvcEtat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CmbEtatBus = new System.Windows.Forms.ComboBox();
             this.TxtKilometrage = new System.Windows.Forms.MaskedTextBox();
             this.TxtAnneeFabrication = new System.Windows.Forms.MaskedTextBox();
             this.TxtPlace = new System.Windows.Forms.MaskedTextBox();
@@ -80,7 +93,22 @@
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator34 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.LblMontant = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -89,34 +117,6 @@
             this.selectionnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator34 = new System.Windows.Forms.ToolStripSeparator();
-            this.DgvId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvNumPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvCompagnie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvMarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvPlaque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvAnneeFab = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvKilometrage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvMiseEnCirculation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GvcEtat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CmbEtatBus = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
@@ -129,20 +129,24 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.BindNavig);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(0, 4);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(898, 498);
+            this.groupBox1.Size = new System.Drawing.Size(898, 495);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.GridView);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -150,7 +154,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Size = new System.Drawing.Size(892, 311);
+            this.groupBox3.Size = new System.Drawing.Size(892, 308);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Liste de bus";
@@ -199,13 +203,99 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
             this.GridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridView.Size = new System.Drawing.Size(886, 287);
+            this.GridView.Size = new System.Drawing.Size(886, 284);
             this.GridView.TabIndex = 0;
             this.GridView.Click += new System.EventHandler(this.GridView_Click);
             this.GridView.DoubleClick += new System.EventHandler(this.GridView_DoubleClick);
             // 
+            // DgvId
+            // 
+            this.DgvId.DataPropertyName = "id";
+            this.DgvId.HeaderText = "ID";
+            this.DgvId.Name = "DgvId";
+            this.DgvId.ReadOnly = true;
+            this.DgvId.Visible = false;
+            // 
+            // DgvNumero
+            // 
+            this.DgvNumero.DataPropertyName = "numero";
+            this.DgvNumero.HeaderText = "Numéro";
+            this.DgvNumero.Name = "DgvNumero";
+            this.DgvNumero.ReadOnly = true;
+            // 
+            // DgvNumPos
+            // 
+            this.DgvNumPos.DataPropertyName = "ref_pos";
+            this.DgvNumPos.HeaderText = "Numéro POS";
+            this.DgvNumPos.Name = "DgvNumPos";
+            this.DgvNumPos.ReadOnly = true;
+            // 
+            // DgvCompagnie
+            // 
+            this.DgvCompagnie.DataPropertyName = "ref_compagnie";
+            this.DgvCompagnie.HeaderText = "Compagnie";
+            this.DgvCompagnie.Name = "DgvCompagnie";
+            this.DgvCompagnie.ReadOnly = true;
+            this.DgvCompagnie.Visible = false;
+            // 
+            // DgvMarque
+            // 
+            this.DgvMarque.DataPropertyName = "marque";
+            this.DgvMarque.HeaderText = "Marque";
+            this.DgvMarque.Name = "DgvMarque";
+            this.DgvMarque.ReadOnly = true;
+            // 
+            // DgvPlaque
+            // 
+            this.DgvPlaque.DataPropertyName = "plaque";
+            this.DgvPlaque.HeaderText = "Plaque";
+            this.DgvPlaque.Name = "DgvPlaque";
+            this.DgvPlaque.ReadOnly = true;
+            // 
+            // DgvPlace
+            // 
+            this.DgvPlace.DataPropertyName = "place";
+            this.DgvPlace.HeaderText = "Place";
+            this.DgvPlace.Name = "DgvPlace";
+            this.DgvPlace.ReadOnly = true;
+            // 
+            // DgvCreatedAt
+            // 
+            this.DgvCreatedAt.DataPropertyName = "created_at";
+            this.DgvCreatedAt.HeaderText = "Création";
+            this.DgvCreatedAt.Name = "DgvCreatedAt";
+            this.DgvCreatedAt.ReadOnly = true;
+            this.DgvCreatedAt.Visible = false;
+            // 
+            // DgvAnneeFab
+            // 
+            this.DgvAnneeFab.DataPropertyName = "annee_fabrication";
+            this.DgvAnneeFab.HeaderText = "Année de fabrication";
+            this.DgvAnneeFab.Name = "DgvAnneeFab";
+            // 
+            // DgvKilometrage
+            // 
+            this.DgvKilometrage.DataPropertyName = "kilometrage";
+            this.DgvKilometrage.HeaderText = "Kilométrage";
+            this.DgvKilometrage.Name = "DgvKilometrage";
+            // 
+            // DgvMiseEnCirculation
+            // 
+            this.DgvMiseEnCirculation.DataPropertyName = "mise_en_circulation";
+            this.DgvMiseEnCirculation.HeaderText = "Date de mise en circulation";
+            this.DgvMiseEnCirculation.Name = "DgvMiseEnCirculation";
+            this.DgvMiseEnCirculation.Visible = false;
+            // 
+            // GvcEtat
+            // 
+            this.GvcEtat.DataPropertyName = "etat";
+            this.GvcEtat.HeaderText = "Etat";
+            this.GvcEtat.Name = "GvcEtat";
+            this.GvcEtat.ReadOnly = true;
+            // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.CmbEtatBus);
             this.groupBox2.Controls.Add(this.TxtKilometrage);
             this.groupBox2.Controls.Add(this.TxtAnneeFabrication);
@@ -236,6 +326,18 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information sur les bus";
+            // 
+            // CmbEtatBus
+            // 
+            this.CmbEtatBus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbEtatBus.FormattingEnabled = true;
+            this.CmbEtatBus.Items.AddRange(new object[] {
+            "ACTIF",
+            "INACTIF"});
+            this.CmbEtatBus.Location = new System.Drawing.Point(110, 93);
+            this.CmbEtatBus.Name = "CmbEtatBus";
+            this.CmbEtatBus.Size = new System.Drawing.Size(160, 25);
+            this.CmbEtatBus.TabIndex = 32;
             // 
             // TxtKilometrage
             // 
@@ -400,6 +502,7 @@
             // BindNavig
             // 
             this.BindNavig.AddNewItem = null;
+            this.BindNavig.BackColor = System.Drawing.Color.White;
             this.BindNavig.CountItem = null;
             this.BindNavig.CountItemFormat = "sur {0}";
             this.BindNavig.DeleteItem = null;
@@ -593,10 +696,85 @@
             this.toolStripSeparator18.Name = "toolStripSeparator18";
             this.toolStripSeparator18.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripSeparator25
+            // 
+            this.toolStripSeparator25.Name = "toolStripSeparator25";
+            this.toolStripSeparator25.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator24
+            // 
+            this.toolStripSeparator24.Name = "toolStripSeparator24";
+            this.toolStripSeparator24.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator23
+            // 
+            this.toolStripSeparator23.Name = "toolStripSeparator23";
+            this.toolStripSeparator23.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator22
+            // 
+            this.toolStripSeparator22.Name = "toolStripSeparator22";
+            this.toolStripSeparator22.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator21
+            // 
+            this.toolStripSeparator21.Name = "toolStripSeparator21";
+            this.toolStripSeparator21.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator20
+            // 
+            this.toolStripSeparator20.Name = "toolStripSeparator20";
+            this.toolStripSeparator20.Size = new System.Drawing.Size(6, 25);
+            // 
             // toolStripSeparator19
             // 
             this.toolStripSeparator19.Name = "toolStripSeparator19";
             this.toolStripSeparator19.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator26
+            // 
+            this.toolStripSeparator26.Name = "toolStripSeparator26";
+            this.toolStripSeparator26.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator27
+            // 
+            this.toolStripSeparator27.Name = "toolStripSeparator27";
+            this.toolStripSeparator27.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator28
+            // 
+            this.toolStripSeparator28.Name = "toolStripSeparator28";
+            this.toolStripSeparator28.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator29
+            // 
+            this.toolStripSeparator29.Name = "toolStripSeparator29";
+            this.toolStripSeparator29.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator32
+            // 
+            this.toolStripSeparator32.Name = "toolStripSeparator32";
+            this.toolStripSeparator32.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator33
+            // 
+            this.toolStripSeparator33.Name = "toolStripSeparator33";
+            this.toolStripSeparator33.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator34
+            // 
+            this.toolStripSeparator34.Name = "toolStripSeparator34";
+            this.toolStripSeparator34.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator30
+            // 
+            this.toolStripSeparator30.Name = "toolStripSeparator30";
+            this.toolStripSeparator30.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator31
+            // 
+            this.toolStripSeparator31.Name = "toolStripSeparator31";
+            this.toolStripSeparator31.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripLabel1
             // 
@@ -648,178 +826,6 @@
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
             this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
-            // 
-            // toolStripSeparator20
-            // 
-            this.toolStripSeparator20.Name = "toolStripSeparator20";
-            this.toolStripSeparator20.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator21
-            // 
-            this.toolStripSeparator21.Name = "toolStripSeparator21";
-            this.toolStripSeparator21.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator22
-            // 
-            this.toolStripSeparator22.Name = "toolStripSeparator22";
-            this.toolStripSeparator22.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator23
-            // 
-            this.toolStripSeparator23.Name = "toolStripSeparator23";
-            this.toolStripSeparator23.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator24
-            // 
-            this.toolStripSeparator24.Name = "toolStripSeparator24";
-            this.toolStripSeparator24.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator25
-            // 
-            this.toolStripSeparator25.Name = "toolStripSeparator25";
-            this.toolStripSeparator25.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator26
-            // 
-            this.toolStripSeparator26.Name = "toolStripSeparator26";
-            this.toolStripSeparator26.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator27
-            // 
-            this.toolStripSeparator27.Name = "toolStripSeparator27";
-            this.toolStripSeparator27.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator28
-            // 
-            this.toolStripSeparator28.Name = "toolStripSeparator28";
-            this.toolStripSeparator28.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator29
-            // 
-            this.toolStripSeparator29.Name = "toolStripSeparator29";
-            this.toolStripSeparator29.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator30
-            // 
-            this.toolStripSeparator30.Name = "toolStripSeparator30";
-            this.toolStripSeparator30.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator31
-            // 
-            this.toolStripSeparator31.Name = "toolStripSeparator31";
-            this.toolStripSeparator31.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator32
-            // 
-            this.toolStripSeparator32.Name = "toolStripSeparator32";
-            this.toolStripSeparator32.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator33
-            // 
-            this.toolStripSeparator33.Name = "toolStripSeparator33";
-            this.toolStripSeparator33.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator34
-            // 
-            this.toolStripSeparator34.Name = "toolStripSeparator34";
-            this.toolStripSeparator34.Size = new System.Drawing.Size(6, 25);
-            // 
-            // DgvId
-            // 
-            this.DgvId.DataPropertyName = "id";
-            this.DgvId.HeaderText = "ID";
-            this.DgvId.Name = "DgvId";
-            this.DgvId.ReadOnly = true;
-            this.DgvId.Visible = false;
-            // 
-            // DgvNumero
-            // 
-            this.DgvNumero.DataPropertyName = "numero";
-            this.DgvNumero.HeaderText = "Numéro";
-            this.DgvNumero.Name = "DgvNumero";
-            this.DgvNumero.ReadOnly = true;
-            // 
-            // DgvNumPos
-            // 
-            this.DgvNumPos.DataPropertyName = "ref_pos";
-            this.DgvNumPos.HeaderText = "Numéro POS";
-            this.DgvNumPos.Name = "DgvNumPos";
-            this.DgvNumPos.ReadOnly = true;
-            // 
-            // DgvCompagnie
-            // 
-            this.DgvCompagnie.DataPropertyName = "ref_compagnie";
-            this.DgvCompagnie.HeaderText = "Compagnie";
-            this.DgvCompagnie.Name = "DgvCompagnie";
-            this.DgvCompagnie.ReadOnly = true;
-            this.DgvCompagnie.Visible = false;
-            // 
-            // DgvMarque
-            // 
-            this.DgvMarque.DataPropertyName = "marque";
-            this.DgvMarque.HeaderText = "Marque";
-            this.DgvMarque.Name = "DgvMarque";
-            this.DgvMarque.ReadOnly = true;
-            // 
-            // DgvPlaque
-            // 
-            this.DgvPlaque.DataPropertyName = "plaque";
-            this.DgvPlaque.HeaderText = "Plaque";
-            this.DgvPlaque.Name = "DgvPlaque";
-            this.DgvPlaque.ReadOnly = true;
-            // 
-            // DgvPlace
-            // 
-            this.DgvPlace.DataPropertyName = "place";
-            this.DgvPlace.HeaderText = "Place";
-            this.DgvPlace.Name = "DgvPlace";
-            this.DgvPlace.ReadOnly = true;
-            // 
-            // DgvCreatedAt
-            // 
-            this.DgvCreatedAt.DataPropertyName = "created_at";
-            this.DgvCreatedAt.HeaderText = "Création";
-            this.DgvCreatedAt.Name = "DgvCreatedAt";
-            this.DgvCreatedAt.ReadOnly = true;
-            this.DgvCreatedAt.Visible = false;
-            // 
-            // DgvAnneeFab
-            // 
-            this.DgvAnneeFab.DataPropertyName = "annee_fabrication";
-            this.DgvAnneeFab.HeaderText = "Année de fabrication";
-            this.DgvAnneeFab.Name = "DgvAnneeFab";
-            // 
-            // DgvKilometrage
-            // 
-            this.DgvKilometrage.DataPropertyName = "kilometrage";
-            this.DgvKilometrage.HeaderText = "Kilométrage";
-            this.DgvKilometrage.Name = "DgvKilometrage";
-            // 
-            // DgvMiseEnCirculation
-            // 
-            this.DgvMiseEnCirculation.DataPropertyName = "mise_en_circulation";
-            this.DgvMiseEnCirculation.HeaderText = "Date de mise en circulation";
-            this.DgvMiseEnCirculation.Name = "DgvMiseEnCirculation";
-            this.DgvMiseEnCirculation.Visible = false;
-            // 
-            // GvcEtat
-            // 
-            this.GvcEtat.DataPropertyName = "etat";
-            this.GvcEtat.HeaderText = "Etat";
-            this.GvcEtat.Name = "GvcEtat";
-            this.GvcEtat.ReadOnly = true;
-            // 
-            // CmbEtatBus
-            // 
-            this.CmbEtatBus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbEtatBus.FormattingEnabled = true;
-            this.CmbEtatBus.Items.AddRange(new object[] {
-            "ACTIF",
-            "INACTIF"});
-            this.CmbEtatBus.Location = new System.Drawing.Point(110, 93);
-            this.CmbEtatBus.Name = "CmbEtatBus";
-            this.CmbEtatBus.Size = new System.Drawing.Size(160, 25);
-            this.CmbEtatBus.TabIndex = 32;
             // 
             // UcBus
             // 

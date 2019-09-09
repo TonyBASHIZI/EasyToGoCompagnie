@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
 using EasyToGoCompany.Classes;
-using EasyToGoCompany.Classes.Model;
 
 namespace EasyToGoCompany.Forms.Views
 {
@@ -22,7 +21,7 @@ namespace EasyToGoCompany.Forms.Views
         {
             try
             {
-                this.Cursor = Cursors.WaitCursor;
+                //this.Cursor = Cursors.WaitCursor;
 
                 LblAllBus.Text = Glossaire.Instance.GetBusCount().ToString();
                 LblFakeBus.Text = Glossaire.Instance.GetInactiveBusCount().ToString();
@@ -118,6 +117,7 @@ namespace EasyToGoCompany.Forms.Views
 
         private void UcDashboard_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(Glossaire.Instance.GetAmount().ToString());
             LoadCharts();
             LoadDashboard();
         }

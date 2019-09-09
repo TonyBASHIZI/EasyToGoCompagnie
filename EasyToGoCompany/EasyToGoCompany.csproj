@@ -89,14 +89,6 @@
     <Compile Include="Classes\Model\ClassBus.cs" />
     <Compile Include="Classes\Model\ClassCompagnie.cs" />
     <Compile Include="Classes\Model\ClassUser.cs" />
-    <Compile Include="Datasets\DsAllBus.cs">
-      <DependentUpon>DsAllBus.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Datasets\DsAllBus.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DsAllBus.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Datasets\DsBusAmount.cs">
       <DependentUpon>DsBusAmount.xsd</DependentUpon>
     </Compile>
@@ -120,6 +112,12 @@
     </Compile>
     <Compile Include="Forms\FormDetailBus.Designer.cs">
       <DependentUpon>FormDetailBus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditProfile.Designer.cs">
+      <DependentUpon>FormEditProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormLogin.cs">
       <SubType>Form</SubType>
@@ -180,6 +178,9 @@
     <EmbeddedResource Include="Forms\FormDetailBus.resx">
       <DependentUpon>FormDetailBus.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditProfile.resx">
+      <DependentUpon>FormEditProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,21 +218,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reports\RptAllBus.rdlc" />
     <EmbeddedResource Include="Reports\RptBusAmount.rdlc" />
     <EmbeddedResource Include="Reports\RptBusAmountDate.rdlc" />
     <EmbeddedResource Include="Reports\RptBusAmountHour.rdlc" />
-    <None Include="Datasets\DsAllBus.xsc">
-      <DependentUpon>DsAllBus.xsd</DependentUpon>
-    </None>
-    <None Include="Datasets\DsAllBus.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DsAllBus.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Datasets\DsAllBus.xss">
-      <DependentUpon>DsAllBus.xsd</DependentUpon>
-    </None>
     <None Include="Datasets\DsBusAmount.xsc">
       <DependentUpon>DsBusAmount.xsd</DependentUpon>
     </None>

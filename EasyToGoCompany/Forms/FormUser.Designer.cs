@@ -115,7 +115,8 @@
             // 
             // PnlCancel
             // 
-            this.PnlCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            this.PnlCancel.BackColor = System.Drawing.Color.White;
+            this.PnlCancel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlCancel.Controls.Add(this.LblCancel);
             this.PnlCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlCancel.Location = new System.Drawing.Point(196, 194);
@@ -123,6 +124,8 @@
             this.PnlCancel.Size = new System.Drawing.Size(136, 32);
             this.PnlCancel.TabIndex = 23;
             this.PnlCancel.Click += new System.EventHandler(this.Controles_Click);
+            this.PnlCancel.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.PnlCancel.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // LblCancel
             // 
@@ -131,16 +134,19 @@
             this.LblCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblCancel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(23)))), ((int)(((byte)(22)))));
-            this.LblCancel.Location = new System.Drawing.Point(34, 5);
+            this.LblCancel.Location = new System.Drawing.Point(35, 5);
             this.LblCancel.Name = "LblCancel";
             this.LblCancel.Size = new System.Drawing.Size(65, 18);
             this.LblCancel.TabIndex = 0;
             this.LblCancel.Text = "Annuler";
             this.LblCancel.Click += new System.EventHandler(this.Controles_Click);
+            this.LblCancel.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.LblCancel.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // PnlEdit
             // 
-            this.PnlEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            this.PnlEdit.BackColor = System.Drawing.Color.White;
+            this.PnlEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlEdit.Controls.Add(this.LblEdit);
             this.PnlEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlEdit.Location = new System.Drawing.Point(38, 194);
@@ -148,6 +154,8 @@
             this.PnlEdit.Size = new System.Drawing.Size(136, 32);
             this.PnlEdit.TabIndex = 22;
             this.PnlEdit.Click += new System.EventHandler(this.Controles_Click);
+            this.PnlEdit.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.PnlEdit.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // LblEdit
             // 
@@ -162,6 +170,8 @@
             this.LblEdit.TabIndex = 0;
             this.LblEdit.Text = "Modifier";
             this.LblEdit.Click += new System.EventHandler(this.Controles_Click);
+            this.LblEdit.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.LblEdit.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // label3
             // 

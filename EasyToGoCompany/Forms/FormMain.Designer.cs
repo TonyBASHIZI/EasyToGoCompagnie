@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
+            this.LblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.PnlHeader = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlConnection = new System.Windows.Forms.Panel();
             this.LblConnection = new System.Windows.Forms.Label();
             this.PnlMenu = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.PnlParametreMain = new System.Windows.Forms.Panel();
             this.PcbUser = new System.Windows.Forms.PictureBox();
             this.LblUser = new System.Windows.Forms.Label();
@@ -44,19 +47,21 @@
             this.PnlParametre = new System.Windows.Forms.Panel();
             this.PcbParametre = new System.Windows.Forms.PictureBox();
             this.LblParametre = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.PnlWhite = new System.Windows.Forms.Panel();
             this.PnlBus = new System.Windows.Forms.Panel();
             this.PcbBus = new System.Windows.Forms.PictureBox();
             this.LblBus = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.PnlProfil = new System.Windows.Forms.Panel();
             this.PcbProfil = new System.Windows.Forms.PictureBox();
             this.LblProfil = new System.Windows.Forms.Label();
+            this.PnlWhite1 = new System.Windows.Forms.Panel();
             this.PnlDashboard = new System.Windows.Forms.Panel();
             this.PcbDashboard = new System.Windows.Forms.PictureBox();
             this.LblDashboard = new System.Windows.Forms.Label();
-            this.PnlWhite1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.PnlMain = new System.Windows.Forms.Panel();
-            this.LblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusStrip.SuspendLayout();
             this.PnlHeader.SuspendLayout();
             this.PnlConnection.SuspendLayout();
@@ -86,6 +91,13 @@
             this.StatusStrip.TabIndex = 0;
             this.StatusStrip.Text = "statusStrip1";
             // 
+            // LblStatus
+            // 
+            this.LblStatus.ForeColor = System.Drawing.Color.White;
+            this.LblStatus.Name = "LblStatus";
+            this.LblStatus.Size = new System.Drawing.Size(36, 17);
+            this.LblStatus.Text = "Invité";
+            // 
             // StatusLabel
             // 
             this.StatusLabel.ForeColor = System.Drawing.Color.White;
@@ -95,7 +107,8 @@
             // 
             // PnlHeader
             // 
-            this.PnlHeader.BackColor = System.Drawing.SystemColors.Control;
+            this.PnlHeader.BackColor = System.Drawing.Color.White;
+            this.PnlHeader.Controls.Add(this.panel1);
             this.PnlHeader.Controls.Add(this.label2);
             this.PnlHeader.Controls.Add(this.label1);
             this.PnlHeader.Controls.Add(this.PnlConnection);
@@ -105,6 +118,15 @@
             this.PnlHeader.Name = "PnlHeader";
             this.PnlHeader.Size = new System.Drawing.Size(1084, 90);
             this.PnlHeader.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 88);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1084, 2);
+            this.panel1.TabIndex = 5;
             // 
             // label2
             // 
@@ -132,7 +154,8 @@
             // 
             this.PnlConnection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlConnection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            this.PnlConnection.BackColor = System.Drawing.Color.White;
+            this.PnlConnection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlConnection.Controls.Add(this.LblConnection);
             this.PnlConnection.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PnlConnection.Location = new System.Drawing.Point(916, 50);
@@ -140,6 +163,8 @@
             this.PnlConnection.Size = new System.Drawing.Size(149, 29);
             this.PnlConnection.TabIndex = 2;
             this.PnlConnection.Click += new System.EventHandler(this.BtnConnection_Click);
+            this.PnlConnection.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.PnlConnection.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // LblConnection
             // 
@@ -148,29 +173,44 @@
             this.LblConnection.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblConnection.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblConnection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(23)))), ((int)(((byte)(22)))));
-            this.LblConnection.Location = new System.Drawing.Point(19, 5);
+            this.LblConnection.Location = new System.Drawing.Point(20, 4);
             this.LblConnection.Name = "LblConnection";
             this.LblConnection.Size = new System.Drawing.Size(89, 18);
             this.LblConnection.TabIndex = 0;
             this.LblConnection.Text = "Connexion";
             this.LblConnection.Click += new System.EventHandler(this.BtnConnection_Click);
+            this.LblConnection.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.LblConnection.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // PnlMenu
             // 
-            this.PnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(28)))), ((int)(((byte)(0)))));
+            this.PnlMenu.BackColor = System.Drawing.Color.White;
+            this.PnlMenu.Controls.Add(this.panel6);
             this.PnlMenu.Controls.Add(this.PnlParametreMain);
             this.PnlMenu.Controls.Add(this.PnlParametre);
+            this.PnlMenu.Controls.Add(this.panel4);
             this.PnlMenu.Controls.Add(this.PnlWhite);
             this.PnlMenu.Controls.Add(this.PnlBus);
+            this.PnlMenu.Controls.Add(this.panel3);
             this.PnlMenu.Controls.Add(this.PnlProfil);
-            this.PnlMenu.Controls.Add(this.PnlDashboard);
             this.PnlMenu.Controls.Add(this.PnlWhite1);
+            this.PnlMenu.Controls.Add(this.PnlDashboard);
+            this.PnlMenu.Controls.Add(this.panel2);
             this.PnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnlMenu.Location = new System.Drawing.Point(0, 90);
             this.PnlMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(185, 499);
             this.PnlMenu.TabIndex = 2;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.Control;
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 299);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(183, 2);
+            this.panel6.TabIndex = 13;
             // 
             // PnlParametreMain
             // 
@@ -180,9 +220,9 @@
             this.PnlParametreMain.Controls.Add(this.LblReport);
             this.PnlParametreMain.Cursor = System.Windows.Forms.Cursors.Default;
             this.PnlParametreMain.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlParametreMain.Location = new System.Drawing.Point(0, 215);
+            this.PnlParametreMain.Location = new System.Drawing.Point(0, 218);
             this.PnlParametreMain.Name = "PnlParametreMain";
-            this.PnlParametreMain.Size = new System.Drawing.Size(185, 81);
+            this.PnlParametreMain.Size = new System.Drawing.Size(183, 81);
             this.PnlParametreMain.TabIndex = 8;
             this.PnlParametreMain.Visible = false;
             // 
@@ -197,19 +237,23 @@
             this.PcbUser.TabIndex = 6;
             this.PcbUser.TabStop = false;
             this.PcbUser.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.PcbUser.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.PcbUser.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // LblUser
             // 
             this.LblUser.AutoSize = true;
             this.LblUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblUser.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUser.ForeColor = System.Drawing.Color.White;
+            this.LblUser.ForeColor = System.Drawing.Color.Black;
             this.LblUser.Location = new System.Drawing.Point(77, 47);
             this.LblUser.Name = "LblUser";
             this.LblUser.Size = new System.Drawing.Size(69, 17);
             this.LblUser.TabIndex = 5;
             this.LblUser.Text = "Utilisateur";
             this.LblUser.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.LblUser.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.LblUser.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // PcbReport
             // 
@@ -222,31 +266,36 @@
             this.PcbReport.TabIndex = 2;
             this.PcbReport.TabStop = false;
             this.PcbReport.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.PcbReport.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.PcbReport.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // LblReport
             // 
             this.LblReport.AutoSize = true;
             this.LblReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblReport.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblReport.ForeColor = System.Drawing.Color.White;
+            this.LblReport.ForeColor = System.Drawing.Color.Black;
             this.LblReport.Location = new System.Drawing.Point(77, 16);
             this.LblReport.Name = "LblReport";
             this.LblReport.Size = new System.Drawing.Size(61, 17);
             this.LblReport.TabIndex = 1;
             this.LblReport.Text = "Rapport";
             this.LblReport.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.LblReport.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.LblReport.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // PnlParametre
             // 
-            this.PnlParametre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlParametre.Controls.Add(this.PcbParametre);
             this.PnlParametre.Controls.Add(this.LblParametre);
             this.PnlParametre.Cursor = System.Windows.Forms.Cursors.Default;
             this.PnlParametre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlParametre.Location = new System.Drawing.Point(0, 162);
+            this.PnlParametre.Location = new System.Drawing.Point(0, 165);
             this.PnlParametre.Name = "PnlParametre";
-            this.PnlParametre.Size = new System.Drawing.Size(185, 53);
+            this.PnlParametre.Size = new System.Drawing.Size(183, 53);
             this.PnlParametre.TabIndex = 7;
+            this.PnlParametre.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.PnlParametre.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // PcbParametre
             // 
@@ -264,7 +313,7 @@
             this.LblParametre.AutoSize = true;
             this.LblParametre.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblParametre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblParametre.ForeColor = System.Drawing.Color.White;
+            this.LblParametre.ForeColor = System.Drawing.Color.Black;
             this.LblParametre.Location = new System.Drawing.Point(56, 14);
             this.LblParametre.Name = "LblParametre";
             this.LblParametre.Size = new System.Drawing.Size(93, 21);
@@ -272,27 +321,37 @@
             this.LblParametre.Text = "Paramètre";
             this.LblParametre.Click += new System.EventHandler(this.NavigationControles_Click);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 163);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(183, 2);
+            this.panel4.TabIndex = 11;
+            // 
             // PnlWhite
             // 
-            this.PnlWhite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.PnlWhite.BackColor = System.Drawing.Color.White;
             this.PnlWhite.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PnlWhite.Location = new System.Drawing.Point(0, 496);
             this.PnlWhite.Name = "PnlWhite";
-            this.PnlWhite.Size = new System.Drawing.Size(185, 3);
+            this.PnlWhite.Size = new System.Drawing.Size(183, 3);
             this.PnlWhite.TabIndex = 5;
             // 
             // PnlBus
             // 
-            this.PnlBus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlBus.Controls.Add(this.PcbBus);
             this.PnlBus.Controls.Add(this.LblBus);
             this.PnlBus.Cursor = System.Windows.Forms.Cursors.Default;
             this.PnlBus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlBus.Location = new System.Drawing.Point(0, 109);
+            this.PnlBus.Location = new System.Drawing.Point(0, 110);
             this.PnlBus.Name = "PnlBus";
-            this.PnlBus.Size = new System.Drawing.Size(185, 53);
+            this.PnlBus.Size = new System.Drawing.Size(183, 53);
             this.PnlBus.TabIndex = 2;
             this.PnlBus.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.PnlBus.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.PnlBus.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // PcbBus
             // 
@@ -311,7 +370,7 @@
             this.LblBus.AutoSize = true;
             this.LblBus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblBus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBus.ForeColor = System.Drawing.Color.White;
+            this.LblBus.ForeColor = System.Drawing.Color.Black;
             this.LblBus.Location = new System.Drawing.Point(56, 14);
             this.LblBus.Name = "LblBus";
             this.LblBus.Size = new System.Drawing.Size(35, 21);
@@ -319,18 +378,28 @@
             this.LblBus.Text = "Bus";
             this.LblBus.Click += new System.EventHandler(this.NavigationControles_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 108);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(183, 2);
+            this.panel3.TabIndex = 10;
+            // 
             // PnlProfil
             // 
-            this.PnlProfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlProfil.Controls.Add(this.PcbProfil);
             this.PnlProfil.Controls.Add(this.LblProfil);
             this.PnlProfil.Cursor = System.Windows.Forms.Cursors.Default;
             this.PnlProfil.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlProfil.Location = new System.Drawing.Point(0, 56);
+            this.PnlProfil.Location = new System.Drawing.Point(0, 55);
             this.PnlProfil.Name = "PnlProfil";
-            this.PnlProfil.Size = new System.Drawing.Size(185, 53);
+            this.PnlProfil.Size = new System.Drawing.Size(183, 53);
             this.PnlProfil.TabIndex = 1;
             this.PnlProfil.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.PnlProfil.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.PnlProfil.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // PcbProfil
             // 
@@ -349,7 +418,7 @@
             this.LblProfil.AutoSize = true;
             this.LblProfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblProfil.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblProfil.ForeColor = System.Drawing.Color.White;
+            this.LblProfil.ForeColor = System.Drawing.Color.Black;
             this.LblProfil.Location = new System.Drawing.Point(56, 14);
             this.LblProfil.Name = "LblProfil";
             this.LblProfil.Size = new System.Drawing.Size(45, 21);
@@ -357,18 +426,28 @@
             this.LblProfil.Text = "Profil";
             this.LblProfil.Click += new System.EventHandler(this.NavigationControles_Click);
             // 
+            // PnlWhite1
+            // 
+            this.PnlWhite1.BackColor = System.Drawing.SystemColors.Control;
+            this.PnlWhite1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnlWhite1.Location = new System.Drawing.Point(0, 53);
+            this.PnlWhite1.Name = "PnlWhite1";
+            this.PnlWhite1.Size = new System.Drawing.Size(183, 2);
+            this.PnlWhite1.TabIndex = 6;
+            // 
             // PnlDashboard
             // 
-            this.PnlDashboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlDashboard.Controls.Add(this.PcbDashboard);
             this.PnlDashboard.Controls.Add(this.LblDashboard);
             this.PnlDashboard.Cursor = System.Windows.Forms.Cursors.Default;
             this.PnlDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlDashboard.Location = new System.Drawing.Point(0, 3);
+            this.PnlDashboard.Location = new System.Drawing.Point(0, 0);
             this.PnlDashboard.Name = "PnlDashboard";
-            this.PnlDashboard.Size = new System.Drawing.Size(185, 53);
+            this.PnlDashboard.Size = new System.Drawing.Size(183, 53);
             this.PnlDashboard.TabIndex = 0;
             this.PnlDashboard.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.PnlDashboard.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.PnlDashboard.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // PcbDashboard
             // 
@@ -387,7 +466,7 @@
             this.LblDashboard.AutoSize = true;
             this.LblDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LblDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDashboard.ForeColor = System.Drawing.Color.White;
+            this.LblDashboard.ForeColor = System.Drawing.Color.Black;
             this.LblDashboard.Location = new System.Drawing.Point(56, 14);
             this.LblDashboard.Name = "LblDashboard";
             this.LblDashboard.Size = new System.Drawing.Size(97, 21);
@@ -395,14 +474,14 @@
             this.LblDashboard.Text = "Dashboard";
             this.LblDashboard.Click += new System.EventHandler(this.NavigationControles_Click);
             // 
-            // PnlWhite1
+            // panel2
             // 
-            this.PnlWhite1.BackColor = System.Drawing.Color.White;
-            this.PnlWhite1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlWhite1.Location = new System.Drawing.Point(0, 0);
-            this.PnlWhite1.Name = "PnlWhite1";
-            this.PnlWhite1.Size = new System.Drawing.Size(185, 3);
-            this.PnlWhite1.TabIndex = 6;
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(183, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(2, 499);
+            this.panel2.TabIndex = 9;
             // 
             // PnlMain
             // 
@@ -414,17 +493,11 @@
             this.PnlMain.Size = new System.Drawing.Size(899, 499);
             this.PnlMain.TabIndex = 3;
             // 
-            // LblStatus
-            // 
-            this.LblStatus.ForeColor = System.Drawing.Color.White;
-            this.LblStatus.Name = "LblStatus";
-            this.LblStatus.Size = new System.Drawing.Size(36, 17);
-            this.LblStatus.Text = "Invité";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1084, 611);
             this.Controls.Add(this.PnlMain);
             this.Controls.Add(this.PnlMenu);
@@ -496,5 +569,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripStatusLabel LblStatus;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
     }
 }

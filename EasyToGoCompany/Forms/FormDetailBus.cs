@@ -1,6 +1,7 @@
 ﻿using EasyToGoCompany.Classes;
 using EasyToGoCompany.Classes.Model;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace EasyToGoCompany.Forms
@@ -108,6 +109,40 @@ namespace EasyToGoCompany.Forms
             finally
             {
                 this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            switch (((Control)sender).Name.Substring(3))
+            {
+                case "ValidateHour":
+                    LblValidateHour.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                case "ValidateDate":
+                    LblValidateDate.ForeColor = Color.FromArgb(85, 183, 20);
+                    break;
+
+                default:
+                    break;
+            }           
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            switch (((Control)sender).Name.Substring(3))
+            {
+                case "ValidateHour":
+                    LblValidateHour.ForeColor = Color.FromArgb(14, 23, 22);
+                    break;
+
+                case "ValidateDate":
+                    LblValidateDate.ForeColor = Color.FromArgb(14, 23, 22);
+                    break;
+
+                default:
+                    break;
             }
         }
     }

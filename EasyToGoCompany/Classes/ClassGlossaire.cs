@@ -304,16 +304,15 @@ namespace EasyToGoCompany.Classes
 
             using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
-                cmd.CommandText = "SELECT `compte`.`solde` as montant" +
-                    " FROM `easy_to_go`.`compte` WHERE `compte`.`designation` = @company AND `compte`.`etat` = 'ACTIF'; ";
+                cmd.CommandText = "SELECT solde FROM compte WHERE designation = @company ; ";
 
                 SetParameter(cmd, "@company", DbType.String, 255, User.Instance.DescriptionSession);
 
                 using (IDataReader dr = cmd.ExecuteReader())
                 {
-                    if (dr.Read())
+                    while (dr.Read())
                     {
-                        nombre = dr["nombre"] == DBNull.Value ? 0 : Convert.ToInt32(dr["montant"]);
+                        nombre = dr["solde"] == DBNull.Value ? 0 : Convert.ToInt32(dr["solde"].ToString());
                     }
                 }
             }
