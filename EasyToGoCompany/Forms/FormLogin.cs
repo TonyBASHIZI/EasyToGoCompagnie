@@ -10,11 +10,6 @@ namespace EasyToGoCompany.Forms
     {
         private FormMain main = new FormMain();
 
-        public FormLogin()
-        {
-            InitializeComponent();
-        }
-
         public FormLogin(FormMain parent)
         {
             InitializeComponent();
@@ -28,19 +23,14 @@ namespace EasyToGoCompany.Forms
 
         private bool IsAuthentic()
         {
-            if (!string.IsNullOrEmpty(TxtPassword.Text) && !string.IsNullOrEmpty(TxtUsername.Text))
-            {
-                return true;
-            }
-            else
-                return false;
+            return !string.IsNullOrEmpty(TxtPassword.Text) && !string.IsNullOrEmpty(TxtUsername.Text) ? true : false;
         } 
         
         private void LoginProcess()
         {
             try
             {
-                this.Cursor = Cursors.WaitCursor;
+                Cursor = Cursors.WaitCursor;
 
                 if (IsAuthentic())
                 {
@@ -55,8 +45,6 @@ namespace EasyToGoCompany.Forms
                     }
                     else
                     {
-                        /// Make a sound if incorrectes credentials
-                        
                         LblError.Text = "Le nom d'utilisateur ou le mot de passe est incorrect !";
                         TxtUsername.Focus();
                     }
@@ -69,7 +57,7 @@ namespace EasyToGoCompany.Forms
             }
             finally
             {
-                this.Cursor = Cursors.Default;
+                Cursor = Cursors.Default;
             }
         }
 

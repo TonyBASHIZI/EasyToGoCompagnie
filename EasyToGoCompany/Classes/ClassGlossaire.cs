@@ -358,7 +358,6 @@ namespace EasyToGoCompany.Classes
         }
 
 
-
         public int GetAmountBusByHour(string plaque, string date, string begin, string end)
         {
             int nombre = 0;
@@ -459,7 +458,7 @@ namespace EasyToGoCompany.Classes
         public Compagnie GetCompagnie(string name = null)
         {
             Compagnie compagnie = null;
-            Byte[] photo = null;
+            byte[] photo = null;
 
             using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
@@ -583,14 +582,7 @@ namespace EasyToGoCompany.Classes
 
                 }
 
-                if (cmd.ExecuteNonQuery() != 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return cmd.ExecuteNonQuery() != 0 ? true : false;
             }
         }
 

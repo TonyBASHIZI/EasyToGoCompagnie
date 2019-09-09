@@ -8,35 +8,27 @@ namespace EasyToGoCompany.Forms
 {
     public partial class FormReport : Form
     {
-        public FormReport()
-        {
-            InitializeComponent();
-        }
-
         public FormReport(string company)
         {
             InitializeComponent();
-
             LoadBusAmount(company);
         }
 
         public FormReport(string company, string begin, string end)
         {
             InitializeComponent();
-
             LoadBusAmountDate(company, begin, end);
         }
 
         public FormReport(string company, string date, string begin, string end)
         {
             InitializeComponent();
-
             LoadBusAmountHour(company, date, begin, end);
         }
 
         private void FormReport_Load(object sender, EventArgs e)
         {
-            this.RptViewer.RefreshReport();
+            RptViewer.RefreshReport();
         }
 
         private void LoadBusAmount(string comapgny)

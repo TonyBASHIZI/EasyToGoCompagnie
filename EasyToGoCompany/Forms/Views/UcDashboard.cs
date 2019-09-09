@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
+﻿using EasyToGoCompany.Classes;
 using LiveCharts;
 using LiveCharts.Wpf;
-using EasyToGoCompany.Classes;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace EasyToGoCompany.Forms.Views
 {
@@ -35,12 +35,13 @@ namespace EasyToGoCompany.Forms.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, "Une erreur s'est produite lors du chargement", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine("Une erreur s'est produite lors de l'opération : " + ex);
+                MessageBox.Show(this, "Une erreur s'est produite lors du chargement des données en temps réel. \n\nL'Application va automatiquement se rédemarrer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("Une erreur s'est produite lors de l'opération : " + ex.Message);
+                Application.Restart();
             }
             finally
             {
-                this.Cursor = Cursors.Default;
+                Cursor = Cursors.Default;
             }
         }
 

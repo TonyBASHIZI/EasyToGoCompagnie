@@ -18,7 +18,7 @@ namespace EasyToGoCompany.Classes.Config
         {
             get
             {
-                return AppConfig.InitialDirectory + @"\Backup\";
+                return InitialDirectory + @"\Backup\";
             }
         }
 
@@ -26,7 +26,7 @@ namespace EasyToGoCompany.Classes.Config
         {
             get
             {
-                return AppConfig.InitialDirectory + @"\Connection\";
+                return InitialDirectory + @"\Connection\";
             }
         }
 
@@ -34,7 +34,7 @@ namespace EasyToGoCompany.Classes.Config
         {
             get
             {
-                return AppConfig.ConnectionDirectory + "path.txt";
+                return ConnectionDirectory + "path.txt";
             }
         }
 
@@ -42,7 +42,7 @@ namespace EasyToGoCompany.Classes.Config
         {
             get
             {
-                return File.ReadAllText(AppConfig.ConnectionString).Trim();
+                return File.ReadAllText(ConnectionString).Trim();
             }
         }
 
@@ -50,17 +50,16 @@ namespace EasyToGoCompany.Classes.Config
         {
             try
             {
-                DirectoryInfo dirInfo = new DirectoryInfo(AppConfig.InitialDirectory);
-                if (!Directory.Exists(AppConfig.InitialDirectory))
+                DirectoryInfo dirInfo = new DirectoryInfo(InitialDirectory);
+                if (!Directory.Exists(InitialDirectory))
                 {
-                    Directory.CreateDirectory(AppConfig.InitialDirectory);
+                    Directory.CreateDirectory(InitialDirectory);
                     dirInfo.Attributes = FileAttributes.Hidden;
                 }
                 dirInfo.Attributes = FileAttributes.Hidden;
             }
             catch (Exception ex)
             {
-
                 throw new Exception("Une erreur s'est produite. \n" + ex.Message);
             }
         }
@@ -69,9 +68,9 @@ namespace EasyToGoCompany.Classes.Config
         {
             try
             {
-                if (!Directory.Exists(AppConfig.ConnectionDirectory))
+                if (!Directory.Exists(ConnectionDirectory))
                 {
-                    Directory.CreateDirectory(AppConfig.ConnectionDirectory);
+                    Directory.CreateDirectory(ConnectionDirectory);
                 }
             }
             catch (Exception ex)
@@ -86,9 +85,9 @@ namespace EasyToGoCompany.Classes.Config
             {               
                 if (!File.Exists(AppConfig.ConnectionString))
                 {
-                    File.Create(AppConfig.ConnectionString);
-                    FileIOPermission file = new FileIOPermission(FileIOPermissionAccess.Read | FileIOPermissionAccess.Write, AppConfig.ConnectionString);
-                    file.AddPathList(FileIOPermissionAccess.Read | FileIOPermissionAccess.Write, AppConfig.ConnectionString);
+                    File.Create(ConnectionString);
+                    FileIOPermission file = new FileIOPermission(FileIOPermissionAccess.Read | FileIOPermissionAccess.Write, ConnectionString);
+                    file.AddPathList(FileIOPermissionAccess.Read | FileIOPermissionAccess.Write, ConnectionString);
                     file.Demand();
                 }
             }
@@ -100,29 +99,17 @@ namespace EasyToGoCompany.Classes.Config
 
         public static Boolean InitialDirectoryExist()
         {
-            if (Directory.Exists(AppConfig.InitialDirectory))
-            {
-                return true;
-            }
-            return false;
+            return Directory.Exists(InitialDirectory) ? true : false;
         }
 
         public static Boolean ConnectionStringExist()
         {
-            if (File.Exists(AppConfig.ConnectionString))
-            {
-                return true;
-            }
-            return false;
+            return File.Exists(ConnectionString) ? true : false;
         }
 
         public static Boolean ConnectionStringEmpty()
         {
-            if (AppConfig.GetConnectionString.Length == 0 )
-            {
-                return true;
-            }
-            return false;
+            return GetConnectionString.Length == 0 ? true : false;
         }
     }
 }

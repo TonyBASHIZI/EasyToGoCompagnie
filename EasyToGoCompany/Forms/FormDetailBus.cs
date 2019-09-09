@@ -29,12 +29,14 @@ namespace EasyToGoCompany.Forms
         {
             try
             {
-                this.Text = "Détail sur le bus : " + bus.Plaque;
+                Text = "Détail sur le bus : " + bus.Plaque;
                 LblMontantNow.Text = Glossaire.Instance.GetAmountByBus(bus.Plaque, DateTime.Now.ToString()).ToString();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Une erreur de connexion est survenue pendant l'opération ! \n\n L'application va automatiquement se rédemarrer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.Write("Cette erreur est survenue lors de l'opération : " + ex.Message);
+                Application.Restart();
             }
         }
 
@@ -42,7 +44,7 @@ namespace EasyToGoCompany.Forms
         {
             try
             {
-                this.Cursor = Cursors.WaitCursor;
+                Cursor = Cursors.WaitCursor;
                 LblResult.Text = Glossaire.Instance.GetAmountBusByHour(bus.Plaque, DteByHour.Value.ToString(), TxtBegin.Text, TxtEnd.Text).ToString();
             }
             catch (Exception ex)
@@ -51,7 +53,7 @@ namespace EasyToGoCompany.Forms
             }
             finally
             {
-                this.Cursor = Cursors.Default;
+                Cursor = Cursors.Default;
             }
         }
 
@@ -59,7 +61,7 @@ namespace EasyToGoCompany.Forms
         {
             try
             {
-                this.Cursor = Cursors.WaitCursor;
+                Cursor = Cursors.WaitCursor;
                 LblResult.Text = Glossaire.Instance.GetAmountBusByDay(bus.Plaque, DteBegin.Value.ToString(), DteEnd.Value.ToString()).ToString();
             }
             catch (Exception ex)
@@ -68,7 +70,7 @@ namespace EasyToGoCompany.Forms
             }
             finally
             {
-                this.Cursor = Cursors.Default;
+                Cursor = Cursors.Default;
             }
         }
 
@@ -95,9 +97,9 @@ namespace EasyToGoCompany.Forms
             {
                 second++;
 
-                if (second == 3)
+                if (second == 5)
                 {
-                    this.Cursor = Cursors.WaitCursor;
+                    Cursor = Cursors.WaitCursor;
                     LoadBusDetail();
                     second = 0;
                 }
@@ -108,7 +110,7 @@ namespace EasyToGoCompany.Forms
             }
             finally
             {
-                this.Cursor = Cursors.Default;
+                Cursor = Cursors.Default;
             }
         }
 

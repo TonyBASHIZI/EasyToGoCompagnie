@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using EasyToGoCompany.Classes.Model;
+﻿using EasyToGoCompany.Classes.Model;
+using System;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace EasyToGoCompany.Forms.Views
 {
@@ -40,31 +40,37 @@ namespace EasyToGoCompany.Forms.Views
             switch (((Control)sender).Name.Substring(3))
             {
                 case "PreviewBusAmount":
-                    this.Cursor = Cursors.WaitCursor;
-                    form = new FormReport(User.Instance.DescriptionSession);
-                    form.ShowInTaskbar = false;
+                    Cursor = Cursors.WaitCursor;
+                    form = new FormReport(User.Instance.DescriptionSession)
+                    {
+                        ShowInTaskbar = false
+                    };
                     form.ShowDialog(this);
-                    this.Cursor = Cursors.Default;
+                    Cursor = Cursors.Default;
                     break;
 
                 case "PreviewBusHour":
-                    this.Cursor = Cursors.WaitCursor;
-                    form = new FormReport(User.Instance.DescriptionSession, DteByHour.Value.ToString(), TxtBegin.Text, TxtEnd.Text);
-                    form.ShowInTaskbar = false;
+                    Cursor = Cursors.WaitCursor;
+                    form = new FormReport(User.Instance.DescriptionSession, DteByHour.Value.ToString(), TxtBegin.Text, TxtEnd.Text)
+                    {
+                        ShowInTaskbar = false
+                    };
                     form.ShowDialog(this);
-                    this.Cursor = Cursors.Default;
+                    Cursor = Cursors.Default;
                     break;
 
                 case "PreviewBusDate":
-                    this.Cursor = Cursors.WaitCursor;
-                    form = new FormReport(User.Instance.DescriptionSession, DteBegin.Value.ToString(), DteEnd.Value.ToString());
-                    form.ShowInTaskbar = false;
+                    Cursor = Cursors.WaitCursor;
+                    form = new FormReport(User.Instance.DescriptionSession, DteBegin.Value.ToString(), DteEnd.Value.ToString())
+                    {
+                        ShowInTaskbar = false
+                    };
                     form.ShowDialog(this);
-                    this.Cursor = Cursors.Default;
+                    Cursor = Cursors.Default;
                     break;
 
                 default:
-                    this.Cursor = Cursors.Default;
+                    Cursor = Cursors.Default;
                     break;
             }
         }

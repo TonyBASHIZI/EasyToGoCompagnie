@@ -98,7 +98,7 @@ namespace EasyToGoCompany.Forms
                 TxtDescriptionEdit.Text = compagnie.Description;
                 PcbEdit.Image = compagnie.Photo == null ? Properties.Resources.user : SetImage(compagnie.Photo);
 
-                this.Text = compagnie.Noms;
+                Text = compagnie.Noms;
             }
         }
 

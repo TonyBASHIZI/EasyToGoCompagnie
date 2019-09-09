@@ -1,9 +1,9 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using EasyToGoCompany.Classes;
+﻿using EasyToGoCompany.Classes;
 using EasyToGoCompany.Classes.Model;
+using System;
+using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace EasyToGoCompany.Forms.Views
 {
@@ -79,16 +79,18 @@ namespace EasyToGoCompany.Forms.Views
 
         private void PnlEdit_Click(object sender, EventArgs e)
         {
-            this.Cursor = Cursors.WaitCursor;
+            Cursor = Cursors.WaitCursor;
 
             if (compagnie != null)
             {
-                form = new FormEditProfile(compagnie);
-                form.ShowInTaskbar = false;
+                form = new FormEditProfile(compagnie)
+                {
+                    ShowInTaskbar = false
+                };
                 form.ShowDialog(this);
             }
 
-            this.Cursor = Cursors.Default;
+            Cursor = Cursors.Default;
         }
 
         private void Button_MouseEnter(object sender, EventArgs e)

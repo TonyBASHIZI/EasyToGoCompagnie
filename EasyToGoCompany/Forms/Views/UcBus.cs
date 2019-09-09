@@ -1,8 +1,8 @@
-﻿using System;
-using System.Windows.Forms;
-using EasyToGoCompany.Classes.Model;
-using EasyToGoCompany.Classes;
+﻿using EasyToGoCompany.Classes;
 using EasyToGoCompany.Classes.Config;
+using EasyToGoCompany.Classes.Model;
+using System;
+using System.Windows.Forms;
 
 namespace EasyToGoCompany.Forms.Views
 {
@@ -41,9 +41,7 @@ namespace EasyToGoCompany.Forms.Views
 
         private void ControleButtons_Click(object sender, EventArgs e)
         {
-            string name = (((ToolStripButton)sender).Name).Substring(3);
-
-            switch (name)
+            switch ((((ToolStripButton)sender).Name).Substring(3))
             {
                 case "New":
                     ClearFields();
@@ -61,6 +59,9 @@ namespace EasyToGoCompany.Forms.Views
                     this.Cursor = Cursors.WaitCursor;
                     LoadDataGridView();
                     this.Cursor = Cursors.Default;
+                    break;
+
+                default:
                     break;
             }
         }
@@ -153,9 +154,7 @@ namespace EasyToGoCompany.Forms.Views
 
         private void TextControle_Leave(object sender, EventArgs e)
         {
-            string name = (((Control)sender).Name).Substring(3);
-
-            switch (name)
+            switch ((((Control)sender).Name).Substring(3))
             {
                 case "Numero":
                     IsAuthentic(TxtNumero);
@@ -184,6 +183,9 @@ namespace EasyToGoCompany.Forms.Views
                 case "Kilometrage":
                     IsAuthentic(TxtKilometrage);
                     break;
+
+                default:
+                    break;
             }
         }
 
@@ -193,7 +195,7 @@ namespace EasyToGoCompany.Forms.Views
             {
                 if (IsAuthentic())
                 {
-                    this.Cursor = Cursors.WaitCursor;
+                    Cursor = Cursors.WaitCursor;
 
                     bus = new Bus
                     {
@@ -226,7 +228,7 @@ namespace EasyToGoCompany.Forms.Views
 
                     LoadDataGridView();
 
-                    this.Cursor = Cursors.Default;
+                    Cursor = Cursors.Default;
                 }
                 else
                 {
@@ -239,7 +241,7 @@ namespace EasyToGoCompany.Forms.Views
             }
             finally
             {
-                this.Cursor = Cursors.Default;
+                Cursor = Cursors.Default;
             }
         }
 
@@ -266,13 +268,13 @@ namespace EasyToGoCompany.Forms.Views
 
                     if (bus !=  null)
                     {
-                        this.Cursor = Cursors.WaitCursor;
+                        Cursor = Cursors.WaitCursor;
                         form = new FormDetailBus(bus);                        
                         form.ShowDialog(this);
 
                         if (form.Visible)
                         {
-                            this.Cursor = Cursors.Default;
+                            Cursor = Cursors.Default;
                         }
                     }
 
@@ -291,7 +293,7 @@ namespace EasyToGoCompany.Forms.Views
             } 
             finally
             {
-                this.Cursor = Cursors.Default;
+                Cursor = Cursors.Default;
             }
         }
 
@@ -344,7 +346,7 @@ namespace EasyToGoCompany.Forms.Views
             }
             finally
             {
-                this.Cursor = Cursors.Default;
+                Cursor = Cursors.Default;
             }
         }
 

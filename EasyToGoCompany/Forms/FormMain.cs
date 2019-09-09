@@ -21,8 +21,14 @@ namespace EasyToGoCompany.Forms
                 {
                     main = new FormMain();
                 }
+
                 return main;
             } 
+
+            set
+            {
+                value = main;
+            }
         }
 
         public FormMain()
@@ -30,9 +36,9 @@ namespace EasyToGoCompany.Forms
             InitializeComponent();           
         }
 
-        public void RefreshOnlineStatus()
+        public void RefreshOnlineStatus(bool autologout = false)
         {
-            if (User.Instance.IsAuthenticate())
+            if (User.Instance.IsAuthenticate() && autologout == false)
             {
                 PnlMenu.Enabled = true;
                 LblConnection.Text = "Déconnexion";
@@ -40,6 +46,11 @@ namespace EasyToGoCompany.Forms
             }
             else
             {
+                User.Instance = null;
+                UcBus.Instance = null;
+                UcProfil.Instance = null;
+                UcReport.Instance = null;
+
                 uc = UcAccueil.Instance;
                 LoadUserControles(uc);
                 PnlMenu.Enabled = false;
@@ -58,19 +69,19 @@ namespace EasyToGoCompany.Forms
 
         public void LoadUserControles(UserControl uc)
         {
-            this.Cursor = Cursors.WaitCursor;
-            this.PnlMain.Controls.Clear();
+            Cursor = Cursors.WaitCursor;
+            PnlMain.Controls.Clear();
             uc.Dock = DockStyle.Fill;
             //this.uc.MouseEnter += new System.EventHandler(this.ColorChanges_MouseEnter);
 
             /// On mouse enter change color of controle
   
-            this.PnlMain.Controls.Add(uc);
+            PnlMain.Controls.Add(uc);
             uc.Show();
 
             if (uc.Visible == true)
             {
-                this.Cursor = Cursors.Default;
+                Cursor = Cursors.Default;
             }
         }
 
@@ -97,15 +108,14 @@ namespace EasyToGoCompany.Forms
                 if (AppConfig.ConnectionStringEmpty())
                 {
                     MessageBox.Show(this, "Veuillez contacter l'administrateur système pour la configuration.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    Close();
                 }
             }          
         }
 
         private void NavigationControles_Click(object sender, EventArgs e)
         {
-            string controlName = ((Control)sender).Name.Substring(3);
-            switch (controlName)
+            switch (((Control)sender).Name.Substring(3))
             {           
                 case "Dashboard":
                     uc = new UcDashboard();
@@ -123,14 +133,7 @@ namespace EasyToGoCompany.Forms
                     break;
 
                 case "Parametre":
-                    if (PnlParametreMain.Visible)
-                    {
-                        PnlParametreMain.Visible = false;
-                    }
-                    else
-                    {
-                        PnlParametreMain.Visible = true;
-                    }
+                    PnlParametreMain.Visible = PnlParametreMain.Visible ? false : true;
                     break;
 
                 case "Report":
@@ -141,7 +144,7 @@ namespace EasyToGoCompany.Forms
                 case "User":
                     form = new FormUser
                     {
-                        Icon = this.Icon
+                        Icon = Icon
                     };
                     form.ShowDialog();
                     break;
@@ -159,17 +162,13 @@ namespace EasyToGoCompany.Forms
             {
                 form = new FormLogin(this)
                 {
-                    Icon = this.Icon
+                    Icon = Icon
                 };
                 form.ShowDialog(this);
             }
             else
-            {
-                User.Instance = null;
-                UcAccueil.Instance = null;
-                UcBus.Instance = null;
-                UcProfil.Instance = null;
-                this.RefreshOnlineStatus();
+            {                
+                RefreshOnlineStatus(true);
             }
         }
 

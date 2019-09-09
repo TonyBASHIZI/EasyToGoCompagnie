@@ -37,29 +37,18 @@ namespace EasyToGoCompany.Forms
 
         private void ShowPassword_Click(object sender, EventArgs e)
         {
-            string name = (((Control)sender).Name).Substring(3);
-
-            switch (name)
+            switch ((((Control)sender).Name).Substring(3))
             {
                 case "LastPassword":
-                    if (TxtLastPassword.UseSystemPasswordChar)
-                        TxtLastPassword.UseSystemPasswordChar = false;
-                    else
-                        TxtLastPassword.UseSystemPasswordChar = true;
+                    TxtLastPassword.UseSystemPasswordChar = TxtLastPassword.UseSystemPasswordChar ? false : true;
                     break;
 
                 case "NewPassword1":
-                    if (TxtNewPassword1.UseSystemPasswordChar)
-                        TxtNewPassword1.UseSystemPasswordChar = false;
-                    else
-                        TxtNewPassword1.UseSystemPasswordChar = true;
+                    TxtNewPassword1.UseSystemPasswordChar = TxtNewPassword1.UseSystemPasswordChar ? false : true;
                     break;
 
                 case "NewPassword2":
-                    if (TxtNewPassword2.UseSystemPasswordChar)
-                        TxtNewPassword2.UseSystemPasswordChar = false;
-                    else
-                        TxtNewPassword2.UseSystemPasswordChar = true;
+                    TxtNewPassword2.UseSystemPasswordChar = TxtNewPassword2.UseSystemPasswordChar ? false : true;
                     break;
 
                 default:
@@ -69,9 +58,7 @@ namespace EasyToGoCompany.Forms
 
         private void Controles_Click(object sender, EventArgs e)
         {
-            string name = (((Control)sender).Name).Substring(3);
-
-            switch (name)
+            switch ((((Control)sender).Name).Substring(3))
             {
                 case "Edit":
                     UpdateUser();
@@ -119,7 +106,7 @@ namespace EasyToGoCompany.Forms
 
                             if (Glossaire.Instance.UpdateUser(user))
                             {
-                                if (MessageBox.Show(this, "Information enregistrée avec succès !\nL'application doit rédemarrer pour appliquer les modifications.", "Rédemarrage requis", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                                if (MessageBox.Show(this, "Information enregistrée avec succès !\n\nL'application doit rédemarrer pour appliquer les modifications.", "Rédemarrage requis", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                                 {
                                     Application.Restart();
                                 }
