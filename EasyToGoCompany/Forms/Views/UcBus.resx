@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="BindNavig.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>140, 17</value>
-  </metadata>
   <metadata name="DgvId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -153,7 +150,10 @@
   <metadata name="DgvMiseEnCirculation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="GvcEtat.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="DgvEtat.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DgvAxe.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="BindNavig.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -164,14 +164,14 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHASURBVEhL3VVNLwNRFD0+ggQ7id+AxJ6FtaUVInYSYuNj
-        a+MfiIgdTVX7iia2tv4BCZEghKV0gWhpmHbGuZM7mbbpTLVmw0le+ua8c8+9vfPmPfw5OA5adFofThxd
-        dhqzJYNjK4H7QgzPn3t4KiZxVkrhiGvjzjpaVQ6ZUxvXx3AwePLL4NExLCpkMPGtncKYZy6cWtSGc4p2
-        VrflGRQNLmyDZSYc4nMff/s5hmm6ahlciya7iSJ1516MWtUGq9gW0YtBgcYL5S2ohpNBGzVrWYOSZx6a
-        gFXNiOB1Bx8MHFE6ENqWWLl5YAL7BJ1WEg8iYKI5pQMRZC5DJZVgxdOyKD0Pa0vTYDWHkoDVLykVLWS7
-        uQkOMKBUtMjHkXN7mEGPUtEiZ5B3/8E+upVqGPYuesXj3eBNKR9RtMhOYlA8rBRulPIRxUtmghXx4EmQ
-        VsrHb7epxDD2UoucUtpHox9aNRg3L7H0uONG6VC6EjRu6KjwwPc2KmeXxHJMKF0bTRx2i545Yzd0KRiB
-        x7XsEF5A7iXEubxQr+euucQwVm3q46cXjmhEq2GNwa2Wu4vVJXi5XEkrZMhcOFmTzaHyfwngG3qQmAU6
-        0w1ZAAAAAElFTkSuQmCC
+        a+MfkIgdTVX7iia2tv4BCZEghKVuEC0N0844d3In0zadqdZsOMlL35x37rm3d968hz8Hx0GLTuvDiaPL
+        TmO2ZHBsJXBfiOH5cw9PxSTOSikccW3cWUeryiFzauP6GA4GT34ZPDqGRYUMJr61UxjzzIVTi9pwTtHO
+        6rY8g6LBhW2wzIRDfO7jbz/HME1XLYNr0WQ3UaTu3ItRq9pgFdsiejEo0HihvAXVcDJoo2Yta1DyzEMT
+        sKoZEbzu4IOBI0oHQtsSKzcPTGCfoNNK4kEETDSndCCCzGWopBKseFoWpedhbWkarOZQErD6JaWihWw3
+        N8EBBpSKFvk4cm4PM+hRKlrkDPLuP9hHt1INw95Fr3i8G7wp5SOKFtlJDIqHlcKNUj6ieMlMsCIePAnS
+        Svn47TaVGMZeapFTSvto9EOrBuPmJZYed9woHUpXgsYNHRUe+N5G5eySWI4JpWujicNu0TNn7IYuBSPw
+        uJYdwgvIvYQ4lxfq9dw1lxjGqk19/PTCEY1oNawxuNVyd7G6BC+XK2mFDJkLJ2uyOVT+LwF8A2UFmAJF
+        1MTHAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="ErrorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

@@ -29,25 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcBus));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.GridView = new System.Windows.Forms.DataGridView();
-            this.DgvId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvNumPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvCompagnie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvMarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvPlaque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvAnneeFab = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvKilometrage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvMiseEnCirculation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GvcEtat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CmbEtatBus = new System.Windows.Forms.ComboBox();
             this.TxtKilometrage = new System.Windows.Forms.MaskedTextBox();
@@ -117,6 +105,21 @@
             this.selectionnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label10 = new System.Windows.Forms.Label();
+            this.CmbAxe = new System.Windows.Forms.ComboBox();
+            this.DgvId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvNumPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvCompagnie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvMarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvPlaque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvAnneeFab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvKilometrage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvMiseEnCirculation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvEtat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvAxe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
@@ -133,6 +136,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.CmbAxe);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.BindNavig);
@@ -167,14 +172,14 @@
             this.GridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.GridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DgvId,
@@ -188,110 +193,26 @@
             this.DgvAnneeFab,
             this.DgvKilometrage,
             this.DgvMiseEnCirculation,
-            this.GvcEtat});
+            this.DgvEtat,
+            this.DgvAxe});
             this.GridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridView.Location = new System.Drawing.Point(3, 20);
             this.GridView.Name = "GridView";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
-            this.GridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            this.GridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridView.Size = new System.Drawing.Size(886, 284);
             this.GridView.TabIndex = 0;
             this.GridView.Click += new System.EventHandler(this.GridView_Click);
             this.GridView.DoubleClick += new System.EventHandler(this.GridView_DoubleClick);
-            // 
-            // DgvId
-            // 
-            this.DgvId.DataPropertyName = "id";
-            this.DgvId.HeaderText = "ID";
-            this.DgvId.Name = "DgvId";
-            this.DgvId.ReadOnly = true;
-            this.DgvId.Visible = false;
-            // 
-            // DgvNumero
-            // 
-            this.DgvNumero.DataPropertyName = "numero";
-            this.DgvNumero.HeaderText = "Numéro";
-            this.DgvNumero.Name = "DgvNumero";
-            this.DgvNumero.ReadOnly = true;
-            // 
-            // DgvNumPos
-            // 
-            this.DgvNumPos.DataPropertyName = "ref_pos";
-            this.DgvNumPos.HeaderText = "Numéro POS";
-            this.DgvNumPos.Name = "DgvNumPos";
-            this.DgvNumPos.ReadOnly = true;
-            // 
-            // DgvCompagnie
-            // 
-            this.DgvCompagnie.DataPropertyName = "ref_compagnie";
-            this.DgvCompagnie.HeaderText = "Compagnie";
-            this.DgvCompagnie.Name = "DgvCompagnie";
-            this.DgvCompagnie.ReadOnly = true;
-            this.DgvCompagnie.Visible = false;
-            // 
-            // DgvMarque
-            // 
-            this.DgvMarque.DataPropertyName = "marque";
-            this.DgvMarque.HeaderText = "Marque";
-            this.DgvMarque.Name = "DgvMarque";
-            this.DgvMarque.ReadOnly = true;
-            // 
-            // DgvPlaque
-            // 
-            this.DgvPlaque.DataPropertyName = "plaque";
-            this.DgvPlaque.HeaderText = "Plaque";
-            this.DgvPlaque.Name = "DgvPlaque";
-            this.DgvPlaque.ReadOnly = true;
-            // 
-            // DgvPlace
-            // 
-            this.DgvPlace.DataPropertyName = "place";
-            this.DgvPlace.HeaderText = "Place";
-            this.DgvPlace.Name = "DgvPlace";
-            this.DgvPlace.ReadOnly = true;
-            // 
-            // DgvCreatedAt
-            // 
-            this.DgvCreatedAt.DataPropertyName = "created_at";
-            this.DgvCreatedAt.HeaderText = "Création";
-            this.DgvCreatedAt.Name = "DgvCreatedAt";
-            this.DgvCreatedAt.ReadOnly = true;
-            this.DgvCreatedAt.Visible = false;
-            // 
-            // DgvAnneeFab
-            // 
-            this.DgvAnneeFab.DataPropertyName = "annee_fabrication";
-            this.DgvAnneeFab.HeaderText = "Année de fabrication";
-            this.DgvAnneeFab.Name = "DgvAnneeFab";
-            // 
-            // DgvKilometrage
-            // 
-            this.DgvKilometrage.DataPropertyName = "kilometrage";
-            this.DgvKilometrage.HeaderText = "Kilométrage";
-            this.DgvKilometrage.Name = "DgvKilometrage";
-            // 
-            // DgvMiseEnCirculation
-            // 
-            this.DgvMiseEnCirculation.DataPropertyName = "mise_en_circulation";
-            this.DgvMiseEnCirculation.HeaderText = "Date de mise en circulation";
-            this.DgvMiseEnCirculation.Name = "DgvMiseEnCirculation";
-            this.DgvMiseEnCirculation.Visible = false;
-            // 
-            // GvcEtat
-            // 
-            this.GvcEtat.DataPropertyName = "etat";
-            this.GvcEtat.HeaderText = "Etat";
-            this.GvcEtat.Name = "GvcEtat";
-            this.GvcEtat.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -778,8 +699,9 @@
             // 
             // toolStripLabel1
             // 
+            this.toolStripLabel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(89, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(100, 22);
             this.toolStripLabel1.Text = "Montant total : ";
             // 
             // LblMontant
@@ -826,6 +748,124 @@
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
             this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(676, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 16);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Axe : ";
+            // 
+            // CmbAxe
+            // 
+            this.CmbAxe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CmbAxe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbAxe.FormattingEnabled = true;
+            this.CmbAxe.Items.AddRange(new object[] {
+            "AXE 1",
+            "AXE 2",
+            "AXE 3",
+            "AXE 4",
+            "AXE 5"});
+            this.CmbAxe.Location = new System.Drawing.Point(719, 18);
+            this.CmbAxe.Name = "CmbAxe";
+            this.CmbAxe.Size = new System.Drawing.Size(160, 24);
+            this.CmbAxe.TabIndex = 33;
+            // 
+            // DgvId
+            // 
+            this.DgvId.DataPropertyName = "id";
+            this.DgvId.HeaderText = "ID";
+            this.DgvId.Name = "DgvId";
+            this.DgvId.ReadOnly = true;
+            this.DgvId.Visible = false;
+            // 
+            // DgvNumero
+            // 
+            this.DgvNumero.DataPropertyName = "numero";
+            this.DgvNumero.HeaderText = "Numéro";
+            this.DgvNumero.Name = "DgvNumero";
+            this.DgvNumero.ReadOnly = true;
+            // 
+            // DgvNumPos
+            // 
+            this.DgvNumPos.DataPropertyName = "ref_pos";
+            this.DgvNumPos.HeaderText = "Numéro POS";
+            this.DgvNumPos.Name = "DgvNumPos";
+            this.DgvNumPos.ReadOnly = true;
+            // 
+            // DgvCompagnie
+            // 
+            this.DgvCompagnie.DataPropertyName = "ref_compagnie";
+            this.DgvCompagnie.HeaderText = "Compagnie";
+            this.DgvCompagnie.Name = "DgvCompagnie";
+            this.DgvCompagnie.ReadOnly = true;
+            this.DgvCompagnie.Visible = false;
+            // 
+            // DgvMarque
+            // 
+            this.DgvMarque.DataPropertyName = "marque";
+            this.DgvMarque.HeaderText = "Marque";
+            this.DgvMarque.Name = "DgvMarque";
+            this.DgvMarque.ReadOnly = true;
+            // 
+            // DgvPlaque
+            // 
+            this.DgvPlaque.DataPropertyName = "plaque";
+            this.DgvPlaque.HeaderText = "Plaque";
+            this.DgvPlaque.Name = "DgvPlaque";
+            this.DgvPlaque.ReadOnly = true;
+            // 
+            // DgvPlace
+            // 
+            this.DgvPlace.DataPropertyName = "place";
+            this.DgvPlace.HeaderText = "Place";
+            this.DgvPlace.Name = "DgvPlace";
+            this.DgvPlace.ReadOnly = true;
+            // 
+            // DgvCreatedAt
+            // 
+            this.DgvCreatedAt.DataPropertyName = "created_at";
+            this.DgvCreatedAt.HeaderText = "Création";
+            this.DgvCreatedAt.Name = "DgvCreatedAt";
+            this.DgvCreatedAt.ReadOnly = true;
+            this.DgvCreatedAt.Visible = false;
+            // 
+            // DgvAnneeFab
+            // 
+            this.DgvAnneeFab.DataPropertyName = "annee_fabrication";
+            this.DgvAnneeFab.HeaderText = "Année de fabrication";
+            this.DgvAnneeFab.Name = "DgvAnneeFab";
+            // 
+            // DgvKilometrage
+            // 
+            this.DgvKilometrage.DataPropertyName = "kilometrage";
+            this.DgvKilometrage.HeaderText = "Kilométrage";
+            this.DgvKilometrage.Name = "DgvKilometrage";
+            // 
+            // DgvMiseEnCirculation
+            // 
+            this.DgvMiseEnCirculation.DataPropertyName = "mise_en_circulation";
+            this.DgvMiseEnCirculation.HeaderText = "Date de mise en circulation";
+            this.DgvMiseEnCirculation.Name = "DgvMiseEnCirculation";
+            this.DgvMiseEnCirculation.Visible = false;
+            // 
+            // DgvEtat
+            // 
+            this.DgvEtat.DataPropertyName = "etat";
+            this.DgvEtat.HeaderText = "Etat";
+            this.DgvEtat.Name = "DgvEtat";
+            this.DgvEtat.ReadOnly = true;
+            // 
+            // DgvAxe
+            // 
+            this.DgvAxe.DataPropertyName = "designation_axe";
+            this.DgvAxe.HeaderText = "Axe";
+            this.DgvAxe.Name = "DgvAxe";
+            this.DgvAxe.ReadOnly = true;
             // 
             // UcBus
             // 
@@ -926,6 +966,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator34;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator30;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator31;
+        private System.Windows.Forms.ComboBox CmbEtatBus;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox CmbAxe;
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvId;
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvNumero;
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvNumPos;
@@ -937,7 +980,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvAnneeFab;
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvKilometrage;
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvMiseEnCirculation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GvcEtat;
-        private System.Windows.Forms.ComboBox CmbEtatBus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgvEtat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgvAxe;
     }
 }

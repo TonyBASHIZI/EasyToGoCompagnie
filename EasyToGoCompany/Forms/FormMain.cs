@@ -71,11 +71,7 @@ namespace EasyToGoCompany.Forms
         {
             Cursor = Cursors.WaitCursor;
             PnlMain.Controls.Clear();
-            uc.Dock = DockStyle.Fill;
-            //this.uc.MouseEnter += new System.EventHandler(this.ColorChanges_MouseEnter);
-
-            /// On mouse enter change color of controle
-  
+            uc.Dock = DockStyle.Fill;  
             PnlMain.Controls.Add(uc);
             uc.Show();
 

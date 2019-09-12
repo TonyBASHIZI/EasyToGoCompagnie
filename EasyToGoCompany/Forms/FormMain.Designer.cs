@@ -307,6 +307,8 @@
             this.PcbParametre.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PcbParametre.TabIndex = 2;
             this.PcbParametre.TabStop = false;
+            this.PcbParametre.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.PcbParametre.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // LblParametre
             // 
@@ -320,6 +322,8 @@
             this.LblParametre.TabIndex = 1;
             this.LblParametre.Text = "Paramètre";
             this.LblParametre.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.LblParametre.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.LblParametre.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // panel4
             // 
@@ -364,6 +368,8 @@
             this.PcbBus.TabIndex = 2;
             this.PcbBus.TabStop = false;
             this.PcbBus.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.PcbBus.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.PcbBus.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // LblBus
             // 
@@ -377,6 +383,8 @@
             this.LblBus.TabIndex = 1;
             this.LblBus.Text = "Bus";
             this.LblBus.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.LblBus.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.LblBus.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // panel3
             // 
@@ -412,6 +420,8 @@
             this.PcbProfil.TabIndex = 2;
             this.PcbProfil.TabStop = false;
             this.PcbProfil.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.PcbProfil.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.PcbProfil.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // LblProfil
             // 
@@ -425,6 +435,8 @@
             this.LblProfil.TabIndex = 1;
             this.LblProfil.Text = "Profil";
             this.LblProfil.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.LblProfil.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.LblProfil.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // PnlWhite1
             // 
@@ -460,6 +472,8 @@
             this.PcbDashboard.TabIndex = 1;
             this.PcbDashboard.TabStop = false;
             this.PcbDashboard.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.PcbDashboard.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.PcbDashboard.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // LblDashboard
             // 
@@ -473,6 +487,8 @@
             this.LblDashboard.TabIndex = 0;
             this.LblDashboard.Text = "Dashboard";
             this.LblDashboard.Click += new System.EventHandler(this.NavigationControles_Click);
+            this.LblDashboard.MouseEnter += new System.EventHandler(this.Menu_MouseEnter);
+            this.LblDashboard.MouseLeave += new System.EventHandler(this.Menu_MouseLeave);
             // 
             // panel2
             // 

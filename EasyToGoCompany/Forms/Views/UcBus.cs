@@ -56,9 +56,9 @@ namespace EasyToGoCompany.Forms.Views
                     break;
 
                 case "Refresh":
-                    this.Cursor = Cursors.WaitCursor;
+                    Cursor = Cursors.WaitCursor;
                     LoadDataGridView();
-                    this.Cursor = Cursors.Default;
+                    Cursor = Cursors.Default;
                     break;
 
                 default:
@@ -83,8 +83,9 @@ namespace EasyToGoCompany.Forms.Views
             id = 0;
             CmbEtatBus.Text = "ACTIF";
             TxtMarque.Text = "";
-            TxtNumero.Text = "";
+            TxtNumero.Text = "";                                                              
             TxtNumPos.Text = "";
+            CmbAxe.SelectedIndex = -1;
             TxtAnneeFabrication.Text = "";
             DteMiseCirculation.Text = DateTime.Now.ToString();
             TxtPlace.Text = "0";
@@ -114,7 +115,7 @@ namespace EasyToGoCompany.Forms.Views
             if (control == null && all == true)
             {
                 if (!string.IsNullOrEmpty(TxtNumero.Text) && !string.IsNullOrEmpty(TxtNumPos.Text)
-                    && !string.IsNullOrEmpty(TxtPlace.Text)
+                    && !string.IsNullOrEmpty(TxtPlace.Text) && !string.IsNullOrEmpty(CmbAxe.Text)
                     && !string.IsNullOrEmpty(TxtMarque.Text) && !string.IsNullOrEmpty(TxtPlaque.Text)
                     && !string.IsNullOrEmpty(TxtAnneeFabrication.Text) && !string.IsNullOrEmpty(TxtKilometrage.Text)
                     && IsNumeric(TxtPlace.Text) && IsNumeric(TxtAnneeFabrication.Text)
@@ -209,13 +210,15 @@ namespace EasyToGoCompany.Forms.Views
                         AnneeFabrication = TxtAnneeFabrication.Text.Trim(),
                         Kilometrage = TxtKilometrage.Text.Trim(),
                         MiseEnCirculation = DteMiseCirculation.Value,
-                        Etat = CmbEtatBus.Text
+                        Etat = CmbEtatBus.Text,
+                        Axe = CmbAxe.Text
                     };
 
 
                     if (save)
                     {
                         Glossaire.Instance.InsertUpdateBus(bus);
+                        ClearFields();
                     }
                     else
                     {
@@ -263,7 +266,8 @@ namespace EasyToGoCompany.Forms.Views
                         MiseEnCirculation = Convert.ToDateTime(GridView.SelectedRows[0].Cells["DgvMiseEnCirculation"].Value.ToString()),
                         Kilometrage = GridView.SelectedRows[0].Cells["DgvKilometrage"].Value.ToString(),
                         AnneeFabrication = GridView.SelectedRows[0].Cells["DgvAnneeFab"].Value.ToString(),
-                        Etat = GridView.SelectedRows[0].Cells["GvcEtat"].Value.ToString()
+                        Etat = GridView.SelectedRows[0].Cells["DgvEtat"].Value.ToString(),
+                        Axe = GridView.SelectedRows[0].Cells["DgvAxe"].Value.ToString()
                     };
 
                     if (bus !=  null)
@@ -315,7 +319,8 @@ namespace EasyToGoCompany.Forms.Views
                         MiseEnCirculation = Convert.ToDateTime(GridView.SelectedRows[0].Cells["DgvMiseEnCirculation"].Value.ToString()),
                         Kilometrage = GridView.SelectedRows[0].Cells["DgvKilometrage"].Value.ToString(),
                         AnneeFabrication = GridView.SelectedRows[0].Cells["DgvAnneeFab"].Value.ToString(),
-                        Etat = GridView.SelectedRows[0].Cells["GvcEtat"].Value.ToString()
+                        Etat = GridView.SelectedRows[0].Cells["DgvEtat"].Value.ToString(),
+                        Axe = GridView.SelectedRows[0].Cells["DgvAxe"].Value.ToString()
                     };
 
                     id = bus.Id;
@@ -326,6 +331,7 @@ namespace EasyToGoCompany.Forms.Views
                     TxtPlaque.Text = bus.Plaque;
                     TxtAnneeFabrication.Text = bus.AnneeFabrication;
                     TxtKilometrage.Text = bus.Kilometrage;
+                    CmbAxe.Text = bus.Axe;
                     DteMiseCirculation.Text = bus.MiseEnCirculation.ToString();
                     CmbEtatBus.Text = bus.Etat;
 

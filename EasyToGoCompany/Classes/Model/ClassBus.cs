@@ -18,6 +18,8 @@ namespace EasyToGoCompany.Classes.Model
 
         public int Place { get; set; }
 
+        public string Axe { get; set; }
+
         public DateTime MiseEnCirculation { get; set; }
 
         public string Kilometrage { get; set; }

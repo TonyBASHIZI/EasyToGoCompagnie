@@ -14,6 +14,8 @@
             public static string Bus = "bus";
             public static string Compagnie = "compagnie";
             public static string Utilisateur = "utilisateur";
+            public static string Compte = "compte";
+            public static string Transaction = "transaction";
             public static string Pos = "pos";
         }
     }

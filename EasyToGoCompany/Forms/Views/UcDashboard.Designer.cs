@@ -424,6 +424,7 @@
             this.DgvDashboard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvDashboard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvDashboard.GridColor = System.Drawing.SystemColors.Control;
             this.DgvDashboard.Location = new System.Drawing.Point(0, 0);
             this.DgvDashboard.Name = "DgvDashboard";
             this.DgvDashboard.ReadOnly = true;
