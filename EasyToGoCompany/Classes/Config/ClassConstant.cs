@@ -17,6 +17,7 @@
             public static string Compte = "compte";
             public static string Transaction = "transaction";
             public static string Pos = "pos";
+            public static string Axe = "axe";
         }
     }
 }

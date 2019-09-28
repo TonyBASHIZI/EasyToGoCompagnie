@@ -29,13 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcBus));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CmbAxe = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.GridView = new System.Windows.Forms.DataGridView();
+            this.DgvId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvNumPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvCompagnie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvMarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvPlaque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvAnneeFab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvKilometrage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvMiseEnCirculation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvEtat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvAxe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CmbEtatBus = new System.Windows.Forms.ComboBox();
             this.TxtKilometrage = new System.Windows.Forms.MaskedTextBox();
@@ -83,43 +98,22 @@
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator28 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator34 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.LblMontant = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.TxtRechercher = new System.Windows.Forms.ToolStripTextBox();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.selectionnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label10 = new System.Windows.Forms.Label();
-            this.CmbAxe = new System.Windows.Forms.ComboBox();
-            this.DgvId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvNumPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvCompagnie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvMarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvPlaque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvAnneeFab = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvKilometrage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvMiseEnCirculation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvEtat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DgvAxe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnAxe = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
@@ -136,6 +130,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.BtnAxe);
             this.groupBox1.Controls.Add(this.CmbAxe);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.groupBox3);
@@ -148,6 +143,26 @@
             this.groupBox1.Size = new System.Drawing.Size(898, 495);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // CmbAxe
+            // 
+            this.CmbAxe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CmbAxe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbAxe.FormattingEnabled = true;
+            this.CmbAxe.Location = new System.Drawing.Point(720, 16);
+            this.CmbAxe.Name = "CmbAxe";
+            this.CmbAxe.Size = new System.Drawing.Size(125, 24);
+            this.CmbAxe.TabIndex = 33;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(677, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 16);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Axe : ";
             // 
             // groupBox3
             // 
@@ -172,14 +187,14 @@
             this.GridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.GridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DgvId,
@@ -198,21 +213,113 @@
             this.GridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridView.Location = new System.Drawing.Point(3, 20);
             this.GridView.Name = "GridView";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
-            this.GridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(138)))), ((int)(((byte)(85)))));
+            this.GridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridView.Size = new System.Drawing.Size(886, 284);
             this.GridView.TabIndex = 0;
             this.GridView.Click += new System.EventHandler(this.GridView_Click);
             this.GridView.DoubleClick += new System.EventHandler(this.GridView_DoubleClick);
+            // 
+            // DgvId
+            // 
+            this.DgvId.DataPropertyName = "id";
+            this.DgvId.HeaderText = "ID";
+            this.DgvId.Name = "DgvId";
+            this.DgvId.ReadOnly = true;
+            this.DgvId.Visible = false;
+            // 
+            // DgvNumero
+            // 
+            this.DgvNumero.DataPropertyName = "numero";
+            this.DgvNumero.HeaderText = "Numéro";
+            this.DgvNumero.Name = "DgvNumero";
+            this.DgvNumero.ReadOnly = true;
+            // 
+            // DgvNumPos
+            // 
+            this.DgvNumPos.DataPropertyName = "ref_pos";
+            this.DgvNumPos.HeaderText = "Numéro POS";
+            this.DgvNumPos.Name = "DgvNumPos";
+            this.DgvNumPos.ReadOnly = true;
+            // 
+            // DgvCompagnie
+            // 
+            this.DgvCompagnie.DataPropertyName = "ref_compagnie";
+            this.DgvCompagnie.HeaderText = "Compagnie";
+            this.DgvCompagnie.Name = "DgvCompagnie";
+            this.DgvCompagnie.ReadOnly = true;
+            this.DgvCompagnie.Visible = false;
+            // 
+            // DgvMarque
+            // 
+            this.DgvMarque.DataPropertyName = "marque";
+            this.DgvMarque.HeaderText = "Marque";
+            this.DgvMarque.Name = "DgvMarque";
+            this.DgvMarque.ReadOnly = true;
+            // 
+            // DgvPlaque
+            // 
+            this.DgvPlaque.DataPropertyName = "plaque";
+            this.DgvPlaque.HeaderText = "Plaque";
+            this.DgvPlaque.Name = "DgvPlaque";
+            this.DgvPlaque.ReadOnly = true;
+            // 
+            // DgvPlace
+            // 
+            this.DgvPlace.DataPropertyName = "place";
+            this.DgvPlace.HeaderText = "Place";
+            this.DgvPlace.Name = "DgvPlace";
+            this.DgvPlace.ReadOnly = true;
+            // 
+            // DgvCreatedAt
+            // 
+            this.DgvCreatedAt.DataPropertyName = "created_at";
+            this.DgvCreatedAt.HeaderText = "Création";
+            this.DgvCreatedAt.Name = "DgvCreatedAt";
+            this.DgvCreatedAt.ReadOnly = true;
+            this.DgvCreatedAt.Visible = false;
+            // 
+            // DgvAnneeFab
+            // 
+            this.DgvAnneeFab.DataPropertyName = "annee_fabrication";
+            this.DgvAnneeFab.HeaderText = "Année de fabrication";
+            this.DgvAnneeFab.Name = "DgvAnneeFab";
+            // 
+            // DgvKilometrage
+            // 
+            this.DgvKilometrage.DataPropertyName = "kilometrage";
+            this.DgvKilometrage.HeaderText = "Kilométrage";
+            this.DgvKilometrage.Name = "DgvKilometrage";
+            // 
+            // DgvMiseEnCirculation
+            // 
+            this.DgvMiseEnCirculation.DataPropertyName = "mise_en_circulation";
+            this.DgvMiseEnCirculation.HeaderText = "Date de mise en circulation";
+            this.DgvMiseEnCirculation.Name = "DgvMiseEnCirculation";
+            this.DgvMiseEnCirculation.Visible = false;
+            // 
+            // DgvEtat
+            // 
+            this.DgvEtat.DataPropertyName = "etat";
+            this.DgvEtat.HeaderText = "Etat";
+            this.DgvEtat.Name = "DgvEtat";
+            this.DgvEtat.ReadOnly = true;
+            // 
+            // DgvAxe
+            // 
+            this.DgvAxe.DataPropertyName = "designation_axe";
+            this.DgvAxe.HeaderText = "Axe";
+            this.DgvAxe.Name = "DgvAxe";
+            this.DgvAxe.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -453,19 +560,12 @@
             this.toolStripSeparator18,
             this.toolStripSeparator25,
             this.toolStripSeparator24,
-            this.toolStripSeparator23,
-            this.toolStripSeparator22,
             this.toolStripSeparator21,
-            this.toolStripSeparator20,
-            this.toolStripSeparator19,
-            this.toolStripSeparator26,
+            this.toolStripLabel3,
+            this.TxtRechercher,
             this.toolStripSeparator27,
             this.toolStripSeparator28,
-            this.toolStripSeparator29,
             this.toolStripSeparator32,
-            this.toolStripSeparator33,
-            this.toolStripSeparator34,
-            this.toolStripSeparator30,
             this.toolStripSeparator31,
             this.toolStripLabel1,
             this.LblMontant,
@@ -627,35 +727,10 @@
             this.toolStripSeparator24.Name = "toolStripSeparator24";
             this.toolStripSeparator24.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripSeparator23
-            // 
-            this.toolStripSeparator23.Name = "toolStripSeparator23";
-            this.toolStripSeparator23.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator22
-            // 
-            this.toolStripSeparator22.Name = "toolStripSeparator22";
-            this.toolStripSeparator22.Size = new System.Drawing.Size(6, 25);
-            // 
             // toolStripSeparator21
             // 
             this.toolStripSeparator21.Name = "toolStripSeparator21";
             this.toolStripSeparator21.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator20
-            // 
-            this.toolStripSeparator20.Name = "toolStripSeparator20";
-            this.toolStripSeparator20.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator19
-            // 
-            this.toolStripSeparator19.Name = "toolStripSeparator19";
-            this.toolStripSeparator19.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator26
-            // 
-            this.toolStripSeparator26.Name = "toolStripSeparator26";
-            this.toolStripSeparator26.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripSeparator27
             // 
@@ -667,30 +742,10 @@
             this.toolStripSeparator28.Name = "toolStripSeparator28";
             this.toolStripSeparator28.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripSeparator29
-            // 
-            this.toolStripSeparator29.Name = "toolStripSeparator29";
-            this.toolStripSeparator29.Size = new System.Drawing.Size(6, 25);
-            // 
             // toolStripSeparator32
             // 
             this.toolStripSeparator32.Name = "toolStripSeparator32";
             this.toolStripSeparator32.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator33
-            // 
-            this.toolStripSeparator33.Name = "toolStripSeparator33";
-            this.toolStripSeparator33.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator34
-            // 
-            this.toolStripSeparator34.Name = "toolStripSeparator34";
-            this.toolStripSeparator34.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator30
-            // 
-            this.toolStripSeparator30.Name = "toolStripSeparator30";
-            this.toolStripSeparator30.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripSeparator31
             // 
@@ -717,6 +772,19 @@
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(19, 22);
             this.toolStripLabel2.Text = "Fc";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(75, 22);
+            this.toolStripLabel3.Text = "Rechercher : ";
+            // 
+            // TxtRechercher
+            // 
+            this.TxtRechercher.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtRechercher.Name = "TxtRechercher";
+            this.TxtRechercher.Size = new System.Drawing.Size(120, 25);
+            this.TxtRechercher.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtRechercher_KeyDown);
             // 
             // ErrorProvider
             // 
@@ -749,123 +817,18 @@
             this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             // 
-            // label10
+            // BtnAxe
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(676, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 16);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Axe : ";
-            // 
-            // CmbAxe
-            // 
-            this.CmbAxe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CmbAxe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbAxe.FormattingEnabled = true;
-            this.CmbAxe.Items.AddRange(new object[] {
-            "AXE 1",
-            "AXE 2",
-            "AXE 3",
-            "AXE 4",
-            "AXE 5"});
-            this.CmbAxe.Location = new System.Drawing.Point(719, 18);
-            this.CmbAxe.Name = "CmbAxe";
-            this.CmbAxe.Size = new System.Drawing.Size(160, 24);
-            this.CmbAxe.TabIndex = 33;
-            // 
-            // DgvId
-            // 
-            this.DgvId.DataPropertyName = "id";
-            this.DgvId.HeaderText = "ID";
-            this.DgvId.Name = "DgvId";
-            this.DgvId.ReadOnly = true;
-            this.DgvId.Visible = false;
-            // 
-            // DgvNumero
-            // 
-            this.DgvNumero.DataPropertyName = "numero";
-            this.DgvNumero.HeaderText = "Numéro";
-            this.DgvNumero.Name = "DgvNumero";
-            this.DgvNumero.ReadOnly = true;
-            // 
-            // DgvNumPos
-            // 
-            this.DgvNumPos.DataPropertyName = "ref_pos";
-            this.DgvNumPos.HeaderText = "Numéro POS";
-            this.DgvNumPos.Name = "DgvNumPos";
-            this.DgvNumPos.ReadOnly = true;
-            // 
-            // DgvCompagnie
-            // 
-            this.DgvCompagnie.DataPropertyName = "ref_compagnie";
-            this.DgvCompagnie.HeaderText = "Compagnie";
-            this.DgvCompagnie.Name = "DgvCompagnie";
-            this.DgvCompagnie.ReadOnly = true;
-            this.DgvCompagnie.Visible = false;
-            // 
-            // DgvMarque
-            // 
-            this.DgvMarque.DataPropertyName = "marque";
-            this.DgvMarque.HeaderText = "Marque";
-            this.DgvMarque.Name = "DgvMarque";
-            this.DgvMarque.ReadOnly = true;
-            // 
-            // DgvPlaque
-            // 
-            this.DgvPlaque.DataPropertyName = "plaque";
-            this.DgvPlaque.HeaderText = "Plaque";
-            this.DgvPlaque.Name = "DgvPlaque";
-            this.DgvPlaque.ReadOnly = true;
-            // 
-            // DgvPlace
-            // 
-            this.DgvPlace.DataPropertyName = "place";
-            this.DgvPlace.HeaderText = "Place";
-            this.DgvPlace.Name = "DgvPlace";
-            this.DgvPlace.ReadOnly = true;
-            // 
-            // DgvCreatedAt
-            // 
-            this.DgvCreatedAt.DataPropertyName = "created_at";
-            this.DgvCreatedAt.HeaderText = "Création";
-            this.DgvCreatedAt.Name = "DgvCreatedAt";
-            this.DgvCreatedAt.ReadOnly = true;
-            this.DgvCreatedAt.Visible = false;
-            // 
-            // DgvAnneeFab
-            // 
-            this.DgvAnneeFab.DataPropertyName = "annee_fabrication";
-            this.DgvAnneeFab.HeaderText = "Année de fabrication";
-            this.DgvAnneeFab.Name = "DgvAnneeFab";
-            // 
-            // DgvKilometrage
-            // 
-            this.DgvKilometrage.DataPropertyName = "kilometrage";
-            this.DgvKilometrage.HeaderText = "Kilométrage";
-            this.DgvKilometrage.Name = "DgvKilometrage";
-            // 
-            // DgvMiseEnCirculation
-            // 
-            this.DgvMiseEnCirculation.DataPropertyName = "mise_en_circulation";
-            this.DgvMiseEnCirculation.HeaderText = "Date de mise en circulation";
-            this.DgvMiseEnCirculation.Name = "DgvMiseEnCirculation";
-            this.DgvMiseEnCirculation.Visible = false;
-            // 
-            // DgvEtat
-            // 
-            this.DgvEtat.DataPropertyName = "etat";
-            this.DgvEtat.HeaderText = "Etat";
-            this.DgvEtat.Name = "DgvEtat";
-            this.DgvEtat.ReadOnly = true;
-            // 
-            // DgvAxe
-            // 
-            this.DgvAxe.DataPropertyName = "designation_axe";
-            this.DgvAxe.HeaderText = "Axe";
-            this.DgvAxe.Name = "DgvAxe";
-            this.DgvAxe.ReadOnly = true;
+            this.BtnAxe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnAxe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAxe.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAxe.Location = new System.Drawing.Point(853, 16);
+            this.BtnAxe.Name = "BtnAxe";
+            this.BtnAxe.Size = new System.Drawing.Size(27, 24);
+            this.BtnAxe.TabIndex = 34;
+            this.BtnAxe.Text = "+";
+            this.BtnAxe.UseVisualStyleBackColor = true;
+            this.BtnAxe.Click += new System.EventHandler(this.BtnAxe_Click);
             // 
             // UcBus
             // 
@@ -923,7 +886,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator19;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -953,18 +915,10 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator25;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator24;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator23;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator22;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator21;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator20;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator26;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator27;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator28;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator29;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator32;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator33;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator34;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator30;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator31;
         private System.Windows.Forms.ComboBox CmbEtatBus;
         private System.Windows.Forms.Label label10;
@@ -982,5 +936,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvMiseEnCirculation;
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvEtat;
         private System.Windows.Forms.DataGridViewTextBoxColumn DgvAxe;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripTextBox TxtRechercher;
+        private System.Windows.Forms.Button BtnAxe;
     }
 }

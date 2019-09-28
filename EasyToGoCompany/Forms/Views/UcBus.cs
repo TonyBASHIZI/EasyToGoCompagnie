@@ -36,7 +36,8 @@ namespace EasyToGoCompany.Forms.Views
 
         private void UcBus_Load(object sender, EventArgs e)
         {
-            LoadDataGridView();            
+            LoadDataGridView();
+            LoadDataCombo();      
         }
 
         private void ControleButtons_Click(object sender, EventArgs e)
@@ -66,11 +67,30 @@ namespace EasyToGoCompany.Forms.Views
             }
         }
 
-        private void LoadDataGridView()
+        private void LoadDataGridView(int index = 1)
         {
             try
             {
-                GridView.DataSource = Glossaire.Instance.LoadDatas(Constant.Table.Bus, " ", "ref_compagnie", User.Instance.DescriptionSession).Tables[0].DefaultView;
+                if (index == 1)
+                {
+                    GridView.DataSource = Glossaire.Instance.LoadDatas(Constant.Table.Bus, " ", "ref_compagnie", User.Instance.DescriptionSession).Tables[0].DefaultView;
+                }
+                else
+                {
+                    GridView.DataSource = Glossaire.Instance.LoadDatas(Constant.Table.Bus, User.Instance.DescriptionSession, "'%"+TxtRechercher.Text.Trim()+"%'").Tables[0].DefaultView;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur est survenue pendant l'opération ! \n" + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadDataCombo()
+        {
+            try
+            {
+                Glossaire.Instance.LoadCombos("designation", Constant.Table.Axe, CmbAxe);
             }
             catch (Exception ex)
             {
@@ -80,12 +100,14 @@ namespace EasyToGoCompany.Forms.Views
 
         private void ClearFields()
         {
+            ErrorProvider.Clear();
             id = 0;
             CmbEtatBus.Text = "ACTIF";
             TxtMarque.Text = "";
             TxtNumero.Text = "";                                                              
             TxtNumPos.Text = "";
             CmbAxe.SelectedIndex = -1;
+            CmbEtatBus.SelectedIndex = -1;
             TxtAnneeFabrication.Text = "";
             DteMiseCirculation.Text = DateTime.Now.ToString();
             TxtPlace.Text = "0";
@@ -93,8 +115,7 @@ namespace EasyToGoCompany.Forms.Views
             TxtPlaque.Text = "";
             TxtNumero.Focus();
             BtnDelete.Enabled = false;
-            BtnSave.Enabled = true;
-            ErrorProvider.Clear();
+            BtnSave.Enabled = true;           
         }
 
         private bool IsNumeric(string nombre)
@@ -252,6 +273,7 @@ namespace EasyToGoCompany.Forms.Views
         {
             try
             {
+                ClearFields();
                 if (GridView.SelectedRows.Count > 0)
                 {
                     bus = new Bus()
@@ -305,6 +327,7 @@ namespace EasyToGoCompany.Forms.Views
         {
             try
             {
+                ClearFields();
                 if (GridView.SelectedRows.Count > 0)
                 {
                     bus = new Bus()
@@ -331,7 +354,7 @@ namespace EasyToGoCompany.Forms.Views
                     TxtPlaque.Text = bus.Plaque;
                     TxtAnneeFabrication.Text = bus.AnneeFabrication;
                     TxtKilometrage.Text = bus.Kilometrage;
-                    CmbAxe.Text = bus.Axe;
+                    CmbAxe.SelectedItem = bus.Axe;
                     DteMiseCirculation.Text = bus.MiseEnCirculation.ToString();
                     CmbEtatBus.Text = bus.Etat;
 
@@ -354,6 +377,23 @@ namespace EasyToGoCompany.Forms.Views
             {
                 Cursor = Cursors.Default;
             }
+        }
+
+        private void TxtRechercher_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoadDataGridView(0);
+            }
+        }
+
+        private void BtnAxe_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            form = new FormAxe();
+            form.ShowInTaskbar = false;
+            form.ShowDialog();
+            Cursor = Cursors.Default;
         }
 
         /// TODO: Add ContextMenu strip

@@ -43,9 +43,9 @@ namespace EasyToGoCompany.Forms.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, "Une erreur s'est produite lors du chargement des données en temps réel. \n\nL'Application va automatiquement se rédemarrer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, "Une erreur s'est produite lors du chargement des données en temps réel. \n\nL'Application va s'arrêter.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine("Une erreur s'est produite lors de l'opération : " + ex.Message);
-                Application.Restart();
+                Application.Exit();
             }
             finally
             {

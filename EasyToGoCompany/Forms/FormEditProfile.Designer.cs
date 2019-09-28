@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditProfile));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.PnlEdit = new System.Windows.Forms.Panel();
             this.LblEdit = new System.Windows.Forms.Label();
@@ -229,6 +230,7 @@
             this.ClientSize = new System.Drawing.Size(402, 380);
             this.Controls.Add(this.groupBox3);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(418, 419);

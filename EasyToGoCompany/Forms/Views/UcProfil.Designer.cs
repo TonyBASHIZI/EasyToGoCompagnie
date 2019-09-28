@@ -143,6 +143,9 @@
             this.PnlEdit.Name = "PnlEdit";
             this.PnlEdit.Size = new System.Drawing.Size(120, 31);
             this.PnlEdit.TabIndex = 3;
+            this.PnlEdit.Click += new System.EventHandler(this.PnlEdit_Click);
+            this.PnlEdit.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.PnlEdit.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // LblEdit
             // 
@@ -156,6 +159,9 @@
             this.LblEdit.Size = new System.Drawing.Size(69, 18);
             this.LblEdit.TabIndex = 0;
             this.LblEdit.Text = "Modifier";
+            this.LblEdit.Click += new System.EventHandler(this.PnlEdit_Click);
+            this.LblEdit.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.LblEdit.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // LblAdresse
             // 

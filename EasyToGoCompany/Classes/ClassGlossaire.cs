@@ -71,7 +71,26 @@ namespace EasyToGoCompany.Classes
             cmd.Parameters.Add(param);
         }
 
-        public DataSet LoadDatas(string table, string orderBy = " ", string where = " ", string value = null)
+        public DataSet LoadDatas(string table, string value, string like)
+        {
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
+            {
+                DataSet ds = new DataSet();
+
+                cmd.CommandText = "SELECT * FROM `easy_to_go`.`" + table + "` WHERE ref_compagnie = '"+value+"' AND plaque LIKE "+like+"; ";
+
+                SetParameter(cmd, "@table", DbType.String, 30, table);
+
+                using (adapter = new MySqlDataAdapter((MySqlCommand)cmd))
+                {
+                    adapter.Fill(ds);
+                }
+
+                return ds;
+            }
+        }
+
+        public DataSet LoadDatas(string table, string orderBy = " ", string where = " ", string value = null, string like = null)
         {
             using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
             {
@@ -90,17 +109,27 @@ namespace EasyToGoCompany.Classes
                             adapter.Fill(ds);
                         }
                     }
-                    else
+                    else if(where == " " && value == null && like != null)
                     {
-                        cmd.CommandText = cmd.CommandText = "SELECT * FROM `easy_to_go`.`" + table + "` WHERE `easy_to_go`.`" + table + "`.`" + where + "` = @value ; ";
+                        cmd.CommandText = cmd.CommandText = "SELECT * FROM `easy_to_go`.`" + table + "` WHERE " + where + " = '"+value+"' AND "+like+" ; ";
 
-                        SetParameter(cmd, "@value", DbType.String, 30, value);
+                        MessageBox.Show(cmd.CommandText);
 
                         using (adapter = new MySqlDataAdapter((MySqlCommand)cmd))
                         {
                             adapter.Fill(ds);
                         }
                     }
+                    else
+                    {
+                        cmd.CommandText = cmd.CommandText = "SELECT * FROM `easy_to_go`.`" + table + "` WHERE " + where + " = '" + value + "' ; ";
+
+                        using (adapter = new MySqlDataAdapter((MySqlCommand)cmd))
+                        {
+                            adapter.Fill(ds);
+                        }
+                    }
+
                 }
                 else
                 {
@@ -450,6 +479,34 @@ namespace EasyToGoCompany.Classes
         #endregion
 
         #region Model
+
+        public void InsertUpdateAxe(Axe axe)
+        {
+            using (IDbCommand cmd = Connection.Connection.Instance.Con.CreateCommand())
+            {
+                if (axe.Id == 0)
+                {
+                    cmd.CommandText = "INSERT INTO `easy_to_go`.`axe` (`designation`,`description`,`montant`) " +
+                        " VALUES (@designation,@description,@montant); ";
+
+                    SetParameter(cmd, "@designation", DbType.String, 255, axe.Designation);
+                    SetParameter(cmd, "@description", DbType.String, 255, axe.Description);
+                    SetParameter(cmd, "@montant", DbType.Int32, 10, axe.Montant);
+                }
+                else
+                {
+                    cmd.CommandText = "UPDATE `easy_to_go`.`axe` SET `designation` = @designation, `description` = @description, " +
+                        " `montant` = @montant WHERE `id` = @id; ";
+
+                    SetParameter(cmd, "@id", DbType.Int32, 10, axe.Id);
+                    SetParameter(cmd, "@designation", DbType.String, 255, axe.Designation);
+                    SetParameter(cmd, "@description", DbType.String, 255, axe.Description);
+                    SetParameter(cmd, "@montant", DbType.Int32, 10, axe.Montant);
+                }
+
+                cmd.ExecuteNonQuery();
+            }
+        }
 
         public void InsertUpdateBus(Bus bus)
         {

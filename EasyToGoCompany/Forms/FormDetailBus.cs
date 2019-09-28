@@ -34,9 +34,9 @@ namespace EasyToGoCompany.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Une erreur de connexion est survenue pendant l'opération ! \n\n L'application va automatiquement se rédemarrer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Une erreur de connexion est survenue pendant l'opération ! \n\n L'application va s'arrêter.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.Write("Cette erreur est survenue lors de l'opération : " + ex.Message);
-                Application.Restart();
+                Application.Exit();
             }
         }
 
