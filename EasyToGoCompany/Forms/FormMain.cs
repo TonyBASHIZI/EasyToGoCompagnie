@@ -48,7 +48,6 @@ namespace EasyToGoCompany.Forms
             {
                 User.Instance = null;
                 UcBus.Instance = null;
-                UcProfil.Instance = null;
                 UcReport.Instance = null;
 
                 uc = UcAccueil.Instance;
@@ -123,11 +122,6 @@ namespace EasyToGoCompany.Forms
                     LoadUserControles(uc);
                     break;
 
-                case "Profil":
-                    uc = UcProfil.Instance;
-                    LoadUserControles(uc);
-                    break;
-
                 case "Parametre":
                     PnlParametreMain.Visible = PnlParametreMain.Visible ? false : true;
                     break;
@@ -186,10 +180,6 @@ namespace EasyToGoCompany.Forms
                     LblDashboard.ForeColor = Color.FromArgb(85, 183, 20);
                     break;
 
-                case "Profil":
-                    LblProfil.ForeColor = Color.FromArgb(85, 183, 20);
-                    break;
-
                 case "Bus":
                     LblBus.ForeColor = Color.FromArgb(85, 183, 20);
                     break;
@@ -217,10 +207,6 @@ namespace EasyToGoCompany.Forms
             {
                 case "Dashboard":
                     LblDashboard.ForeColor = Color.FromArgb(14, 23, 22);
-                    break;
-
-                case "Profil":
-                    LblProfil.ForeColor = Color.FromArgb(14, 23, 22);
                     break;
 
                 case "Bus":

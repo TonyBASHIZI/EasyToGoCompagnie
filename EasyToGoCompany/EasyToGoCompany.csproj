@@ -123,12 +123,6 @@
     <Compile Include="Forms\FormDetailBus.Designer.cs">
       <DependentUpon>FormDetailBus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEditProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormEditProfile.Designer.cs">
-      <DependentUpon>FormEditProfile.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,12 +165,6 @@
     <Compile Include="Forms\Views\UcDashboard.Designer.cs">
       <DependentUpon>UcDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Views\UcProfil.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Views\UcProfil.Designer.cs">
-      <DependentUpon>UcProfil.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Views\UcReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,9 +178,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDetailBus.resx">
       <DependentUpon>FormDetailBus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEditProfile.resx">
-      <DependentUpon>FormEditProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -214,9 +199,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Views\UcDashboard.resx">
       <DependentUpon>UcDashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Views\UcProfil.resx">
-      <DependentUpon>UcProfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Views\UcReport.resx">
       <DependentUpon>UcReport.cs</DependentUpon>
